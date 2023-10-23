@@ -23,7 +23,7 @@ struct LeftRightViewHStack<Content: View, LeftView: View, RightView: View>: View
     }
 
     var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: Dimen.spacing(.small)) {
             leftView()
             content()
             rightView()
