@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct FormPicker: View {
+struct FormPicker<LeftView: View, RightView: View>: View {
     var title: String
     @Binding var selectedId: Int
     var data: [PickerItem]
     @Binding var message: String
     var messageType: FormMessageType
+    var leftView: () -> LeftView
+    var rightView: () -> RightView
     var onSelectedChanged: (Int) -> Void
 
     init(
@@ -21,6 +23,8 @@ struct FormPicker: View {
         data: [PickerItem],
         message: Binding<String> = .constant(""),
         messageType: FormMessageType = .error,
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.title = title
@@ -29,12 +33,16 @@ struct FormPicker: View {
         self._message = message
         self.messageType = messageType
         self.onSelectedChanged = onSelectedChanged
+        self.leftView = leftView
+        self.rightView = rightView
     }
 
     init(
         title: String = "",
         field: Binding<FormField<Int>>,
         data: [PickerItem],
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.init(
@@ -49,6 +57,8 @@ struct FormPicker: View {
                 set: { field.wrappedValue.message = $0 }
             ),
             messageType: field.wrappedValue.messageType,
+            leftView: leftView,
+            rightView: rightView,
             onSelectedChanged: onSelectedChanged
         )
     }
@@ -66,7 +76,8 @@ struct FormPicker: View {
         PickerMenu(
             selectedId: $selectedId,
             data: data,
-            rightView: { Image("arrow_down").allowsTightening(false) }
+            leftView: leftView,
+            rightView: rightView
         )
         .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect())
