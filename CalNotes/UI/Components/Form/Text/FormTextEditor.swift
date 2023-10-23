@@ -54,7 +54,7 @@ struct FormTextEditor: View {
 
     func textEditor() -> some View {
         TextEditor(text: $text)
-            .textEditorStyle(TextEditorStyle.RoundedRect())
+            .textEditorStyle(TextEditorStyle.RoundedRect(isError: messageType == .error && !message.isEmpty))
             .keyboardType(keyboardType)
             .onChange(of: text) { _ in
                 if let maxLength = maxLength, text.count > maxLength {
@@ -73,12 +73,24 @@ struct FormTextEditor: View {
 
 struct FormTextEditor_Previews: PreviewProvider {
     static var previews: some View {
-        FormTextEditor(
-            title: "Remark",
-            placeholder: "Comment",
-            text: .constant(""),
-            message: .constant("Our company will look for it")
-        )
-        .previewLayout(.sizeThatFits)
+        Group {
+            FormTextEditor(
+                title: "Remark",
+                placeholder: "Comment",
+                text: .constant(""),
+                message: .constant("Our company will look for it")
+            )
+            .previewLayout(.sizeThatFits)
+
+            FormTextEditor(
+                title: "Remark",
+                placeholder: "Comment",
+                text: .constant(""),
+                message: .constant("Please enter"),
+                messageType: .error
+            )
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Error")
+        }
     }
 }

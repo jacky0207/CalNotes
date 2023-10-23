@@ -16,6 +16,7 @@ extension View {
 struct TextEditorStyle {
     struct RoundedRect: ViewModifier {
         @FocusState var isFocused: Bool
+        var isError: Bool = false
         
         func body(content: Content) -> some View {
             content
@@ -40,7 +41,7 @@ struct TextEditorStyle {
                 .overlay(
                     RoundedRectangle(cornerRadius: Dimen.corner(.normal))
                         .strokeBorder(
-                            isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color,
+                            isError ? ColorStyle.errorPrimary.color : (isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color),
                             style: StrokeStyle(
                                 lineWidth: isFocused ? Dimen.border(.large) : Dimen.border(.normal)
                             )

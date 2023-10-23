@@ -82,7 +82,7 @@ struct FormTextField<LeftView: View, RightView: View>: View {
             rightView: rightView
         )
         .textStyle(TextStyle.Regular())
-        .stackStyle(StackStyle.RoundedRect())
+        .stackStyle(StackStyle.RoundedRect(isError: messageType == .error && !message.isEmpty))
         .onChange(of: text) { _ in
             message = ""
         }

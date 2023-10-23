@@ -80,7 +80,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
             rightView: rightView
         )
         .textStyle(TextStyle.Regular())
-        .stackStyle(StackStyle.RoundedRect())
+        .stackStyle(StackStyle.RoundedRect(isError: messageType == .error && !message.isEmpty))
         .onChange(of: selectedId) { _ in
             message = ""
             onSelectedChanged(selectedId)
@@ -90,16 +90,32 @@ struct FormPicker<LeftView: View, RightView: View>: View {
 
 struct FormPicker_Previews: PreviewProvider {
     static var previews: some View {
-        FormPicker(
-            title: "Color",
-            selectedId: .constant(2),
-            data: [
-                PickerItem(id: 0, value: "Red"),
-                PickerItem(id: 1, value: "Green"),
-                PickerItem(id: 2, value: "Blue"),
-            ],
-            message: .constant("")
-        )
-        .previewLayout(.sizeThatFits)
+        Group {
+            FormPicker(
+                title: "Color",
+                selectedId: .constant(2),
+                data: [
+                    PickerItem(id: 0, value: "Red"),
+                    PickerItem(id: 1, value: "Green"),
+                    PickerItem(id: 2, value: "Blue"),
+                ],
+                message: .constant("")
+            )
+            .previewLayout(.sizeThatFits)
+
+            FormPicker(
+                title: "Color",
+                selectedId: .constant(-1),
+                data: [
+                    PickerItem(id: 0, value: "Red"),
+                    PickerItem(id: 1, value: "Green"),
+                    PickerItem(id: 2, value: "Blue"),
+                ],
+                message: .constant("Please select"),
+                messageType: .error
+            )
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Error")
+        }
     }
 }
