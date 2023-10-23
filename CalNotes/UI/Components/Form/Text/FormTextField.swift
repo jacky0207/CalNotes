@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct FormTextField: View {
+struct FormTextField<LeftView: View>: View {
     var title: String
     var placeholder: String
     @Binding var text: String
     @Binding var message: String
     var messageType: FormMessageType
     var keyboardType: UIKeyboardType
+    var leftView: () -> LeftView
 
     init(
         title: String = "",
@@ -21,7 +22,8 @@ struct FormTextField: View {
         text: Binding<String>,
         message: Binding<String> = .constant(""),
         messageType: FormMessageType = .info,
-        keyboardType: UIKeyboardType = .default
+        keyboardType: UIKeyboardType = .default,
+        leftView: @escaping () -> LeftView = { EmptyView() }
     ) {
         self.title = title
         self.placeholder = placeholder
@@ -29,13 +31,15 @@ struct FormTextField: View {
         self._message = message
         self.messageType = messageType
         self.keyboardType = keyboardType
+        self.leftView = leftView
     }
 
     init(
         title: String = "",
         placeholder: String = "",
         field: Binding<FormField<String>>,
-        keyboardType: UIKeyboardType = .default
+        keyboardType: UIKeyboardType = .default,
+        leftView: @escaping () -> LeftView = { EmptyView() }
     ) {
         self.init(
             title: title,
@@ -49,7 +53,8 @@ struct FormTextField: View {
                 set: { field.wrappedValue.message = $0 }
             ),
             messageType: field.wrappedValue.messageType,
-            keyboardType: keyboardType
+            keyboardType: keyboardType,
+            leftView: leftView
         )
     }
 
@@ -63,12 +68,16 @@ struct FormTextField: View {
     }
 
     func content() -> some View {
-        TextField(placeholder, text: $text)
-            .textFieldStyle(RoundedRectTextFieldStyle())
-            .keyboardType(keyboardType)
-            .onChange(of: text) { _ in
-                message = ""
-            }
+        HStack(spacing: Dimen.spacing(.xSmall)) {
+            leftView()
+            TextField(placeholder, text: $text)
+                .keyboardType(keyboardType)
+                .onChange(of: text) { _ in
+                    message = ""
+                }
+        }
+        .textStyle(TextStyle.Regular())
+        .stackStyle(StackStyle.RoundedRect())
     }
 }
 
@@ -78,7 +87,8 @@ struct FormTextField_Previews: PreviewProvider {
             title: "Last Name",
             placeholder: "e.g. Tai Man",
             text: .constant(""),
-            message: .constant("Please enter \"Tai Man\" for \"Chan Tai Man\"")
+            message: .constant("Please enter \"Tai Man\" for \"Chan Tai Man\""),
+            leftView: { Text("HKD") }
         )
         .previewLayout(.sizeThatFits)
     }

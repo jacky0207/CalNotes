@@ -67,9 +67,12 @@ struct StackStyle {
         }
     }
 
-    struct Picker: ViewModifier {
+    struct RoundedRect: ViewModifier {
+        @FocusState var isFocused: Bool
+
         func body(content: Content) -> some View {
             content
+                .focused($isFocused)
                 // padding
                 .padding(EdgeInsets(
                     top: Dimen.spacing(.small),
@@ -86,7 +89,7 @@ struct StackStyle {
                 .overlay(
                     RoundedRectangle(cornerRadius: Dimen.corner(.normal))
                         .strokeBorder(
-                            ColorStyle.textPrimary.color,
+                            isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color,
                             style: StrokeStyle(
                                 lineWidth: Dimen.border(.normal)
                             )

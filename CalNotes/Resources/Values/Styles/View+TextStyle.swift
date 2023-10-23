@@ -113,13 +113,4 @@ struct TextStyle {
                 .foregroundColor(ColorStyle.errorPrimary.color)
         }
     }
-
-    struct PickerLabel: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                // text
-                .font(FontStyle.regular.notoSansTC(for: .normal))
-                .accentColor(ColorStyle.textPrimary.color)
-        }
-    }
 }

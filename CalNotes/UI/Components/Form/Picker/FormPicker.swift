@@ -103,17 +103,16 @@ struct FormPickerMenu: View {
     }
 
     func label() -> some View {
-        ZStack {
+        HStack(spacing: Dimen.spacing(.xSmall)) {
             labelTitle()
             labelIcon()
         }
-        .stackStyle(StackStyle.Picker())
+        .stackStyle(StackStyle.RoundedRect())
     }
 
     func labelTitle() -> some View {
         Text(data.first(where: { $0.id == selectedId })?.value ?? " ")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .textStyle(TextStyle.PickerLabel())
+            .textStyle(TextStyle.Regular())
     }
 
     func labelIcon() -> some View {
