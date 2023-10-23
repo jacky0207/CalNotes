@@ -58,7 +58,8 @@ struct NoteItemFormView: View {
             FormTextField(
                 title: "amount".localized(),
                 field: $viewModel.form.amount,
-                keyboardType: .decimalPad
+                keyboardType: .decimalPad,
+                leftView: { Text("dollar_sign") }
             )
             FormImagePicker(
                 title: "image".localized(),
