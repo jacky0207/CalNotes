@@ -69,6 +69,7 @@ struct StackStyle {
 
     struct RoundedRect: ViewModifier {
         @FocusState var isFocused: Bool
+        var isError: Bool = false
 
         func body(content: Content) -> some View {
             content
@@ -89,7 +90,7 @@ struct StackStyle {
                 .overlay(
                     RoundedRectangle(cornerRadius: Dimen.corner(.normal))
                         .strokeBorder(
-                            isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color,
+                            isError ? ColorStyle.errorPrimary.color : (isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color),
                             style: StrokeStyle(
                                 lineWidth: Dimen.border(.normal)
                             )
