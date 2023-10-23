@@ -1,0 +1,168 @@
+{
+    "id": 1,
+    "title": "Monthly Cost",
+    "items": [
+        {
+            "id": 1,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 2,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 3,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 4,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 5,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 6,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 7,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 8,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 9,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 10,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 11,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 12,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 13,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 14,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 15,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 16,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 17,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 18,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 19,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        },
+        {
+            "id": 20,
+            "noteId": 1,
+            "title": "Public Mobile Plan",
+            "category": 8,
+            "amount": 44.0,
+            "remarks": "44GB with 4G speed"
+        }
+    ],
+    "sum": 100.0,
+    "lastUpdate": "2023-10-20 16:51:22 +0000"
+}

@@ -1,0 +1,52 @@
+{
+    "notes": [
+        {
+            "id": 1,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 2,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 3,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 4,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 5,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 6,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 7,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        },
+        {
+            "id": 8,
+            "title": "Monthly Cost",
+            "sum": 100.0,
+            "lastUpdate": "2023-10-20 16:51:22 +0000"
+        }
+    ]
+}

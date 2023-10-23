@@ -1,0 +1,40 @@
+// General
+"ok" = "OK";
+"cancel" = "Cancel";
+"add" = "Add";
+"no_item_found" = "No item found";
+"free" = "Free";
+// General Field
+"title" = "Title";
+"category" = "Category";
+"sum" = "Sum";
+"amount" = "Amount";
+"image" = "Image";
+"remarks" = "Remarks";
+// Image
+"camera" = "Camera";
+"photo_library" = "Photo Library";
+"permission_denied" = "Permission Denied";
+// Error
+"empty_text_error" = "Please enter";
+"empty_select_error" = "Please select";
+// Note
+"note_title_question" = "Enter Note Title";
+"notes" = "Notes";
+"note_copy_name_format" = "Copy of %@";
+"edit_note_name" = "Edit Note Name";
+// Note Item
+"add_note_item" = "Add Note Item";
+"update_note_item" = "Update Note Item";
+// Note Item Category
+"food" = "Food";
+"transport" = "Transport";
+"rent" = "Rent";
+"water" = "Water";
+"heat" = "Heat";
+"hydro" = "Hydro";
+"internet" = "Internet";
+"cellPhone" = "CellPhone";
+"insurance" = "Insurance";
+// Settings
+"settings" = "Settings";

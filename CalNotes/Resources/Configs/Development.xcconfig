@@ -1,0 +1,5 @@
+API_BASE_URL = www.your_dev_base_url.com
+GAD_APP_ID = ca-app-pub-4421054333001726~9050177945
+GAD_BOTTOM_BANNER_UNIT_ID = ca-app-pub-3940256099942544/6300978111
+CAMERA_USAGE_DESCRIPTION = This app requires access to camera
+PHOTO_LIBRARY_USAGE_DESCRIPTION = This app requires acess to photo library
