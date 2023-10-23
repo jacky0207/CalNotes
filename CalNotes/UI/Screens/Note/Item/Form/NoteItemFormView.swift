@@ -53,7 +53,8 @@ struct NoteItemFormView: View {
             )
             FormTextField(
                 title: "title".localized(),
-                field: $viewModel.form.title
+                field: $viewModel.form.title,
+                rightView: removeTitleButton
             )
             FormTextField(
                 title: "amount".localized(),
@@ -69,6 +70,16 @@ struct NoteItemFormView: View {
                 title: "remarks".localized(),
                 text: $viewModel.form.remarks.value
             )
+        }
+    }
+
+    func removeTitleButton() -> some View {
+        if viewModel.form.title.value == "" {
+            return AnyView(EmptyView())
+        } else {
+            return AnyView(Button(action: { viewModel.form.title.value = "" }) {
+                Image("remove")
+            })
         }
     }
 }
