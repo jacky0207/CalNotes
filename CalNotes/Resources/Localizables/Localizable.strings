@@ -26,6 +26,7 @@
 "notes" = "Notes";
 "note_copy_name_format" = "Copy of %@";
 "edit_note_name" = "Edit Note Name";
+"delete_note" = "Delete Note";
 // Note Item
 "add_note_item" = "Add Note Item";
 "update_note_item" = "Update Note Item";

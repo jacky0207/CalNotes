@@ -13,6 +13,7 @@ protocol NoteDetailProtocol {
     init(diContainer: DIContainer, id: Int)
     func getNoteDetail()
     func editNoteTitle(form: CreateNoteForm)
+    func deleteNote(completion: @escaping () -> Void)
     func deleteNoteItem(noteItemId: Int)
     func deleteNoteItem(at index: Int)
     func moveNoteItem(noteItemId: Int, newNoteItemId: Int) async

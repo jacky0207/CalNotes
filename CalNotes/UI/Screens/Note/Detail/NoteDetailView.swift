@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoteDetailView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.diContainer) var diContainer
     @ObservedObject var viewModel: NoteDetailViewModel
     @State private var isShowEditNoteTitle = false
@@ -25,7 +26,8 @@ struct NoteDetailView: View {
     func toolbar() -> some View {
         NoteDetailToolbar(
             note: viewModel.note,
-            isShowEditNoteTitle: $isShowEditNoteTitle
+            isShowEditNoteTitle: $isShowEditNoteTitle,
+            deleteNoteAction: deleteNote
         )
     }
 
@@ -67,6 +69,12 @@ struct NoteDetailView: View {
         viewModel.editNoteTitle(form: form)
     }
 
+    func deleteNote() {
+        viewModel.deleteNote {
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+
     func cloneButton(_ indexSet: IndexSet) -> some View {
         Button(action: { cloneNoteItem(at: indexSet) }) {
             Image("clone")
@@ -85,6 +93,7 @@ struct NoteDetailToolbar: View {
     @Environment(\.diContainer) var diContainer
     var note: NoteDetail
     @Binding var isShowEditNoteTitle: Bool
+    var deleteNoteAction: () -> Void
 
     var body: some View {
         HStack(spacing: Dimen.spacing(.normal)) {
@@ -118,6 +127,7 @@ struct NoteDetailToolbar: View {
         Menu(
             content: {
                 editNoteTitleButton()
+                deleteNoteButton()
             },
             label: menuLabel
         )
@@ -142,6 +152,24 @@ struct NoteDetailToolbar: View {
                 .textStyle(TextStyle.Regular())
             Image("edit")
                 .imageStyle(ImageStyle.Icon())
+        }
+    }
+
+    func deleteNoteButton() -> some View {
+        Button(
+            role: .destructive,
+            action: deleteNoteAction,
+            label: deleteNoteLabel
+        )
+    }
+
+    func deleteNoteLabel() -> some View {
+        HStack {
+            Text("delete_note")
+                .textStyle(TextStyle.Regular())
+            Image("trash")
+                .renderingMode(.template)
+                .foregroundColor(.red)
         }
     }
 }

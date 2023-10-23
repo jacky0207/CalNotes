@@ -58,6 +58,24 @@ class NoteDetailViewModel: ViewModel, ObservableObject, NoteDetailProtocol {
             .store(in: &cancellables)
     }
 
+    func deleteNote(completion: @escaping () -> Void) {
+        dataService.deleteNote(noteId: id)
+            .sink(
+                receiveCompletion: { completion in
+                    guard case let .failure(apiError) = completion else {
+                        return
+                    }
+                    AppState.shared.setAlert(for: AlertParams(
+                        title: apiError.errorMessage
+                    ))
+                },
+                receiveValue: { _ in
+                    completion()
+                }
+            )
+            .store(in: &cancellables)
+    }
+
     func deleteNoteItem(noteItemId: Int) {
         dataService.deleteNoteItem(noteId: id, noteItemId: noteItemId)
             .sink(
