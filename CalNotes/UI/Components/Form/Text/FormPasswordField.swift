@@ -11,28 +11,24 @@ struct FormPasswordField: View {
     var title: String
     var placeholder: String
     @Binding var text: String
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
 
     init(
         title: String = "",
         placeholder: String = "",
         text: Binding<String>,
-        message: Binding<String> = .constant(""),
-        messageType: FormMessageType = .info
+        errorMessage: Binding<String> = .constant("")
     ) {
         self.title = title
         self.placeholder = placeholder
         self._text = text
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
     }
 
     var body: some View {
         FormView(
             title: title,
-            message: $message,
-            messageType: messageType,
+            errorMessage: $errorMessage,
             content: content
         )
     }

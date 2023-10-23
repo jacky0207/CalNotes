@@ -76,13 +76,13 @@ extension NoteItemForm.LocalForm: FormValidation {
 
     mutating func validate() {
         if category.value < 0 {
-            category.message = "empty_select_error".localized()
+            category.errorMessage = "empty_select_error".localized()
         }
         if title.value.isEmpty {
-            title.message = "empty_text_error".localized()
+            title.errorMessage = "empty_text_error".localized()
         }
         if Float(amount.value) == nil {
-            amount.message = "empty_text_error".localized()
+            amount.errorMessage = "empty_text_error".localized()
         }
     }
 }

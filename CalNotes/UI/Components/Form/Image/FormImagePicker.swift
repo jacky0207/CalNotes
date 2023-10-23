@@ -10,20 +10,17 @@ import SwiftUI
 struct FormImagePicker: View {
     var title: String
     @Binding var image: Optional<UIImage>
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
     @State private var isShowSourceTypeSelections = false
 
     init(
         title: String = "",
         image: Binding<Optional<UIImage>>,
-        message: Binding<String> = .constant(""),
-        messageType: FormMessageType = .info
+        errorMessage: Binding<String> = .constant("")
     ) {
         self.title = title
         self._image = image
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
     }
 
     init(
@@ -36,19 +33,17 @@ struct FormImagePicker: View {
                 get: { field.wrappedValue.value },
                 set: { field.wrappedValue.value = $0 }
             ),
-            message: Binding(
-                get: { field.wrappedValue.message },
-                set: { field.wrappedValue.message = $0 }
-            ),
-            messageType: field.wrappedValue.messageType
+            errorMessage: Binding(
+                get: { field.wrappedValue.errorMessage },
+                set: { field.wrappedValue.errorMessage = $0 }
+            )
         )
     }
     
     var body: some View {
         FormView(
             title: title,
-            message: $message,
-            messageType: messageType,
+            errorMessage: $errorMessage,
             content: content
         )
     }
@@ -56,7 +51,7 @@ struct FormImagePicker: View {
     func content() -> some View {
         ImagePicker(image: $image)
             .onChange(of: image) { _ in
-                message = ""
+                errorMessage = ""
             }
     }
 }
@@ -66,7 +61,7 @@ struct FormImagePicker_Previews: PreviewProvider {
         FormImagePicker(
             title: "Last Name",
             image: .constant(nil),
-            message: .constant("Please enter \"Tai Man\" for \"Chan Tai Man\"")
+            errorMessage: .constant("Please enter \"Tai Man\" for \"Chan Tai Man\"")
         )
         .previewLayout(.sizeThatFits)
     }

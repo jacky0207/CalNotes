@@ -11,8 +11,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
     var title: String
     @Binding var selectedId: Int
     var data: [PickerItem]
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
     var leftView: () -> LeftView
     var rightView: () -> RightView
     var onSelectedChanged: (Int) -> Void
@@ -21,8 +20,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         title: String = "",
         selectedId: Binding<Int>,
         data: [PickerItem],
-        message: Binding<String> = .constant(""),
-        messageType: FormMessageType = .error,
+        errorMessage: Binding<String> = .constant(""),
         leftView: @escaping () -> LeftView = { EmptyView() },
         rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
@@ -30,8 +28,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         self.title = title
         self._selectedId = selectedId
         self.data = data
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
         self.onSelectedChanged = onSelectedChanged
         self.leftView = leftView
         self.rightView = rightView
@@ -52,11 +49,10 @@ struct FormPicker<LeftView: View, RightView: View>: View {
                 set: { field.wrappedValue.value = $0 }
             ),
             data: data,
-            message: Binding(
-                get: { field.wrappedValue.message },
-                set: { field.wrappedValue.message = $0 }
+            errorMessage: Binding(
+                get: { field.wrappedValue.errorMessage },
+                set: { field.wrappedValue.errorMessage = $0 }
             ),
-            messageType: field.wrappedValue.messageType,
             leftView: leftView,
             rightView: rightView,
             onSelectedChanged: onSelectedChanged
@@ -66,8 +62,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
     var body: some View {
         FormView(
             title: title,
-            message: $message,
-            messageType: messageType,
+            errorMessage: $errorMessage,
             content: content
         )
     }
@@ -80,9 +75,9 @@ struct FormPicker<LeftView: View, RightView: View>: View {
             rightView: rightView
         )
         .textStyle(TextStyle.Regular())
-        .stackStyle(StackStyle.RoundedRect(isError: messageType == .error && !message.isEmpty))
+        .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))
         .onChange(of: selectedId) { _ in
-            message = ""
+            errorMessage = ""
             onSelectedChanged(selectedId)
         }
     }
@@ -99,7 +94,7 @@ struct FormPicker_Previews: PreviewProvider {
                     PickerItem(id: 1, value: "Green"),
                     PickerItem(id: 2, value: "Blue"),
                 ],
-                message: .constant("")
+                errorMessage: .constant("")
             )
             .previewLayout(.sizeThatFits)
 
@@ -111,8 +106,7 @@ struct FormPicker_Previews: PreviewProvider {
                     PickerItem(id: 1, value: "Green"),
                     PickerItem(id: 2, value: "Blue"),
                 ],
-                message: .constant("Please select"),
-                messageType: .error
+                errorMessage: .constant("Please select")
             )
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Error")
