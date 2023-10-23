@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+struct TextOnlyTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .font(FontStyle.regular.notoSansTC(for: .normal))
+            .foregroundColor(ColorStyle.textPrimary.color)
+    }
+}
+
+@available(*, deprecated, message: "Declare style in parent stack, use .stackStyle(StackStyle.RoundedRect())")
 struct RoundedRectTextFieldStyle: TextFieldStyle {
     @FocusState var isFocused: Bool
 

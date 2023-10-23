@@ -9,19 +9,16 @@ import SwiftUI
 
 struct FormView<Content: View>: View {
     var title: String
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
     var content: () -> Content
 
     init(
         title: String,
-        message: Binding<String>,
-        messageType: FormMessageType,
+        errorMessage: Binding<String>,
         content: @escaping () -> Content
     ) {
         self.title = title
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
         self.content = content
     }
 
@@ -29,29 +26,21 @@ struct FormView<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
             FormHeaderView(title: title)
             content()
-            FormFooterView(message: message, messageType: messageType)
+            FormFooterView(errorMessage: errorMessage)
         }
     }
 }
 
-enum FormMessageType: Encodable {
-    case error
-    case info
-}
-
 struct FormField<T> where T: Encodable {
     var value: T
-    var message: String
-    var messageType: FormMessageType
+    var errorMessage: String
 
     init(
         _ value: T,
-        message: String = "",
-        messageType: FormMessageType = .error
+        errorMessage: String = ""
     ) {
         self.value = value
-        self.message = message
-        self.messageType = messageType
+        self.errorMessage = errorMessage
     }
 }
 
@@ -98,32 +87,24 @@ fileprivate struct FormTitleView: View {
 }
 
 fileprivate struct FormFooterView: View {
-    var message: String
-    var messageType: FormMessageType
+    var errorMessage: String
 
     var body: some View {
-        if message.isEmpty {
+        if errorMessage.isEmpty {
            EmptyView()
         } else {
             Spacer().frame(height: 2)
-            FormMessageView(message: message, messageType: messageType)
+            FormerrorMessageView(errorMessage: errorMessage)
         }
     }
 }
 
-struct FormMessageView: View {
-    var message: String
-    var messageType: FormMessageType
+struct FormerrorMessageView: View {
+    var errorMessage: String
 
     var body: some View {
-        switch messageType {
-        case .info:
-            Text(message)
-                .textStyle(TextStyle.FormInfo())
-        case .error:
-            Text(message)
-                .textStyle(TextStyle.FormError())
-        }
+        Text(errorMessage)
+            .textStyle(TextStyle.FormError())
     }
 }
 
@@ -132,8 +113,7 @@ struct FormView_Previews: PreviewProvider {
         Group {
             FormView(
                 title: "Last Name",
-                message: .constant("e.g. Tai Man"),
-                messageType: .info
+                errorMessage: .constant("")
             ) {
                 TextField("", text: .constant("Alvin"))
             }
@@ -141,8 +121,7 @@ struct FormView_Previews: PreviewProvider {
             
             FormView(
                 title: "Last Name",
-                message: .constant("e.g. Tai Man"),
-                messageType: .error
+                errorMessage: .constant("Please enter")
             ) {
                 TextField("", text: .constant("Alvin"))
             }

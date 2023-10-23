@@ -15,6 +15,9 @@
 "camera" = "Camera";
 "photo_library" = "Photo Library";
 "permission_denied" = "Permission Denied";
+// Dollar
+"dollar_sign" = "$";
+"dollar_format" = "$ %.2f";
 // Error
 "empty_text_error" = "Please enter";
 "empty_select_error" = "Please select";

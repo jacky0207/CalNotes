@@ -98,28 +98,11 @@ struct TextStyle {
         }
     }
 
-    struct FormInfo: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .font(FontStyle.regular.notoSansTC(for: .normal))
-                .foregroundColor(ColorStyle.hintPrimary.color)
-        }
-    }
-
     struct FormError: ViewModifier {
         func body(content: Content) -> some View {
             content
                 .font(FontStyle.regular.notoSansTC(for: .normal))
                 .foregroundColor(ColorStyle.errorPrimary.color)
-        }
-    }
-
-    struct PickerLabel: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                // text
-                .font(FontStyle.regular.notoSansTC(for: .normal))
-                .accentColor(ColorStyle.textPrimary.color)
         }
     }
 }

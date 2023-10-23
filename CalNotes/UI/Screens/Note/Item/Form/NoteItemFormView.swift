@@ -45,6 +45,7 @@ struct NoteItemFormView: View {
                 title: "category".localized(),
                 field: $viewModel.form.category,
                 data: NoteItemCategory.items,
+                leftView: categoryIcon,
                 onSelectedChanged: { id in
                     if viewModel.form.title.value.isEmpty {
                         viewModel.form.title.value = NoteItemCategory(rawValue: id)?.name ?? ""
@@ -53,12 +54,14 @@ struct NoteItemFormView: View {
             )
             FormTextField(
                 title: "title".localized(),
-                field: $viewModel.form.title
+                field: $viewModel.form.title,
+                rightView: removeTitleButton
             )
             FormTextField(
                 title: "amount".localized(),
                 field: $viewModel.form.amount,
-                keyboardType: .decimalPad
+                keyboardType: .decimalPad,
+                leftView: { Text("dollar_sign") }
             )
             FormImagePicker(
                 title: "image".localized(),
@@ -68,6 +71,24 @@ struct NoteItemFormView: View {
                 title: "remarks".localized(),
                 text: $viewModel.form.remarks.value
             )
+        }
+    }
+
+    func categoryIcon() -> some View {
+        if let category = NoteItemCategory(rawValue: viewModel.form.category.value) {
+            return AnyView(category.icon)
+        } else {
+            return AnyView(EmptyView())
+        }
+    }
+
+    func removeTitleButton() -> some View {
+        if viewModel.form.title.value == "" {
+            return AnyView(EmptyView())
+        } else {
+            return AnyView(Button(action: { viewModel.form.title.value = "" }) {
+                Image("remove")
+            })
         }
     }
 }

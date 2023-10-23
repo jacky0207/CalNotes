@@ -56,7 +56,7 @@ extension NoteItemCategory {
         case .dollar:
             return ""
         case .food:
-            return "food".localized()
+            return ""
         case .transport:
             return "transport".localized()
         case .rent:

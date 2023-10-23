@@ -109,7 +109,7 @@ struct NoteItemSumView: View {
     }
 
     var body: some View {
-        Text(amount == 0 ? "free".localized() : String(format: "%.2f", amount))
+        Text(amount == 0 ? "free".localized() : "dollar_format".localized(with: [amount]))
             .textStyle(TextStyle.Medium())
     }
 }

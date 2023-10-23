@@ -13,8 +13,7 @@ struct FormTitle: View {
     var body: some View {
         FormView(
             title: title,
-            message: .constant(""),
-            messageType: .info,
+            errorMessage: .constant(""),
             content: { EmptyView() }
         )
     }

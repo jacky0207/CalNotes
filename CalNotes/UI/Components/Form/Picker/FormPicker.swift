@@ -7,34 +7,39 @@
 
 import SwiftUI
 
-struct FormPicker: View {
+struct FormPicker<LeftView: View, RightView: View>: View {
     var title: String
     @Binding var selectedId: Int
     var data: [PickerItem]
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
+    var leftView: () -> LeftView
+    var rightView: () -> RightView
     var onSelectedChanged: (Int) -> Void
 
     init(
         title: String = "",
         selectedId: Binding<Int>,
         data: [PickerItem],
-        message: Binding<String> = .constant(""),
-        messageType: FormMessageType = .error,
+        errorMessage: Binding<String> = .constant(""),
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.title = title
         self._selectedId = selectedId
         self.data = data
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
         self.onSelectedChanged = onSelectedChanged
+        self.leftView = leftView
+        self.rightView = rightView
     }
 
     init(
         title: String = "",
         field: Binding<FormField<Int>>,
         data: [PickerItem],
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.init(
@@ -44,11 +49,12 @@ struct FormPicker: View {
                 set: { field.wrappedValue.value = $0 }
             ),
             data: data,
-            message: Binding(
-                get: { field.wrappedValue.message },
-                set: { field.wrappedValue.message = $0 }
+            errorMessage: Binding(
+                get: { field.wrappedValue.errorMessage },
+                set: { field.wrappedValue.errorMessage = $0 }
             ),
-            messageType: field.wrappedValue.messageType,
+            leftView: leftView,
+            rightView: rightView,
             onSelectedChanged: onSelectedChanged
         )
     }
@@ -56,88 +62,54 @@ struct FormPicker: View {
     var body: some View {
         FormView(
             title: title,
-            message: $message,
-            messageType: messageType,
+            errorMessage: $errorMessage,
             content: content
         )
     }
 
     func content() -> some View {
-        FormPickerMenu(
+        PickerMenu(
             selectedId: $selectedId,
-            data: data
+            data: data,
+            leftView: leftView,
+            rightView: rightView
         )
+        .textStyle(TextStyle.Regular())
+        .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))
         .onChange(of: selectedId) { _ in
-            message = ""
+            errorMessage = ""
             onSelectedChanged(selectedId)
         }
     }
 }
 
-struct FormPickerMenu: View {
-    @Binding var selectedId: Int
-    var data: [PickerItem]
-
-    var body: some View {
-        Menu(
-            content: content,
-            label: label
-        )
-    }
-
-    func content() -> some View {
-        Picker("", selection: $selectedId) {
-            pickerDefaultItem()
-            ForEach(data, id: \.id) { element in
-                pickerItem(content: element.value)
-            }
-        }
-    }
-
-    func pickerDefaultItem() -> some View {
-        Text(" ").tag(-1)
-    }
-
-    func pickerItem(content: String) -> some View {
-        Text(content)
-    }
-
-    func label() -> some View {
-        ZStack {
-            labelTitle()
-            labelIcon()
-        }
-        .stackStyle(StackStyle.Picker())
-    }
-
-    func labelTitle() -> some View {
-        Text(data.first(where: { $0.id == selectedId })?.value ?? " ")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .textStyle(TextStyle.PickerLabel())
-    }
-
-    func labelIcon() -> some View {
-        VStack {
-            Image("arrow_down")
-                .resizable()
-                .imageStyle(ImageStyle.Icon())
-        }
-        .frame(maxWidth: .infinity, alignment: .trailing)
-    }
-}
-
 struct FormPicker_Previews: PreviewProvider {
     static var previews: some View {
-        FormPicker(
-            title: "Color",
-            selectedId: .constant(2),
-            data: [
-                PickerItem(id: 0, value: "Red"),
-                PickerItem(id: 1, value: "Green"),
-                PickerItem(id: 2, value: "Blue"),
-            ],
-            message: .constant("")
-        )
-        .previewLayout(.sizeThatFits)
+        Group {
+            FormPicker(
+                title: "Color",
+                selectedId: .constant(2),
+                data: [
+                    PickerItem(id: 0, value: "Red"),
+                    PickerItem(id: 1, value: "Green"),
+                    PickerItem(id: 2, value: "Blue"),
+                ],
+                errorMessage: .constant("")
+            )
+            .previewLayout(.sizeThatFits)
+
+            FormPicker(
+                title: "Color",
+                selectedId: .constant(-1),
+                data: [
+                    PickerItem(id: 0, value: "Red"),
+                    PickerItem(id: 1, value: "Green"),
+                    PickerItem(id: 2, value: "Blue"),
+                ],
+                errorMessage: .constant("Please select")
+            )
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Error")
+        }
     }
 }

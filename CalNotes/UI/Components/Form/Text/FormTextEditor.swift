@@ -11,8 +11,7 @@ struct FormTextEditor: View {
     var title: String
     var placeholder: String
     @Binding var text: String
-    @Binding var message: String
-    var messageType: FormMessageType
+    @Binding var errorMessage: String
     var keyboardType: UIKeyboardType
     var maxLength: Int?
 
@@ -20,16 +19,14 @@ struct FormTextEditor: View {
         title: String = "",
         placeholder: String = "",
         text: Binding<String>,
-        message: Binding<String> = .constant(""),
-        messageType: FormMessageType = .info,
+        errorMessage: Binding<String> = .constant(""),
         keyboardType: UIKeyboardType = .default,
         maxLength: Int? = nil
     ) {
         self.title = title
         self.placeholder = placeholder
         self._text = text
-        self._message = message
-        self.messageType = messageType
+        self._errorMessage = errorMessage
         self.keyboardType = keyboardType
         self.maxLength = maxLength
     }
@@ -37,8 +34,7 @@ struct FormTextEditor: View {
     var body: some View {
         FormView(
             title: title,
-            message: $message,
-            messageType: messageType,
+            errorMessage: $errorMessage,
             content: content
         )
     }
@@ -54,7 +50,7 @@ struct FormTextEditor: View {
 
     func textEditor() -> some View {
         TextEditor(text: $text)
-            .textEditorStyle(TextEditorStyle.RoundedRect())
+            .textEditorStyle(TextEditorStyle.RoundedRect(isError: !errorMessage.isEmpty))
             .keyboardType(keyboardType)
             .onChange(of: text) { _ in
                 if let maxLength = maxLength, text.count > maxLength {
@@ -73,12 +69,22 @@ struct FormTextEditor: View {
 
 struct FormTextEditor_Previews: PreviewProvider {
     static var previews: some View {
-        FormTextEditor(
-            title: "Remark",
-            placeholder: "Comment",
-            text: .constant(""),
-            message: .constant("Our company will look for it")
-        )
-        .previewLayout(.sizeThatFits)
+        Group {
+            FormTextEditor(
+                title: "Remark",
+                placeholder: "Comment",
+                text: .constant("")
+            )
+            .previewLayout(.sizeThatFits)
+
+            FormTextEditor(
+                title: "Remark",
+                placeholder: "Comment",
+                text: .constant(""),
+                errorMessage: .constant("Please enter")
+            )
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Error")
+        }
     }
 }

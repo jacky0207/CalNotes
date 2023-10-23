@@ -70,7 +70,7 @@
 		F3C492072A9B3031009A63ED /* NoteItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C492062A9B3031009A63ED /* NoteItemFormView.swift */; };
 		F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C492082A9B3042009A63ED /* NoteItemFormViewModel.swift */; };
 		F3C4920B2A9B304A009A63ED /* NoteItemFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4920A2A9B304A009A63ED /* NoteItemFormProtocol.swift */; };
-		F3C492162A9B3124009A63ED /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4920E2A9B3124009A63ED /* PickerItem.swift */; };
+		F3C492162A9B3124009A63ED /* PickerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4920E2A9B3124009A63ED /* PickerMenu.swift */; };
 		F3C492172A9B3124009A63ED /* FormPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4920F2A9B3124009A63ED /* FormPasswordField.swift */; };
 		F3C492182A9B3124009A63ED /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C492102A9B3124009A63ED /* FormTextField.swift */; };
 		F3C492192A9B3124009A63ED /* FormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C492122A9B3124009A63ED /* FormSheet.swift */; };
@@ -123,6 +123,7 @@
 		F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6A2AA59D34006880A4 /* QA.xcconfig */; };
 		F3E97E6E2AA633AC006880A4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */; };
 		F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */; };
+		F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,7 +209,7 @@
 		F3C492062A9B3031009A63ED /* NoteItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormView.swift; sourceTree = "<group>"; };
 		F3C492082A9B3042009A63ED /* NoteItemFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormViewModel.swift; sourceTree = "<group>"; };
 		F3C4920A2A9B304A009A63ED /* NoteItemFormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormProtocol.swift; sourceTree = "<group>"; };
-		F3C4920E2A9B3124009A63ED /* PickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
+		F3C4920E2A9B3124009A63ED /* PickerMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerMenu.swift; sourceTree = "<group>"; };
 		F3C4920F2A9B3124009A63ED /* FormPasswordField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPasswordField.swift; sourceTree = "<group>"; };
 		F3C492102A9B3124009A63ED /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		F3C492122A9B3124009A63ED /* FormSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSheet.swift; sourceTree = "<group>"; };
@@ -265,6 +266,7 @@
 		F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		F3E97E6F2AA6447D006880A4 /* CalNotes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CalNotes.xctestplan; sourceTree = "<group>"; };
 		F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightViewHStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,9 +418,11 @@
 		F399F9D42A9A766D006710DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3F3DC952AE7146B001C1249 /* Base */,
 				F3DB44D02A9BFB7F0019050B /* List */,
 				F3DB44D92A9C1A370019050B /* Navigation */,
 				F3328EE02AE5044B004951F6 /* Image */,
+				F3F3DC982AE717C1001C1249 /* Picker */,
 				F3C4920C2A9B3124009A63ED /* Form */,
 				F3DB44BD2A9BB42A0019050B /* Note */,
 				F3E97E592AA58DE2006880A4 /* Settings */,
@@ -661,7 +665,6 @@
 		F3C4920D2A9B3124009A63ED /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				F3C4920E2A9B3124009A63ED /* PickerItem.swift */,
 				F3DB44B02A9B56CB0019050B /* FormPicker.swift */,
 			);
 			path = Picker;
@@ -886,6 +889,22 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
+		F3F3DC952AE7146B001C1249 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F3F3DC982AE717C1001C1249 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				F3C4920E2A9B3124009A63ED /* PickerMenu.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1096,8 +1115,9 @@
 				F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */,
 				F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */,
 				F3DB44C72A9BB8EB0019050B /* View+TextStyle.swift in Sources */,
+				F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */,
 				F399F9E12A9A7865006710DF /* DataSession.swift in Sources */,
-				F3C492162A9B3124009A63ED /* PickerItem.swift in Sources */,
+				F3C492162A9B3124009A63ED /* PickerMenu.swift in Sources */,
 				F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */,
 				F3C0C2772AA1E078001844B4 /* CDNote+CoreDataClass.swift in Sources */,
 				F3C492072A9B3031009A63ED /* NoteItemFormView.swift in Sources */,
