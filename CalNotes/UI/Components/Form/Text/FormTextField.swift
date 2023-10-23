@@ -73,17 +73,19 @@ struct FormTextField<LeftView: View, RightView: View>: View {
     }
 
     func content() -> some View {
-        HStack(spacing: Dimen.spacing(.xSmall)) {
-            leftView()
-            TextField(placeholder, text: $text)
-                .keyboardType(keyboardType)
-                .onChange(of: text) { _ in
-                    message = ""
-                }
-            rightView()
-        }
+        LeftRightViewHStack(
+            content: {
+                TextField(placeholder, text: $text)
+                    .keyboardType(keyboardType)
+            },
+            leftView: leftView,
+            rightView: rightView
+        )
         .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect())
+        .onChange(of: text) { _ in
+            message = ""
+        }
     }
 }
 

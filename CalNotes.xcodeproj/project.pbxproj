@@ -123,6 +123,7 @@
 		F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6A2AA59D34006880A4 /* QA.xcconfig */; };
 		F3E97E6E2AA633AC006880A4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */; };
 		F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */; };
+		F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +266,7 @@
 		F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		F3E97E6F2AA6447D006880A4 /* CalNotes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CalNotes.xctestplan; sourceTree = "<group>"; };
 		F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightViewHStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,9 +418,11 @@
 		F399F9D42A9A766D006710DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3F3DC952AE7146B001C1249 /* Base */,
 				F3DB44D02A9BFB7F0019050B /* List */,
 				F3DB44D92A9C1A370019050B /* Navigation */,
 				F3328EE02AE5044B004951F6 /* Image */,
+				F3F3DC982AE717C1001C1249 /* Picker */,
 				F3C4920C2A9B3124009A63ED /* Form */,
 				F3DB44BD2A9BB42A0019050B /* Note */,
 				F3E97E592AA58DE2006880A4 /* Settings */,
@@ -886,6 +890,21 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
+		F3F3DC952AE7146B001C1249 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F3F3DC982AE717C1001C1249 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1096,6 +1115,7 @@
 				F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */,
 				F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */,
 				F3DB44C72A9BB8EB0019050B /* View+TextStyle.swift in Sources */,
+				F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */,
 				F399F9E12A9A7865006710DF /* DataSession.swift in Sources */,
 				F3C492162A9B3124009A63ED /* PickerItem.swift in Sources */,
 				F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */,

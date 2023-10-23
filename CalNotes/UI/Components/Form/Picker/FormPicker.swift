@@ -63,65 +63,17 @@ struct FormPicker: View {
     }
 
     func content() -> some View {
-        FormPickerMenu(
+        PickerMenu(
             selectedId: $selectedId,
-            data: data
+            data: data,
+            rightView: { Image("arrow_down").allowsTightening(false) }
         )
+        .textStyle(TextStyle.Regular())
+        .stackStyle(StackStyle.RoundedRect())
         .onChange(of: selectedId) { _ in
             message = ""
             onSelectedChanged(selectedId)
         }
-    }
-}
-
-struct FormPickerMenu: View {
-    @Binding var selectedId: Int
-    var data: [PickerItem]
-
-    var body: some View {
-        Menu(
-            content: content,
-            label: label
-        )
-    }
-
-    func content() -> some View {
-        Picker("", selection: $selectedId) {
-            pickerDefaultItem()
-            ForEach(data, id: \.id) { element in
-                pickerItem(content: element.value)
-            }
-        }
-    }
-
-    func pickerDefaultItem() -> some View {
-        Text(" ").tag(-1)
-    }
-
-    func pickerItem(content: String) -> some View {
-        Text(content)
-    }
-
-    func label() -> some View {
-        HStack(spacing: Dimen.spacing(.xSmall)) {
-            labelTitle()
-            labelIcon()
-        }
-        .stackStyle(StackStyle.RoundedRect())
-    }
-
-    func labelTitle() -> some View {
-        Text(data.first(where: { $0.id == selectedId })?.value ?? " ")
-            .textStyle(TextStyle.Regular())
-    }
-
-    func labelIcon() -> some View {
-        VStack {
-            Image("arrow_down")
-                .resizable()
-                .imageStyle(ImageStyle.Icon())
-        }
-        .frame(maxWidth: .infinity, alignment: .trailing)
     }
 }
 
