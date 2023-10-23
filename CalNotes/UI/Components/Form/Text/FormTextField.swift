@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FormTextField<LeftView: View>: View {
+struct FormTextField<LeftView: View, RightView: View>: View {
     var title: String
     var placeholder: String
     @Binding var text: String
@@ -15,6 +15,7 @@ struct FormTextField<LeftView: View>: View {
     var messageType: FormMessageType
     var keyboardType: UIKeyboardType
     var leftView: () -> LeftView
+    var rightView: () -> RightView
 
     init(
         title: String = "",
@@ -23,7 +24,8 @@ struct FormTextField<LeftView: View>: View {
         message: Binding<String> = .constant(""),
         messageType: FormMessageType = .info,
         keyboardType: UIKeyboardType = .default,
-        leftView: @escaping () -> LeftView = { EmptyView() }
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { EmptyView() }
     ) {
         self.title = title
         self.placeholder = placeholder
@@ -32,6 +34,7 @@ struct FormTextField<LeftView: View>: View {
         self.messageType = messageType
         self.keyboardType = keyboardType
         self.leftView = leftView
+        self.rightView = rightView
     }
 
     init(
@@ -39,7 +42,8 @@ struct FormTextField<LeftView: View>: View {
         placeholder: String = "",
         field: Binding<FormField<String>>,
         keyboardType: UIKeyboardType = .default,
-        leftView: @escaping () -> LeftView = { EmptyView() }
+        leftView: @escaping () -> LeftView = { EmptyView() },
+        rightView: @escaping () -> RightView = { EmptyView() }
     ) {
         self.init(
             title: title,
@@ -54,7 +58,8 @@ struct FormTextField<LeftView: View>: View {
             ),
             messageType: field.wrappedValue.messageType,
             keyboardType: keyboardType,
-            leftView: leftView
+            leftView: leftView,
+            rightView: rightView
         )
     }
 
@@ -75,6 +80,7 @@ struct FormTextField<LeftView: View>: View {
                 .onChange(of: text) { _ in
                     message = ""
                 }
+            rightView()
         }
         .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect())
@@ -88,7 +94,8 @@ struct FormTextField_Previews: PreviewProvider {
             placeholder: "e.g. Tai Man",
             text: .constant(""),
             message: .constant("Please enter \"Tai Man\" for \"Chan Tai Man\""),
-            leftView: { Text("HKD") }
+            leftView: { Text("HKD") },
+            rightView: { Button(action: {}) { Image("remove") } }
         )
         .previewLayout(.sizeThatFits)
     }
