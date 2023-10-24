@@ -124,6 +124,9 @@
 		F3E97E6E2AA633AC006880A4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */; };
 		F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */; };
 		F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */; };
+		F3F3DC9B2AE72D86001C1249 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */; };
+		F3F3DC9E2AE73A43001C1249 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */; };
+		F3F3DCA02AE73AA7001C1249 /* CalculatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +270,9 @@
 		F3E97E6F2AA6447D006880A4 /* CalNotes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CalNotes.xctestplan; sourceTree = "<group>"; };
 		F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 		F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftRightViewHStack.swift; sourceTree = "<group>"; };
+		F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,6 +613,7 @@
 				F382B4542AAE7AB100275BAE /* Ads */,
 				F341B5A32ADFCC8800847BD6 /* Date */,
 				F3E1165C2AE459EC004B6B15 /* Image */,
+				F3F3DC992AE72D65001C1249 /* Calcutor */,
 				F3F3DC832AE51C6A001C1249 /* Permission */,
 			);
 			path = Util;
@@ -905,6 +912,16 @@
 			path = Picker;
 			sourceTree = "<group>";
 		};
+		F3F3DC992AE72D65001C1249 /* Calcutor */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */,
+				F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */,
+				F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */,
+			);
+			path = Calcutor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1064,6 +1081,7 @@
 				F3C492312A9B31C2009A63ED /* ViewStyle+TextField.swift in Sources */,
 				F3C4923F2A9B33C3009A63ED /* NoteItemDetail.swift in Sources */,
 				F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */,
+				F3F3DC9B2AE72D86001C1249 /* CalculatorView.swift in Sources */,
 				F3C4920B2A9B304A009A63ED /* NoteItemFormProtocol.swift in Sources */,
 				F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */,
 				F399F9DD2A9A782B006710DF /* AppState.swift in Sources */,
@@ -1094,6 +1112,7 @@
 				F3C25B242AAEE9FF005BC7C4 /* CDNote+CoreDataProperties.swift in Sources */,
 				F3C491F92A9A8911009A63ED /* Record.swift in Sources */,
 				F399F9F22A9A7A5C006710DF /* ViewModel.swift in Sources */,
+				F3F3DCA02AE73AA7001C1249 /* CalculatorStyle.swift in Sources */,
 				F3BAA3352A9D920A00586A58 /* View+TextEditorStyle.swift in Sources */,
 				F399F9F32A9A7A5C006710DF /* SlashView.swift in Sources */,
 				F3DB44C52A9BB5E10019050B /* Dimen+Spacing.swift in Sources */,
@@ -1146,6 +1165,7 @@
 				F3E116612AE45C84004B6B15 /* FormImagePicker.swift in Sources */,
 				F3E1165E2AE459FC004B6B15 /* ImageUtil.swift in Sources */,
 				F3DB44C92A9BBB1F0019050B /* View+StackStyle.swift in Sources */,
+				F3F3DC9E2AE73A43001C1249 /* CalculatorButton.swift in Sources */,
 				F399F9A32A9A73D5006710DF /* CalNotesApp.swift in Sources */,
 				F3B3EE1C2A9E68E800A1E8A6 /* APIError.swift in Sources */,
 				F3C492292A9B31C2009A63ED /* ColorStyle+Hex.swift in Sources */,
