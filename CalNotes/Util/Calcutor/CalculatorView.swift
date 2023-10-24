@@ -28,21 +28,36 @@ struct CalculatorView: View {
     }
 
     var text: String {
-        switch state {
-        case .idle:
-            return sum
-        case .progress:
-            return operatorNumber
+        get {
+            switch state {
+            case .idle:
+                return sum
+            case .progress:
+                return operatorNumber
+            }
         }
     }
 
-    func newText(_ text: String, concat digit: CalculatorDigit) -> String {
+    func text(_ text: String, concat digit: CalculatorDigit) -> String {
         if digit == .zero, text == CalculatorView.zeroValue {
             return text
         } else if digit == .dot, text.contains(CalculatorDigit.dot.text) {
             return text
         }
         return (text == CalculatorView.zeroValue && digit != .dot) ? digit.text : text + digit.text
+    }
+
+    func text(from sum: Float) -> String {
+        return sum.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", sum) : String("\(NSNumber(value: sum).decimalValue)")
+    }
+
+    func setText(_ text: String) {
+        switch state {
+        case .idle:
+            sum = text
+        case .progress:
+            operatorNumber = text
+        }
     }
 
     func isOperatorSelected(_ operator: CalculatorOperator) -> Bool {
@@ -167,20 +182,15 @@ struct CalculatorView: View {
     }
 
     func appendDigit(_ digit: CalculatorDigit) {
-        if state == .progress && !isOperatorNumberEdited {
-            operatorNumber = CalculatorView.zeroValue  // 1st edit clear operator number first
+        if !isOperatorNumberEdited {
+            setText(CalculatorView.zeroValue)  // 1st edit clear operator number first
             isOperatorNumberEdited = true
         }
-        let newText = newText(text, concat: digit)
+        let newText = text(text, concat: digit)
         if newText == text {
             return
         }
-        switch state {
-        case .idle:
-            sum = newText
-        case .progress:
-            operatorNumber = newText
-        }
+        setText(newText)
     }
 
     func proceedOperator(_ operator: CalculatorOperator) {
@@ -204,8 +214,9 @@ struct CalculatorView: View {
             } else {
                 // calculate new sum
                 state = .idle
+                isOperatorNumberEdited = false
                 let newSum = self.`operator`.calcuate(Float(sum)!, Float(operatorNumber)!)
-                sum = newSum.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", newSum) : String("\(newSum)")
+                sum = text(from: newSum)
                 if `operator` != .equal {
                     proceedOperator(`operator`)  // operator combo
                 }
