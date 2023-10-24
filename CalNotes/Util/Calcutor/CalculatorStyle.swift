@@ -60,6 +60,11 @@ extension CalculatorButton {
             return CalculatorColor.black
         }
     }
+
+    var foregroundSelectedColor: Color {
+        return normalColor
+    }
+
     var normalColor: Color {
         switch self {
         case .digit:
@@ -81,9 +86,15 @@ extension CalculatorButton {
             return CalculatorColor.grayHighlight
         }
     }
+
+    var selectedColor: Color {
+        return foregroundColor
+    }
 }
 
 struct CalculatorButtonStyle: ButtonStyle {
+    var isSelected: Bool = false
+
     var type: CalculatorButton
     var fontSize: CGFloat = 28
     var width: CGFloat = 40
@@ -93,14 +104,14 @@ struct CalculatorButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(type.foregroundColor)
+            .foregroundColor(isSelected ? type.foregroundSelectedColor : type.foregroundColor)
             .font(Font.system(size: fontSize))
             .frame(width: width, height: width / 4)
             .padding(.trailing, (spanSpacing + width + padding * 2) * (CGFloat(span) - 1))
             .padding(.all, padding)
             .background(
                 RoundedRectangle(cornerRadius: width/2 + padding)
-                    .fill(configuration.isPressed ? type.highlightColor : type.normalColor )
+                    .fill(configuration.isPressed ? type.highlightColor : (isSelected ? type.selectedColor : type.normalColor) )
             )
     }
 }

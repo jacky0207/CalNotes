@@ -87,17 +87,33 @@ extension CalculatorOperator {
             return Image(systemName: "equal")
         }
     }
+
+    func calcuate(_ a: Float, _ b: Float) -> Float {
+        switch self {
+        case .plus:
+            return a + b
+        case .minus:
+            return a - b
+        case .multiply:
+            return a * b
+        case .divide:
+            return a / b
+        case .equal:
+            fatalError("Calculation doest not supported for equal operator")
+        }
+    }
 }
 
 struct CalculatorOperatorButton: View {
     var `operator`: CalculatorOperator
+    var isSelected: Bool = false
     var action: (CalculatorOperator) -> Void
 
     var body: some View {
         Button(action: { action(`operator`) }) {
             `operator`.image
         }
-        .buttonStyle(CalculatorButtonStyle(type: .operator))
+        .buttonStyle(CalculatorButtonStyle(isSelected: isSelected, type: .operator))
     }
 }
 
