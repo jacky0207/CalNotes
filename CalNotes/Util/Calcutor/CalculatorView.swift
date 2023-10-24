@@ -52,6 +52,7 @@ struct CalculatorView: View {
     }
 
     func setText(_ text: String) {
+        let text = Float(text) == nil ? "0" : text
         switch state {
         case .idle:
             sum = text
@@ -244,7 +245,7 @@ struct CalculatorView: View {
     }
 
     func executeDeleteFunction() {
-
+        setText(String(text.dropLast()))
     }
 
     func executePercentageFunction() {
