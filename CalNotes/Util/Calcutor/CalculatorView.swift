@@ -81,15 +81,19 @@ struct CalculatorView: View {
                     }
                 }
             HStack(spacing: spanSpacing) {
-                CalculatorFunctionButton(function: .allClear, sum: sum) { function in
-
-                }
-                CalculatorFunctionButton(function: .delete) { function in
-
-                }
-                CalculatorFunctionButton(function: .percentage) { function in
-
-                }
+                CalculatorFunctionButton(
+                    function: .allClear,
+                    sum: sum,
+                    action: executeFunction
+                )
+                CalculatorFunctionButton(
+                    function: .delete,
+                    action: executeFunction
+                )
+                CalculatorFunctionButton(
+                    function: .percentage,
+                    action: executeFunction
+                )
                 CalculatorOperatorButton(
                     operator: .divide,
                     isSelected: isOperatorSelected(.divide),
@@ -222,6 +226,30 @@ struct CalculatorView: View {
                 }
             }
         }
+    }
+
+    func executeFunction(_ function: CalculatorFunction) {
+        switch function {
+        case .allClear:
+            executeAllClearFunction()
+        case .delete:
+            executeDeleteFunction()
+        case .percentage:
+            executePercentageFunction()
+        }
+    }
+
+    func executeAllClearFunction() {
+
+    }
+
+    func executeDeleteFunction() {
+
+    }
+
+    func executePercentageFunction() {
+        isOperatorNumberEdited = false  // digit input will be clear after input digit
+        setText(text(from: Float(text)! / 100))
     }
 }
 
