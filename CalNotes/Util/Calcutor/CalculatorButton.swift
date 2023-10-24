@@ -123,11 +123,27 @@ enum CalculatorFunction {
     case percentage
 }
 
+enum CalcalationCleanState {
+    case allClean
+    case clean
+}
+
+extension CalcalationCleanState {
+    var text: String {
+        switch self {
+        case .allClean:
+            return "AC"
+        case .clean:
+            return "C"
+        }
+    }
+}
+
 extension CalculatorFunction {
-    func view(sum: String) -> some View {
+    func view(cleanState: CalcalationCleanState) -> some View {
         switch self {
         case .allClear:
-            return AnyView(Text(sum == "0" ? "AC" : "C"))
+            return AnyView(Text(cleanState.text))
         case .delete:
             return AnyView(Image(systemName: "delete.backward"))
         case .percentage:
@@ -138,12 +154,12 @@ extension CalculatorFunction {
 
 struct CalculatorFunctionButton: View {
     var function: CalculatorFunction
-    var sum: String = "0"
+    var cleanState: CalcalationCleanState = .allClean
     var action: (CalculatorFunction) -> Void
 
     var body: some View {
         Button(action: { action(function) }) {
-            function.view(sum: sum)
+            function.view(cleanState: cleanState)
         }
         .buttonStyle(CalculatorButtonStyle(type: .function))
     }
@@ -164,7 +180,7 @@ struct CalculatorDigitButton_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Operator Button")
 
-            CalculatorFunctionButton(function: .allClear, sum: "1") { _ in
+            CalculatorFunctionButton(function: .allClear, cleanState: .allClean) { _ in
 
             }
             .previewLayout(.sizeThatFits)

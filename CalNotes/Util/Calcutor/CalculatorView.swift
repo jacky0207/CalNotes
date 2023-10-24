@@ -19,6 +19,7 @@ struct CalculatorView: View {
         case progress
     }
     @State private var state: CalculationState = .idle
+    @State private var cleanState: CalcalationCleanState = .allClean
     @State private var `operator`: CalculatorOperator = .equal
     @State private var operatorNumber: String = ""
     @State private var isOperatorNumberEdited: Bool = false
@@ -84,7 +85,7 @@ struct CalculatorView: View {
             HStack(spacing: spanSpacing) {
                 CalculatorFunctionButton(
                     function: .allClear,
-                    sum: sum,
+                    cleanState: cleanState,
                     action: executeFunction
                 )
                 CalculatorFunctionButton(
@@ -196,6 +197,7 @@ struct CalculatorView: View {
             return
         }
         setText(newText)
+        cleanState = .clean
     }
 
     func proceedOperator(_ operator: CalculatorOperator) {
@@ -241,7 +243,17 @@ struct CalculatorView: View {
     }
 
     func executeAllClearFunction() {
-
+        switch cleanState {
+        case .allClean:
+            sum = CalculatorView.zeroValue
+            state = .idle
+            `operator` = .equal
+            operatorNumber = ""
+            isOperatorNumberEdited = false
+        case .clean:
+            cleanState = .allClean
+            setText(CalculatorView.zeroValue)
+        }
     }
 
     func executeDeleteFunction() {
