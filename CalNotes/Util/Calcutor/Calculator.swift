@@ -47,8 +47,15 @@ class SumTextCalculator: ObservableObject, Calculator {
     @Published private(set) var `operator`: CalculatorOperator = .equal
     @Published private var operationText: String = ""
 
-    init(sum: String) {
-        self.text = sum
+    // change notify
+    var onChange: (String) -> Void
+
+    init(
+        sum: String,
+        onChange: @escaping (String) -> Void = { _ in }
+    ) {
+        self.sumText = Float(sum) == nil ? SumTextCalculator.defaultValue : sum
+        self.onChange = onChange
     }
 
     // MARK: Text
@@ -67,6 +74,7 @@ class SumTextCalculator: ObservableObject, Calculator {
             switch state {
             case .idle:
                 sumText = newValue
+                onChange(sumText)
             case .progress:
                 operationText = newValue
             }

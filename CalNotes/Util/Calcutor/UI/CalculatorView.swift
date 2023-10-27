@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct CalculatorView: View {
-    @ObservedObject var calculator: SumTextCalculator
+    @StateObject private var calculator: SumTextCalculator
     private let spanSpacing: CGFloat = 16.0
     private let maxLength = 16
 
-    init(calculator: SumTextCalculator) {
-        self.calculator = calculator
+    init(
+        sum: String,
+        onChange: @escaping (String) -> Void
+    ) {
+        self._calculator = StateObject(wrappedValue: SumTextCalculator(sum: sum, onChange: onChange))
     }
 
     var body: some View {
@@ -94,7 +97,15 @@ struct CalculatorTestView: View {
     @State private var sum = "abc"
 
     var body: some View {
-        CalculatorView(calculator: SumTextCalculator(sum: sum))
+        VStack {
+            Text("Sum: \(sum)")
+            CalculatorView(
+                sum: sum,
+                onChange: { sum in
+                    self.sum = sum
+                }
+            )
+        }
     }
 }
 
