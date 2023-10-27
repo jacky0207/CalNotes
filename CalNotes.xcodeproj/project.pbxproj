@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30E095C2AE9111B0048D776 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F30E095B2AE9111B0048D776 /* FirebaseAnalytics */; };
+		F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */; };
+		F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09612AE95C040048D776 /* CalcalutorColor.swift */; };
+		F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */; };
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
 		F382B44D2AAE74D900275BAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F382B44C2AAE74D900275BAE /* GoogleService-Info.plist */; };
-		F382B4502AAE75A400275BAE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F382B44F2AAE75A400275BAE /* FirebaseAnalytics */; };
 		F382B4532AAE784800275BAE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F382B4522AAE784700275BAE /* GoogleMobileAds */; };
 		F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F382B4552AAE7AC700275BAE /* BannerViewController.swift */; };
 		F382B4582AAE7AEF00275BAE /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F382B4572AAE7AEF00275BAE /* BannerView.swift */; };
@@ -127,6 +130,11 @@
 		F3F3DC9B2AE72D86001C1249 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */; };
 		F3F3DC9E2AE73A43001C1249 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */; };
 		F3F3DCA02AE73AA7001C1249 /* CalculatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */; };
+		F3F3DCA22AE84651001C1249 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCA12AE84650001C1249 /* Calculator.swift */; };
+		F3F3DCA42AE8F832001C1249 /* CalculatorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCA32AE8F831001C1249 /* CalculatorEnum.swift */; };
+		F3F3DCA62AE8F85E001C1249 /* CalculatorButtonType+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */; };
+		F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */; };
+		F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +155,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+Color.swift"; sourceTree = "<group>"; };
+		F30E09612AE95C040048D776 /* CalcalutorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcalutorColor.swift; sourceTree = "<group>"; };
+		F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorDigit+Concat.swift"; sourceTree = "<group>"; };
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -273,6 +284,11 @@
 		F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorStyle.swift; sourceTree = "<group>"; };
+		F3F3DCA12AE84650001C1249 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		F3F3DCA32AE8F831001C1249 /* CalculatorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorEnum.swift; sourceTree = "<group>"; };
+		F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+View.swift"; sourceTree = "<group>"; };
+		F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorOperator+Calculation.swift"; sourceTree = "<group>"; };
+		F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCalculatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,8 +296,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30E095C2AE9111B0048D776 /* FirebaseAnalytics in Frameworks */,
 				F382B4532AAE784800275BAE /* GoogleMobileAds in Frameworks */,
-				F382B4502AAE75A400275BAE /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +318,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F30E095D2AE95AF50048D776 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */,
+				F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F30E095E2AE95B3C0048D776 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */,
+				F30E09612AE95C040048D776 /* CalcalutorColor.swift */,
+				F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		F3328EE02AE5044B004951F6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +371,7 @@
 				F399F9B72A9A73D7006710DF /* CalNotesTests */,
 				F399F9C12A9A73D7006710DF /* CalNotesUITests */,
 				F399F9A02A9A73D5006710DF /* Products */,
+				F3F3DCB12AE90A15001C1249 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				F399F9B82A9A73D7006710DF /* CalNotesTests.swift */,
+				F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */,
 			);
 			path = CalNotesTests;
 			sourceTree = "<group>";
@@ -915,11 +952,22 @@
 		F3F3DC992AE72D65001C1249 /* Calcutor */ = {
 			isa = PBXGroup;
 			children = (
-				F3F3DC9A2AE72D85001C1249 /* CalculatorView.swift */,
-				F3F3DC9D2AE73A43001C1249 /* CalculatorButton.swift */,
-				F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */,
+				F30E095D2AE95AF50048D776 /* UI */,
+				F30E095E2AE95B3C0048D776 /* Style */,
+				F3F3DCA12AE84650001C1249 /* Calculator.swift */,
+				F3F3DCA32AE8F831001C1249 /* CalculatorEnum.swift */,
+				F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */,
+				F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */,
+				F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */,
 			);
 			path = Calcutor;
+			sourceTree = "<group>";
+		};
+		F3F3DCB12AE90A15001C1249 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -939,8 +987,8 @@
 			);
 			name = CalNotes;
 			packageProductDependencies = (
-				F382B44F2AAE75A400275BAE /* FirebaseAnalytics */,
 				F382B4522AAE784700275BAE /* GoogleMobileAds */,
+				F30E095B2AE9111B0048D776 /* FirebaseAnalytics */,
 			);
 			productName = CalNotes;
 			productReference = F399F99F2A9A73D5006710DF /* CalNotes.app */;
@@ -960,6 +1008,8 @@
 				F399F9B62A9A73D7006710DF /* PBXTargetDependency */,
 			);
 			name = CalNotesTests;
+			packageProductDependencies = (
+			);
 			productName = CalNotesTests;
 			productReference = F399F9B42A9A73D7006710DF /* CalNotesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -978,6 +1028,8 @@
 				F399F9C02A9A73D7006710DF /* PBXTargetDependency */,
 			);
 			name = CalNotesUITests;
+			packageProductDependencies = (
+			);
 			productName = CalNotesUITests;
 			productReference = F399F9BE2A9A73D7006710DF /* CalNotesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1015,8 +1067,8 @@
 			);
 			mainGroup = F399F9962A9A73D5006710DF;
 			packageReferences = (
-				F382B44E2AAE75A400275BAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F382B4512AAE784700275BAE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				F30E095A2AE9111B0048D776 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F399F9A02A9A73D5006710DF /* Products */;
 			projectDirPath = "";
@@ -1086,6 +1138,7 @@
 				F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */,
 				F399F9DD2A9A782B006710DF /* AppState.swift in Sources */,
 				F3E97E582AA58B6F006880A4 /* SettingsProtocol.swift in Sources */,
+				F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */,
 				F3C4922A2A9B31C2009A63ED /* ColorStyle.swift in Sources */,
 				F3DB44CB2A9BBD220019050B /* Dimen+Corner.swift in Sources */,
 				F3C492192A9B3124009A63ED /* FormSheet.swift in Sources */,
@@ -1117,11 +1170,14 @@
 				F399F9F32A9A7A5C006710DF /* SlashView.swift in Sources */,
 				F3DB44C52A9BB5E10019050B /* Dimen+Spacing.swift in Sources */,
 				F3BAA32F2A9D63E100586A58 /* Dimen+Border.swift in Sources */,
+				F3F3DCA62AE8F85E001C1249 /* CalculatorButtonType+View.swift in Sources */,
 				F3BAA3332A9D90F900586A58 /* FormTextEditor.swift in Sources */,
+				F3F3DCA42AE8F832001C1249 /* CalculatorEnum.swift in Sources */,
 				F3E97E502AA4CFA0006880A4 /* NoteCreateFormView.swift in Sources */,
 				F3C4922F2A9B31C2009A63ED /* FontStyle.swift in Sources */,
 				F3C0C2852AA1EDF6001844B4 /* CalNotes.xcdatamodeld in Sources */,
 				F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */,
+				F3F3DCA22AE84651001C1249 /* Calculator.swift in Sources */,
 				F3DB44D62A9C0E0A0019050B /* View+ListStyle.swift in Sources */,
 				F3DB44DB2A9C1A9B0019050B /* BodyView.swift in Sources */,
 				F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */,
@@ -1133,7 +1189,9 @@
 				F399FA082A9A824A006710DF /* String+Localizable.swift in Sources */,
 				F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */,
 				F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */,
+				F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */,
 				F3DB44C72A9BB8EB0019050B /* View+TextStyle.swift in Sources */,
+				F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */,
 				F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */,
 				F399F9E12A9A7865006710DF /* DataSession.swift in Sources */,
 				F3C492162A9B3124009A63ED /* PickerMenu.swift in Sources */,
@@ -1167,6 +1225,7 @@
 				F3DB44C92A9BBB1F0019050B /* View+StackStyle.swift in Sources */,
 				F3F3DC9E2AE73A43001C1249 /* CalculatorButton.swift in Sources */,
 				F399F9A32A9A73D5006710DF /* CalNotesApp.swift in Sources */,
+				F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */,
 				F3B3EE1C2A9E68E800A1E8A6 /* APIError.swift in Sources */,
 				F3C492292A9B31C2009A63ED /* ColorStyle+Hex.swift in Sources */,
 				F3C4921A2A9B3124009A63ED /* FormSubmitButton.swift in Sources */,
@@ -1180,6 +1239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */,
 				F399F9B92A9A73D7006710DF /* CalNotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1308,7 +1368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HCGREW92J;
@@ -1320,7 +1380,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalNotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 			};
 			name = Development;
 		};
@@ -1441,7 +1501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HCGREW92J;
@@ -1453,7 +1513,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalNotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 			};
 			name = Production;
 		};
@@ -1574,7 +1634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HCGREW92J;
@@ -1586,7 +1646,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalNotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 			};
 			name = UAT;
 		};
@@ -1707,7 +1767,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HCGREW92J;
@@ -1719,7 +1779,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalNotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 			};
 			name = QA;
 		};
@@ -1840,7 +1900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6HCGREW92J;
@@ -1852,7 +1912,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalNotes";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
 			};
 			name = Beta;
 		};
@@ -1928,7 +1988,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F382B44E2AAE75A400275BAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		F30E095A2AE9111B0048D776 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -1947,9 +2007,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F382B44F2AAE75A400275BAE /* FirebaseAnalytics */ = {
+		F30E095B2AE9111B0048D776 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F382B44E2AAE75A400275BAE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = F30E095A2AE9111B0048D776 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
 		F382B4522AAE784700275BAE /* GoogleMobileAds */ = {
