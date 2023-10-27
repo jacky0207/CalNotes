@@ -21,10 +21,13 @@ struct CalculatorView: View {
 
     var body: some View {
         VStack(spacing: spanSpacing) {
-            calculationText()
+            HStack(spacing: spanSpacing) {
+                calculationText()
+                functionButton(.delete)
+            }
             HStack(spacing: spanSpacing) {
                 functionButton(calculator.isDigitInputted ? .clear : .allClear)
-                functionButton(.delete)
+                functionButton(.inverseSign)
                 functionButton(.percentage)
                 operatorButton(.divide)
             }

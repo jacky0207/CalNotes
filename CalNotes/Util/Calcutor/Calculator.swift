@@ -26,6 +26,7 @@ protocol Calculator {
     // function
     func reset()
     func clear()
+    func inverseSign()
     func deleteBackward()
     func percentaged()
     // user interaction
@@ -200,11 +201,24 @@ class SumTextCalculator: ObservableObject, Calculator {
         text = SumTextCalculator.defaultValue
     }
 
+    func inverseSign() {
+        if text == SumTextCalculator.defaultValue {
+            return
+        }
+        setText(from: -Float(text)!)
+    }
+
     func deleteBackward() {
+        if text == SumTextCalculator.defaultValue {
+            return
+        }
         text = String(text.dropLast())
     }
 
     func percentaged() {
+        if text == SumTextCalculator.defaultValue {
+            return
+        }
         isCurrDigitInputted = false
         setText(from: Float(text)! / 100)
     }
@@ -258,6 +272,8 @@ class SumTextCalculator: ObservableObject, Calculator {
             reset()
         case .clear:
             clear()
+        case .inverseSign:
+            inverseSign()
         case .delete:
             deleteBackward()
         case .percentage:

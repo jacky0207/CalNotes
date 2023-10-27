@@ -77,6 +77,8 @@ extension CalculatorFunction {
             return AnyView(Text("AC"))
         case .clear:
             return AnyView(Text("C"))
+        case .inverseSign:
+            return AnyView(Image(systemName: "plus.slash.minus"))
         case .delete:
             return AnyView(Image(systemName: "delete.backward"))
         case .percentage:

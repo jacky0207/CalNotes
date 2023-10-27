@@ -41,6 +41,7 @@ enum CalculatorOperator {
 enum CalculatorFunction {
     case allClear
     case clear
+    case inverseSign
     case delete
     case percentage
 }

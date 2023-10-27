@@ -166,6 +166,17 @@ final class CalNotesCalculatorTests: XCTestCase {
         XCTAssertEqual(calculator.text, "0")
     }
 
+    func testCalculator_InverseSign() throws {
+        calculator.appendDigit(.zero)
+        calculator.inverseSign()
+        XCTAssertEqual(calculator.text, "0")
+        calculator.appendDigit(.one)
+        calculator.inverseSign()
+        XCTAssertEqual(calculator.text, "-1")
+        calculator.inverseSign()
+        XCTAssertEqual(calculator.text, "1")
+    }
+
     func testCalculator_DeleteBackward() throws {
         calculator.appendDigit(.one)
         calculator.deleteBackward()
