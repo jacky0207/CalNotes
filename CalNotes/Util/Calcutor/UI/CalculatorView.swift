@@ -62,7 +62,7 @@ struct CalculatorView: View {
 
     func calculationText() -> some View {
         Text(calculator.text)
-            .frame(maxWidth: 350, alignment: .trailing)
+            .frame(maxWidth: 240, alignment: .trailing)
             .textStyle(CalculatorText())
             .onChange(of: calculator.text) { text in
                 if text.count > maxLength {

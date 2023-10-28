@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F301071D2AEC3722003D0565 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F301071C2AEC3722003D0565 /* BottomSheet.swift */; };
 		F30E095C2AE9111B0048D776 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F30E095B2AE9111B0048D776 /* FirebaseAnalytics */; };
 		F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */; };
 		F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09612AE95C040048D776 /* CalcalutorColor.swift */; };
@@ -155,6 +156,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F301071C2AEC3722003D0565 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+Color.swift"; sourceTree = "<group>"; };
 		F30E09612AE95C040048D776 /* CalcalutorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcalutorColor.swift; sourceTree = "<group>"; };
 		F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorDigit+Concat.swift"; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F301071B2AEC36F5003D0565 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				F301071C2AEC3722003D0565 /* BottomSheet.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		F30E095D2AE95AF50048D776 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +661,7 @@
 				F341B5A32ADFCC8800847BD6 /* Date */,
 				F3E1165C2AE459EC004B6B15 /* Image */,
 				F3F3DC992AE72D65001C1249 /* Calcutor */,
+				F301071B2AEC36F5003D0565 /* BottomSheet */,
 				F3F3DC832AE51C6A001C1249 /* Permission */,
 			);
 			path = Util;
@@ -1207,6 +1218,7 @@
 				F3B3EE0E2A9D9BA200A1E8A6 /* FormValidation.swift in Sources */,
 				F399F9A52A9A73D5006710DF /* ContentView.swift in Sources */,
 				F3DB44A82A9B36D80019050B /* NoteItem.swift in Sources */,
+				F301071D2AEC3722003D0565 /* BottomSheet.swift in Sources */,
 				F399FA172A9A826C006710DF /* Configuration+Plist.swift in Sources */,
 				F3DB44B12A9B56CB0019050B /* FormPicker.swift in Sources */,
 				F3B3EE0B2A9D9AF600A1E8A6 /* NoteDetailView.swift in Sources */,

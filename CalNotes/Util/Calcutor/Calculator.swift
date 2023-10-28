@@ -193,6 +193,7 @@ class SumTextCalculator: ObservableObject, Calculator {
         sumText = SumTextCalculator.defaultValue
         `operator` = .equal
         operationText = ""
+        onChange(sumText)  // reset modify origin text directly
     }
 
     func clear() {
