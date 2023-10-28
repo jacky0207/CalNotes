@@ -20,6 +20,7 @@
 		F32FA0AD2AEF578700E09B93 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */; };
 		F32FA0B02AEF57E100E09B93 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AF2AEF57E100E09B93 /* Home.swift */; };
 		F32FA0B22AEF58F300E09B93 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = F32FA0B12AEF58F300E09B93 /* home.json */; };
+		F32FA0902AED041F00E09B93 /* FormNumberIncrementField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */; };
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
@@ -174,6 +175,7 @@
 		F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		F32FA0AF2AEF57E100E09B93 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		F32FA0B12AEF58F300E09B93 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNumberIncrementField.swift; sourceTree = "<group>"; };
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 				F3DB44B22A9B56DC0019050B /* FormTitle.swift */,
 				F3C492102A9B3124009A63ED /* FormTextField.swift */,
 				F3C4920F2A9B3124009A63ED /* FormPasswordField.swift */,
+				F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */,
 				F3BAA3322A9D90F900586A58 /* FormTextEditor.swift */,
 			);
 			path = Text;
@@ -1183,6 +1186,7 @@
 				F3F3DC9B2AE72D86001C1249 /* CalculatorView.swift in Sources */,
 				F3C4920B2A9B304A009A63ED /* NoteItemFormProtocol.swift in Sources */,
 				F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */,
+				F32FA0902AED041F00E09B93 /* FormNumberIncrementField.swift in Sources */,
 				F399F9DD2A9A782B006710DF /* AppState.swift in Sources */,
 				F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */,
 				F3C4922A2A9B31C2009A63ED /* ColorStyle.swift in Sources */,
