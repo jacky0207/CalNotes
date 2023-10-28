@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NoteItemFormView: View {
     @ObservedObject var viewModel: NoteItemFormViewModel
+    @State private var isShowAmountCalculator = false
 
     var body: some View {
         BodyView(
@@ -17,6 +18,16 @@ struct NoteItemFormView: View {
             content: content
         )
         .onAppear(perform: viewModel.loadData)
+        .bottomSheet(
+            isPresented: $isShowAmountCalculator,
+            backgroundColor: CalculatorColor.black,
+            detents: [.medium()],
+            content: {
+                CalculatorView(sum: viewModel.form.amount.value) { sum in
+                    viewModel.form.amount.value = sum
+                }
+            }
+        )
     }
 
     func toolbar() -> some View {
@@ -61,7 +72,8 @@ struct NoteItemFormView: View {
                 title: "amount".localized(),
                 field: $viewModel.form.amount,
                 keyboardType: .decimalPad,
-                leftView: { Text("dollar_sign") }
+                leftView: { Text("dollar_sign") },
+                rightView: amountCalculatorButton
             )
             FormImagePicker(
                 title: "image".localized(),
@@ -90,6 +102,13 @@ struct NoteItemFormView: View {
                 Image("remove")
             })
         }
+    }
+
+    func amountCalculatorButton() -> some View {
+        Button(
+            action: { isShowAmountCalculator.toggle() },
+            label: { Image("calculator") }
+        )
     }
 }
 

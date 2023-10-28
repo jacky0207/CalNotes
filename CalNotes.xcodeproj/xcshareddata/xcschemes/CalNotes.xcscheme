@@ -29,7 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:CalNotes.xctestplan"
+            reference = "container:CalNotes/System/CalNotes.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
