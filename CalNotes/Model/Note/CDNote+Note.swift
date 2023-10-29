@@ -38,7 +38,8 @@ extension NoteDetail {
             title: cdNote.title,
             items: cdNoteItems.map { NoteItem(cdNoteItem: $0) },
             sum: cdNoteItems.reduce(0, { $0 + $1.amount }),
-            lastUpdate: cdNote.lastUpdate
+            lastUpdate: cdNote.lastUpdate,
+            disabled: cdNote.disabled
         )
     }
 }

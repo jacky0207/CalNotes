@@ -12,6 +12,9 @@
 		F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */; };
 		F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09612AE95C040048D776 /* CalcalutorColor.swift */; };
 		F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */; };
+		F32FA09C2AED998400E09B93 /* NoteTrashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */; };
+		F32FA09E2AED999C00E09B93 /* NoteTrashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */; };
+		F32FA0A02AED99A700E09B93 /* NoteTrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */; };
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
@@ -160,6 +163,9 @@
 		F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+Color.swift"; sourceTree = "<group>"; };
 		F30E09612AE95C040048D776 /* CalcalutorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcalutorColor.swift; sourceTree = "<group>"; };
 		F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorDigit+Concat.swift"; sourceTree = "<group>"; };
+		F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashViewModel.swift; sourceTree = "<group>"; };
+		F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashProtocol.swift; sourceTree = "<group>"; };
+		F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashView.swift; sourceTree = "<group>"; };
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -345,6 +351,16 @@
 				F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		F32FA09A2AED996E00E09B93 /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */,
+				F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */,
+				F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */,
+			);
+			path = Trash;
 			sourceTree = "<group>";
 		};
 		F3328EE02AE5044B004951F6 /* Image */ = {
@@ -563,6 +579,7 @@
 		F399F9F62A9A7B07006710DF /* List */ = {
 			isa = PBXGroup;
 			children = (
+				F32FA09A2AED996E00E09B93 /* Trash */,
 				F399F9FC2A9A80B9006710DF /* NoteListViewModel.swift */,
 				F399F9FA2A9A80A0006710DF /* NoteListView.swift */,
 				F399F9FE2A9A80DC006710DF /* NoteListProtocol.swift */,
@@ -1161,6 +1178,7 @@
 				F3DF756D2ADB2281001FE8FF /* NoteItemForm+Clone.swift in Sources */,
 				F3C492302A9B31C2009A63ED /* ViewStyle+Button.swift in Sources */,
 				F3C492172A9B3124009A63ED /* FormPasswordField.swift in Sources */,
+				F32FA0A02AED99A700E09B93 /* NoteTrashView.swift in Sources */,
 				F3C492402A9B33C3009A63ED /* NoteItemCategory.swift in Sources */,
 				F3C0C2952AA26D4B001844B4 /* CDNoteItem+NoteItem.swift in Sources */,
 				F3DB44B52A9B56E10019050B /* FormButton.swift in Sources */,
@@ -1178,6 +1196,7 @@
 				F399F9F22A9A7A5C006710DF /* ViewModel.swift in Sources */,
 				F3F3DCA02AE73AA7001C1249 /* CalculatorStyle.swift in Sources */,
 				F3BAA3352A9D920A00586A58 /* View+TextEditorStyle.swift in Sources */,
+				F32FA09C2AED998400E09B93 /* NoteTrashViewModel.swift in Sources */,
 				F399F9F32A9A7A5C006710DF /* SlashView.swift in Sources */,
 				F3DB44C52A9BB5E10019050B /* Dimen+Spacing.swift in Sources */,
 				F3BAA32F2A9D63E100586A58 /* Dimen+Border.swift in Sources */,
@@ -1220,6 +1239,7 @@
 				F3DB44A82A9B36D80019050B /* NoteItem.swift in Sources */,
 				F301071D2AEC3722003D0565 /* BottomSheet.swift in Sources */,
 				F399FA172A9A826C006710DF /* Configuration+Plist.swift in Sources */,
+				F32FA09E2AED999C00E09B93 /* NoteTrashProtocol.swift in Sources */,
 				F3DB44B12A9B56CB0019050B /* FormPicker.swift in Sources */,
 				F3B3EE0B2A9D9AF600A1E8A6 /* NoteDetailView.swift in Sources */,
 				F3B3EE192A9E68D300A1E8A6 /* LocalError.swift in Sources */,
