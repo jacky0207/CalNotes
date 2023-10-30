@@ -58,7 +58,7 @@ class NoteTrashViewModel: ViewModel, ObservableObject, NoteTrashProtocol {
         deleteNote(noteId: list.notes[index].id)
     }
 
-    func deleteAllDisabledNotes() {
+    func deleteAllDisabledNotes(completion: @escaping () -> Void) {
         dataService.deleteAllDisabledNote()
             .sink(
                 receiveCompletion: { completion in
@@ -69,8 +69,8 @@ class NoteTrashViewModel: ViewModel, ObservableObject, NoteTrashProtocol {
                         title: apiError.errorMessage
                     ))
                 },
-                receiveValue: { noteList in
-                    self.list = noteList
+                receiveValue: { _ in
+                    completion()
                 }
             )
             .store(in: &cancellables)

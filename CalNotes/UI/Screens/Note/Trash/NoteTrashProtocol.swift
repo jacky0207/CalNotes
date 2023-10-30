@@ -10,7 +10,7 @@ protocol NoteTrashProtocol {
     func getAllNotes()
     func deleteNote(noteId: Int)
     func deleteNote(at index: Int)
-    func deleteAllDisabledNotes()
+    func deleteAllDisabledNotes(completion: @escaping () -> Void)
     func recoverNote(noteId: Int)
     func recoverNote(at index: Int)
 }

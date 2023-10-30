@@ -603,6 +603,7 @@
 			children = (
 				F3C492012A9B2F4A009A63ED /* Item */,
 				F399F9F62A9A7B07006710DF /* List */,
+				F32FA09A2AED996E00E09B93 /* Trash */,
 				F3DB44E02A9C2DF20019050B /* Detail */,
 			);
 			path = Note;
@@ -611,7 +612,6 @@
 		F399F9F62A9A7B07006710DF /* List */ = {
 			isa = PBXGroup;
 			children = (
-				F32FA09A2AED996E00E09B93 /* Trash */,
 				F399F9FC2A9A80B9006710DF /* NoteListViewModel.swift */,
 				F399F9FA2A9A80A0006710DF /* NoteListView.swift */,
 				F399F9FE2A9A80DC006710DF /* NoteListProtocol.swift */,

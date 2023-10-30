@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NoteTrashView: View {
     @Environment(\.diContainer) var diContainer
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel: NoteTrashViewModel
     @State private var isShowDeleteAllNotes = false
 
@@ -54,7 +55,11 @@ struct NoteTrashView: View {
             isPresented: $isShowDeleteAllNotes,
             title: "delete_note_confirm_question".localized(),
             message: "delete_note_confirm_message".localized(),
-            action: viewModel.deleteAllDisabledNotes
+            action: {
+                viewModel.deleteAllDisabledNotes {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
         ))
     }
 
