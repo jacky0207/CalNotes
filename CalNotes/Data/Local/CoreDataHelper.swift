@@ -183,6 +183,7 @@ struct CoreDataHelper: CoreDataHelperProtocol {
         let notes = try disabledNotes()
         for note in notes {
             container.viewContext.delete(note)
+            try deleteNoteItems(noteId: Int(note.id))  // delete all related note items
         }
         try container.viewContext.save()
     }
