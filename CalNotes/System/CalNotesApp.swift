@@ -23,7 +23,7 @@ struct CalNotesApp: App {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.light)
-                .environment(\.defaultMinListRowHeight, 0)  // set list row min height to all pages
+                .environment(\.defaultMinListRowHeight, 1)  // set list row min height to all pages, having bug if min height is 0
                 .environment(\.diContainer, diContainer)
         }
     }

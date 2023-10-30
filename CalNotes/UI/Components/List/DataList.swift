@@ -128,8 +128,8 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                 .listRowStyle(ListRowStyle.Default())
         }
         .listStyle(ListStyle.Default())
-        .id(UUID())  // disable animation to avoid overlap with observed object change
-        .environment(\.defaultMinListRowHeight, 0)
+//        .id(UUID())  // disable animation to avoid overlap with observed object change
+        .environment(\.defaultMinListRowHeight, 1)
     }
 }
 
