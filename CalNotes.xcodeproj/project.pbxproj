@@ -12,6 +12,14 @@
 		F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */; };
 		F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09612AE95C040048D776 /* CalcalutorColor.swift */; };
 		F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */; };
+		F32FA09C2AED998400E09B93 /* NoteTrashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */; };
+		F32FA09E2AED999C00E09B93 /* NoteTrashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */; };
+		F32FA0A02AED99A700E09B93 /* NoteTrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */; };
+		F32FA0A62AEEE85E00E09B93 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0A52AEEE85E00E09B93 /* HomeView.swift */; };
+		F32FA0AB2AEF577F00E09B93 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AA2AEF577F00E09B93 /* HomeViewModel.swift */; };
+		F32FA0AD2AEF578700E09B93 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */; };
+		F32FA0B02AEF57E100E09B93 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AF2AEF57E100E09B93 /* Home.swift */; };
+		F32FA0B22AEF58F300E09B93 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = F32FA0B12AEF58F300E09B93 /* home.json */; };
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
@@ -120,9 +128,6 @@
 		F3E116612AE45C84004B6B15 /* FormImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E116602AE45C84004B6B15 /* FormImagePicker.swift */; };
 		F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4D2AA48815006880A4 /* CreateNoteForm.swift */; };
 		F3E97E502AA4CFA0006880A4 /* NoteCreateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */; };
-		F3E97E542AA58B54006880A4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E532AA58B54006880A4 /* SettingsView.swift */; };
-		F3E97E562AA58B5F006880A4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E552AA58B5F006880A4 /* SettingsViewModel.swift */; };
-		F3E97E582AA58B6F006880A4 /* SettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E572AA58B6F006880A4 /* SettingsProtocol.swift */; };
 		F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */; };
 		F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6A2AA59D34006880A4 /* QA.xcconfig */; };
 		F3E97E6E2AA633AC006880A4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */; };
@@ -160,6 +165,14 @@
 		F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+Color.swift"; sourceTree = "<group>"; };
 		F30E09612AE95C040048D776 /* CalcalutorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcalutorColor.swift; sourceTree = "<group>"; };
 		F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorDigit+Concat.swift"; sourceTree = "<group>"; };
+		F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashViewModel.swift; sourceTree = "<group>"; };
+		F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashProtocol.swift; sourceTree = "<group>"; };
+		F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashView.swift; sourceTree = "<group>"; };
+		F32FA0A52AEEE85E00E09B93 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F32FA0AA2AEF577F00E09B93 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		F32FA0AF2AEF57E100E09B93 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F32FA0B12AEF58F300E09B93 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -271,9 +284,6 @@
 		F3E116602AE45C84004B6B15 /* FormImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormImagePicker.swift; sourceTree = "<group>"; };
 		F3E97E4D2AA48815006880A4 /* CreateNoteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteForm.swift; sourceTree = "<group>"; };
 		F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateFormView.swift; sourceTree = "<group>"; };
-		F3E97E532AA58B54006880A4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F3E97E552AA58B5F006880A4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		F3E97E572AA58B6F006880A4 /* SettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocol.swift; sourceTree = "<group>"; };
 		F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		F3E97E5C2AA59C0F006880A4 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		F3E97E692AA59D2A006880A4 /* UAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UAT.xcconfig; sourceTree = "<group>"; };
@@ -345,6 +355,43 @@
 				F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		F32FA09A2AED996E00E09B93 /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */,
+				F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */,
+				F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
+		F32FA0A42AEEE84C00E09B93 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F32FA0A52AEEE85E00E09B93 /* HomeView.swift */,
+				F32FA0AA2AEF577F00E09B93 /* HomeViewModel.swift */,
+				F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F32FA0AE2AEF57C600E09B93 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F32FA0AF2AEF57E100E09B93 /* Home.swift */,
+				F32FA0B12AEF58F300E09B93 /* home.json */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F32FA0B42AEF5E5E00E09B93 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		F3328EE02AE5044B004951F6 /* Image */ = {
@@ -463,6 +510,7 @@
 				F399F9EC2A9A7A5C006710DF /* Base */,
 				F399F9F02A9A7A5C006710DF /* Alert */,
 				F399F9EE2A9A7A5C006710DF /* Slash */,
+				F32FA0A42AEEE84C00E09B93 /* Home */,
 				F399F9F52A9A7AE0006710DF /* Note */,
 			);
 			path = Screens;
@@ -471,14 +519,14 @@
 		F399F9D42A9A766D006710DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F3F3DC952AE7146B001C1249 /* Base */,
 				F3DB44D02A9BFB7F0019050B /* List */,
 				F3DB44D92A9C1A370019050B /* Navigation */,
 				F3328EE02AE5044B004951F6 /* Image */,
 				F3F3DC982AE717C1001C1249 /* Picker */,
 				F3C4920C2A9B3124009A63ED /* Form */,
+				F3F3DC952AE7146B001C1249 /* Base */,
 				F3DB44BD2A9BB42A0019050B /* Note */,
-				F3E97E592AA58DE2006880A4 /* Settings */,
+				F32FA0B42AEF5E5E00E09B93 /* Settings */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -487,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B3EE0C2A9D9B6D00A1E8A6 /* Form */,
+				F32FA0AE2AEF57C600E09B93 /* Home */,
 				F3C491E92A9A8472009A63ED /* Note */,
 				F399FA002A9A81B2006710DF /* ModelData.swift */,
 			);
@@ -554,8 +603,8 @@
 			children = (
 				F3C492012A9B2F4A009A63ED /* Item */,
 				F399F9F62A9A7B07006710DF /* List */,
+				F32FA09A2AED996E00E09B93 /* Trash */,
 				F3DB44E02A9C2DF20019050B /* Detail */,
-				F3E97E522AA58B43006880A4 /* Setting */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -919,24 +968,6 @@
 			path = Form;
 			sourceTree = "<group>";
 		};
-		F3E97E522AA58B43006880A4 /* Setting */ = {
-			isa = PBXGroup;
-			children = (
-				F3E97E532AA58B54006880A4 /* SettingsView.swift */,
-				F3E97E552AA58B5F006880A4 /* SettingsViewModel.swift */,
-				F3E97E572AA58B6F006880A4 /* SettingsProtocol.swift */,
-			);
-			path = Setting;
-			sourceTree = "<group>";
-		};
-		F3E97E592AA58DE2006880A4 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		F3F3DC832AE51C6A001C1249 /* Permission */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,6 +1138,7 @@
 				F3BAA32D2A9C7AD700586A58 /* note_item.json in Resources */,
 				F3C4922C2A9B31C2009A63ED /* NotoSansTC-Bold.otf in Resources */,
 				F3DB44BA2A9BB1370019050B /* note_list.json in Resources */,
+				F32FA0B22AEF58F300E09B93 /* home.json in Resources */,
 				F399FA092A9A824A006710DF /* Localizable.strings in Resources */,
 				F3DB44BC2A9BB1420019050B /* note_detail.json in Resources */,
 				F399FA162A9A826C006710DF /* Development.xcconfig in Resources */,
@@ -1148,12 +1180,13 @@
 				F3C4920B2A9B304A009A63ED /* NoteItemFormProtocol.swift in Sources */,
 				F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */,
 				F399F9DD2A9A782B006710DF /* AppState.swift in Sources */,
-				F3E97E582AA58B6F006880A4 /* SettingsProtocol.swift in Sources */,
 				F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */,
 				F3C4922A2A9B31C2009A63ED /* ColorStyle.swift in Sources */,
 				F3DB44CB2A9BBD220019050B /* Dimen+Corner.swift in Sources */,
 				F3C492192A9B3124009A63ED /* FormSheet.swift in Sources */,
+				F32FA0A62AEEE85E00E09B93 /* HomeView.swift in Sources */,
 				F3C25B1E2AAEE985005BC7C4 /* CDNoteItem+CoreDataProperties.swift in Sources */,
+				F32FA0AB2AEF577F00E09B93 /* HomeViewModel.swift in Sources */,
 				F399FA142A9A826C006710DF /* Dimen.swift in Sources */,
 				F399F9E52A9A7924006710DF /* LocalService.swift in Sources */,
 				F3B3EE1E2A9F252400A1E8A6 /* NoteList.swift in Sources */,
@@ -1161,13 +1194,13 @@
 				F3DF756D2ADB2281001FE8FF /* NoteItemForm+Clone.swift in Sources */,
 				F3C492302A9B31C2009A63ED /* ViewStyle+Button.swift in Sources */,
 				F3C492172A9B3124009A63ED /* FormPasswordField.swift in Sources */,
+				F32FA0A02AED99A700E09B93 /* NoteTrashView.swift in Sources */,
 				F3C492402A9B33C3009A63ED /* NoteItemCategory.swift in Sources */,
 				F3C0C2952AA26D4B001844B4 /* CDNoteItem+NoteItem.swift in Sources */,
 				F3DB44B52A9B56E10019050B /* FormButton.swift in Sources */,
 				F399FA012A9A81B2006710DF /* ModelData.swift in Sources */,
 				F3DB44E42A9C2E150019050B /* NoteDetailViewModel.swift in Sources */,
 				F3C0C28A2AA1F953001844B4 /* CDNoteItem+CoreDataClass.swift in Sources */,
-				F3E97E542AA58B54006880A4 /* SettingsView.swift in Sources */,
 				F399FA152A9A826C006710DF /* BuildConfig.swift in Sources */,
 				F399F9FB2A9A80A0006710DF /* NoteListView.swift in Sources */,
 				F3C491EB2A9A84A8009A63ED /* Note.swift in Sources */,
@@ -1178,6 +1211,7 @@
 				F399F9F22A9A7A5C006710DF /* ViewModel.swift in Sources */,
 				F3F3DCA02AE73AA7001C1249 /* CalculatorStyle.swift in Sources */,
 				F3BAA3352A9D920A00586A58 /* View+TextEditorStyle.swift in Sources */,
+				F32FA09C2AED998400E09B93 /* NoteTrashViewModel.swift in Sources */,
 				F399F9F32A9A7A5C006710DF /* SlashView.swift in Sources */,
 				F3DB44C52A9BB5E10019050B /* Dimen+Spacing.swift in Sources */,
 				F3BAA32F2A9D63E100586A58 /* Dimen+Border.swift in Sources */,
@@ -1193,7 +1227,6 @@
 				F3DB44DB2A9C1A9B0019050B /* BodyView.swift in Sources */,
 				F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */,
 				F3DB44B32A9B56DC0019050B /* FormTitle.swift in Sources */,
-				F3E97E562AA58B5F006880A4 /* SettingsViewModel.swift in Sources */,
 				F3DB44AB2A9B3A300019050B /* RecordItem.swift in Sources */,
 				F399F9FF2A9A80DC006710DF /* NoteListProtocol.swift in Sources */,
 				F3DB44C12A9BB4AE0019050B /* NoteView.swift in Sources */,
@@ -1202,6 +1235,7 @@
 				F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */,
 				F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */,
 				F3DB44C72A9BB8EB0019050B /* View+TextStyle.swift in Sources */,
+				F32FA0B02AEF57E100E09B93 /* Home.swift in Sources */,
 				F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */,
 				F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */,
 				F399F9E12A9A7865006710DF /* DataSession.swift in Sources */,
@@ -1220,6 +1254,7 @@
 				F3DB44A82A9B36D80019050B /* NoteItem.swift in Sources */,
 				F301071D2AEC3722003D0565 /* BottomSheet.swift in Sources */,
 				F399FA172A9A826C006710DF /* Configuration+Plist.swift in Sources */,
+				F32FA09E2AED999C00E09B93 /* NoteTrashProtocol.swift in Sources */,
 				F3DB44B12A9B56CB0019050B /* FormPicker.swift in Sources */,
 				F3B3EE0B2A9D9AF600A1E8A6 /* NoteDetailView.swift in Sources */,
 				F3B3EE192A9E68D300A1E8A6 /* LocalError.swift in Sources */,
@@ -1239,6 +1274,7 @@
 				F399F9A32A9A73D5006710DF /* CalNotesApp.swift in Sources */,
 				F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */,
 				F3B3EE1C2A9E68E800A1E8A6 /* APIError.swift in Sources */,
+				F32FA0AD2AEF578700E09B93 /* HomeProtocol.swift in Sources */,
 				F3C492292A9B31C2009A63ED /* ColorStyle+Hex.swift in Sources */,
 				F3C4921A2A9B3124009A63ED /* FormSubmitButton.swift in Sources */,
 				F3C4921B2A9B3124009A63ED /* FormView.swift in Sources */,

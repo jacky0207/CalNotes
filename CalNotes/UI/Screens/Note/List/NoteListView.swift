@@ -16,8 +16,7 @@ struct NoteListView: View {
     var body: some View {
         BodyView(
             title: "notes",
-            toolbarLeading: toolbarLeading,
-            toolbarTrailing: toolbarTrailing,
+            toolbar: toolbarTrailing,
             content: content
         )
         .safeAreaInset(edge: .bottom) {
@@ -27,10 +26,6 @@ struct NoteListView: View {
         }
         .onAppear(perform: viewModel.loadData)
         .overlay(content: createFormContent)
-    }
-
-    func toolbarLeading() -> some View {
-        NoteListLeadingToolbar()
     }
 
     func toolbarTrailing() -> some View {
@@ -88,29 +83,6 @@ struct NoteListView: View {
         viewModel.cloneNote(at: indexSet.first!) { note in
             isNoteSelected = true
         }
-    }
-}
-
-struct NoteListLeadingToolbar: View {
-    @Environment(\.diContainer) var diContainer
-
-    var body: some View {
-        NavigationViewLink(
-            destination: destination,
-            label: label
-        )
-    }
-
-    func destination() -> some View {
-        SettingsView(viewModel: SettingsViewModel(
-            diContainer: diContainer
-        ))
-    }
-
-    func label() -> some View {
-        Image("settings")
-            .resizable()
-            .imageStyle(ImageStyle.Icon())
     }
 }
 

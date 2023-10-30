@@ -21,12 +21,17 @@
 // Error
 "empty_text_error" = "Please enter";
 "empty_select_error" = "Please select";
+// Home
+"home" = "Home";
 // Note
 "note_title_question" = "Enter Note Title";
 "notes" = "Notes";
 "note_copy_name_format" = "Copy of %@";
 "edit_note_name" = "Edit Note Name";
 "delete_note" = "Delete Note";
+"note_trash" = "Trash";
+"delete_note_confirm_question" = "Confirm";
+"delete_note_confirm_message" = "These notes will be deleted. This action cannot be undone";
 // Note Item
 "add_note_item" = "Add Note Item";
 "update_note_item" = "Update Note Item";
@@ -42,3 +47,4 @@
 "insurance" = "Insurance";
 // Settings
 "settings" = "Settings";
+"version" = "Version";

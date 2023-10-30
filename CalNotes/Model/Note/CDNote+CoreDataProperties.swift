@@ -2,7 +2,7 @@
 //  CDNote+CoreDataProperties.swift
 //  CalNotes
 //
-//  Created by Jacky Lam on 2023-10-21.
+//  Created by Jacky Lam on 2023-10-28.
 //
 //
 
@@ -16,6 +16,7 @@ extension CDNote {
         return NSFetchRequest<CDNote>(entityName: "CDNote")
     }
 
+    @NSManaged public var disabled: Bool
     @NSManaged public var id: Int16
     @NSManaged public var lastUpdate: String
     @NSManaged public var title: String

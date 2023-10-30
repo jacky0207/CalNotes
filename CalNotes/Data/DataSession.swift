@@ -16,8 +16,16 @@ struct DataSession: DataService {
         return localService.deleteAll()
     }
 
+    func getHome() -> AnyPublisher<Home, DataError<APIError>> {
+        return localService.getHome()
+    }
+
     func getAllNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
         return localService.getAllNotes()
+    }
+
+    func getAllDisabledNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
+        return localService.getAllDisabledNotes()
     }
 
     func createNote(form: CreateNoteForm) -> AnyPublisher<NoteDetail, DataError<APIError>> {
@@ -34,6 +42,14 @@ struct DataSession: DataService {
 
     func deleteNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
         return localService.deleteNote(noteId: noteId)
+    }
+
+    func deleteAllDisabledNote() -> AnyPublisher<NoteList, DataError<APIError>> {
+        return localService.deleteAllDisabledNote()
+    }
+
+    func recoverNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
+        return localService.recoverNote(noteId: noteId)
     }
 
     func getNoteDetail(noteId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {

@@ -24,9 +24,39 @@ struct LocalSession: LocalService {
         }
     }
 
+    func getHome() -> AnyPublisher<Home, DataError<APIError>> {
+        do {
+            let note = try coreDataHelper.noteCount()
+            let trash = try coreDataHelper.disabledNoteCount()
+            let home = Home(note: note, trash: trash)
+            print("Response=\(home)")
+            return Just(home)
+                .setFailureType(to: DataError<APIError>.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail(error: DataError.local(.unknown))
+                .eraseToAnyPublisher()
+        }
+    }
+
     func getAllNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
         do {
             let cdNotes = try coreDataHelper.notes()
+            let cdNoteItems = try coreDataHelper.noteItems()
+            let noteList = NoteList(cdNotes: cdNotes, cdNoteItems: cdNoteItems)
+            print("Response=\(noteList)")
+            return Just(noteList)
+                .setFailureType(to: DataError<APIError>.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail(error: DataError.local(.unknown))
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func getAllDisabledNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
+        do {
+            let cdNotes = try coreDataHelper.disabledNotes()
             let cdNoteItems = try coreDataHelper.noteItems()
             let noteList = NoteList(cdNotes: cdNotes, cdNoteItems: cdNoteItems)
             print("Response=\(noteList)")
@@ -84,9 +114,34 @@ struct LocalSession: LocalService {
     func deleteNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
         do {
             print("Request={noteId:\(noteId)}")
+            let disabled = try coreDataHelper.note(noteId: noteId).disabled
             try coreDataHelper.deleteNote(noteId: noteId)
-            try coreDataHelper.deleteNoteItems(noteId: noteId)
-            return getAllNotes()
+            if disabled {
+                return getAllDisabledNotes()
+            } else {
+                return getAllNotes()
+            }
+        } catch {
+            return Fail(error: DataError.local(.unknown))
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func deleteAllDisabledNote() -> AnyPublisher<NoteList, DataError<APIError>> {
+        do {
+            try coreDataHelper.deleteAllDisabledNotes()
+            return getAllDisabledNotes()
+        } catch {
+            return Fail(error: DataError.local(.unknown))
+                .eraseToAnyPublisher()
+        }
+    }
+
+    func recoverNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
+        do {
+            print("Request={noteId:\(noteId)}")
+            try coreDataHelper.recoverNote(noteId: noteId)
+            return getAllDisabledNotes()
         } catch {
             return Fail(error: DataError.local(.unknown))
                 .eraseToAnyPublisher()

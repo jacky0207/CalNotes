@@ -28,6 +28,7 @@ extension Dimen {
         case iconWidth
         case iconLargeWidth
         case iconXLargeWidth
+        case iconXXLargeWidth
         case logoWidth
         case textEditorHeight
         case imagePickerHeight
@@ -48,6 +49,8 @@ extension Dimen {
                 return 32
             case .iconXLargeWidth:
                 return 48
+            case .iconXXLargeWidth:
+                return 72
             case .logoWidth:
                 return 192
             case .textEditorHeight:

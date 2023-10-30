@@ -9,6 +9,8 @@ import Combine
 import Foundation
 
 final class ModelData: ObservableObject {
+    // home
+    var home: Home = load("home.json")
     // note
     var note: Note = load("note.json")
     var noteList: NoteList = load("note_list.json")

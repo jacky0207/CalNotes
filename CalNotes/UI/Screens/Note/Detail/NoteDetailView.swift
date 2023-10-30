@@ -24,11 +24,14 @@ struct NoteDetailView: View {
     }
 
     func toolbar() -> some View {
-        NoteDetailToolbar(
+        if viewModel.note.disabled {
+            return AnyView(EmptyView())
+        }
+        return AnyView(NoteDetailToolbar(
             note: viewModel.note,
             isShowEditNoteTitle: $isShowEditNoteTitle,
             deleteNoteAction: deleteNote
-        )
+        ))
     }
 
     func content() -> some View {
@@ -36,11 +39,11 @@ struct NoteDetailView: View {
             DataList(
                 data: viewModel.note.items,
                 content: listContent,
-                swipeContent: cloneButton,
-                deleteItem: {
+                swipeContent: viewModel.note.disabled ? nil : cloneButton,
+                deleteItem: viewModel.note.disabled ? nil : {
                     viewModel.deleteNoteItem(at: $0.first!)
                 },
-                moveItem: { source, destination in
+                moveItem: viewModel.note.disabled ? nil : { source, destination in
                     viewModel.moveNoteItem(from: source, to: destination)
                 }
             )
@@ -50,7 +53,7 @@ struct NoteDetailView: View {
     }
 
     func listContent(item: NoteItem) -> some View {
-        NoteDetailItemView(item: item)
+        NoteDetailItemView(item: item, disabled: viewModel.note.disabled)
     }
 
     func editNoteTitleContent() -> some View {
@@ -177,12 +180,16 @@ struct NoteDetailToolbar: View {
 struct NoteDetailItemView: View {
     @Environment(\.diContainer) var diContainer
     var item: NoteItem
+    var disabled: Bool
 
     var body: some View {
-        NavigationViewLink(
+        if disabled {
+            return AnyView(label())
+        }
+        return AnyView(NavigationViewLink(
             destination: destination,
             label: label
-        )
+        ))
     }
 
     func destination() -> some View {
@@ -194,7 +201,7 @@ struct NoteDetailItemView: View {
     }
 
     func label() -> some View {
-        NoteItemView(item: item)
+        NoteItemView(item: item, disabled: disabled)
     }
 }
 

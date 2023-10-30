@@ -13,6 +13,7 @@ struct NoteDetail: Record {
     var items: [NoteItem]
     var sum: Float
     var lastUpdate: String
+    var disabled: Bool
 }
 
 extension NoteDetail: Encodable & CustomStringConvertible {
@@ -34,7 +35,8 @@ extension NoteDetail {
             title: "",
             items: [],
             sum: 0,
-            lastUpdate: ""
+            lastUpdate: "",
+            disabled: false
         )
     }
 }

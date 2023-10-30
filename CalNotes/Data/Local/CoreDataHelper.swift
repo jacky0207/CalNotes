@@ -11,6 +11,9 @@ protocol CoreDataHelperProtocol {
     mutating func deleteAll() throws
     // note
     func notes() throws -> [CDNote]
+    func noteCount() throws -> Int
+    func disabledNotes() throws -> [CDNote]
+    func disabledNoteCount() throws -> Int
     func note(noteId: Int) throws -> CDNote
     func nextNoteId() throws -> Int16
     func newNote(form: CreateNoteForm) throws -> CDNote
@@ -19,6 +22,8 @@ protocol CoreDataHelperProtocol {
     func editNoteTitle(noteId: Int, form: CreateNoteForm) throws
     func updateNoteLastUpdate(noteId: Int) throws
     func deleteNote(noteId: Int) throws
+    func deleteAllDisabledNotes() throws
+    func recoverNote(noteId: Int) throws
     // note item
     func noteItems() throws -> [CDNoteItem]
     func noteItems(noteId: Int) throws -> [CDNoteItem]
@@ -72,8 +77,10 @@ struct CoreDataHelper: CoreDataHelperProtocol {
     }
 
     func notes() throws -> [CDNote] {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==false")
         return try container.viewContext
-            .fetch(CDNote.fetchRequest())
+            .fetch(request)
             .sorted(by: {
                 guard let date1 = DateUtil.shared.date(from: $0.lastUpdate),
                       let date2 = DateUtil.shared.date(from: $1.lastUpdate) else {
@@ -81,6 +88,32 @@ struct CoreDataHelper: CoreDataHelperProtocol {
                 }
                 return date1 > date2
             })  // new to old
+    }
+
+    func noteCount() throws -> Int {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==false")
+        return try container.viewContext.count(for: request)
+    }
+
+    func disabledNotes() throws -> [CDNote] {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==true")
+        return try container.viewContext
+            .fetch(request)
+            .sorted(by: {
+                guard let date1 = DateUtil.shared.date(from: $0.lastUpdate),
+                      let date2 = DateUtil.shared.date(from: $1.lastUpdate) else {
+                    return false
+                }
+                return date1 > date2
+            })  // new to old
+    }
+
+    func disabledNoteCount() throws -> Int {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==true")
+        return try container.viewContext.count(for: request)
     }
 
     func note(noteId: Int) throws -> CDNote {
@@ -137,7 +170,26 @@ struct CoreDataHelper: CoreDataHelperProtocol {
 
     func deleteNote(noteId: Int) throws {
         let note = try note(noteId: noteId)
-        container.viewContext.delete(note)
+        if note.disabled {
+            container.viewContext.delete(note)
+            try deleteNoteItems(noteId: noteId)  // delete all related note items
+        } else {
+            note.disabled = true  // move to bin
+        }
+        try container.viewContext.save()
+    }
+
+    func deleteAllDisabledNotes() throws {
+        let notes = try disabledNotes()
+        for note in notes {
+            container.viewContext.delete(note)
+        }
+        try container.viewContext.save()
+    }
+
+    func recoverNote(noteId: Int) throws {
+        let note = try note(noteId: noteId)
+        note.disabled = false
         try container.viewContext.save()
     }
 

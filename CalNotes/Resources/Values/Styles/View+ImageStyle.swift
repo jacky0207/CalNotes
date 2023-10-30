@@ -48,4 +48,11 @@ struct ImageStyle {
                 .frame(width: Dimen.float(.iconXLargeWidth), height: Dimen.float(.iconXLargeWidth))
         }
     }
+
+    struct IconXXLarge: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .frame(width: Dimen.float(.iconXXLargeWidth), height: Dimen.float(.iconXXLargeWidth))
+        }
+    }
 }
