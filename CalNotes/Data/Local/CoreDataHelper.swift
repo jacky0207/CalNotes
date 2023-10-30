@@ -11,7 +11,9 @@ protocol CoreDataHelperProtocol {
     mutating func deleteAll() throws
     // note
     func notes() throws -> [CDNote]
+    func noteCount() throws -> Int
     func disabledNotes() throws -> [CDNote]
+    func disabledNoteCount() throws -> Int
     func note(noteId: Int) throws -> CDNote
     func nextNoteId() throws -> Int16
     func newNote(form: CreateNoteForm) throws -> CDNote
@@ -88,6 +90,12 @@ struct CoreDataHelper: CoreDataHelperProtocol {
             })  // new to old
     }
 
+    func noteCount() throws -> Int {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==false")
+        return try container.viewContext.count(for: request)
+    }
+
     func disabledNotes() throws -> [CDNote] {
         let request = CDNote.fetchRequest()
         request.predicate = NSPredicate(format: "disabled==true")
@@ -100,6 +108,12 @@ struct CoreDataHelper: CoreDataHelperProtocol {
                 }
                 return date1 > date2
             })  // new to old
+    }
+
+    func disabledNoteCount() throws -> Int {
+        let request = CDNote.fetchRequest()
+        request.predicate = NSPredicate(format: "disabled==true")
+        return try container.viewContext.count(for: request)
     }
 
     func note(noteId: Int) throws -> CDNote {

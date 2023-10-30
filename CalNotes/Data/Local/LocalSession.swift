@@ -24,6 +24,21 @@ struct LocalSession: LocalService {
         }
     }
 
+    func getHome() -> AnyPublisher<Home, DataError<APIError>> {
+        do {
+            let note = try coreDataHelper.noteCount()
+            let trash = try coreDataHelper.disabledNoteCount()
+            let home = Home(note: note, trash: trash)
+            print("Response=\(home)")
+            return Just(home)
+                .setFailureType(to: DataError<APIError>.self)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail(error: DataError.local(.unknown))
+                .eraseToAnyPublisher()
+        }
+    }
+
     func getAllNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
         do {
             let cdNotes = try coreDataHelper.notes()

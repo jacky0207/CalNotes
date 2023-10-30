@@ -10,6 +10,8 @@ import CoreData
 
 protocol LocalService {
     mutating func deleteAll() -> AnyPublisher<Void, DataError<APIError>>
+    // Home
+    func getHome() -> AnyPublisher<Home, DataError<APIError>>
     // Note
     func getAllNotes() -> AnyPublisher<NoteList, DataError<APIError>>
     func getAllDisabledNotes() -> AnyPublisher<NoteList, DataError<APIError>>

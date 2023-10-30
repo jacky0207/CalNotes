@@ -16,6 +16,10 @@ struct DataSession: DataService {
         return localService.deleteAll()
     }
 
+    func getHome() -> AnyPublisher<Home, DataError<APIError>> {
+        return localService.getHome()
+    }
+
     func getAllNotes() -> AnyPublisher<NoteList, DataError<APIError>> {
         return localService.getAllNotes()
     }

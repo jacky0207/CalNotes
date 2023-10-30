@@ -21,6 +21,8 @@
 // Error
 "empty_text_error" = "Please enter";
 "empty_select_error" = "Please select";
+// Home
+"home" = "Home";
 // Note
 "note_title_question" = "Enter Note Title";
 "notes" = "Notes";
@@ -45,3 +47,4 @@
 "insurance" = "Insurance";
 // Settings
 "settings" = "Settings";
+"version" = "Version";
