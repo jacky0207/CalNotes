@@ -42,16 +42,9 @@ struct BodyView<Content: View, ToolbarLeading: View, ToolbarTrailing: View>: Vie
     var body: some View {
         content()
             .navigationBarTitle(Text(LocalizedStringKey(title)), displayMode: .inline)
-            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    if ToolbarLeading.self == EmptyView.self && presentationMode.wrappedValue.isPresented {  // display only when back can be performed
-                        Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                            Image("back")
-                                .resizable()
-                                .imageStyle(ImageStyle.Icon())
-                        }
-                    } else {
+                    if ToolbarLeading.self != EmptyView.self || !presentationMode.wrappedValue.isPresented {
                         toolbarLeading()
                     }
                 }

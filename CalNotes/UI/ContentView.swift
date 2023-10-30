@@ -45,10 +45,12 @@ struct ContentMainView: View {
                 NavigationStack(root: content)
                     .navigationViewStyle(StackNavigationViewStyle())  // solve navigation view displayed as drawer in ipad
                     .navigationViewStyle(NavigationViewStyle.Default())
+                    .accentColor(ColorStyle.textPrimary.color)
             } else {
                 NavigationView(content: content)
                     .navigationViewStyle(StackNavigationViewStyle())  // solve navigation view displayed as drawer in ipad
                     .navigationViewStyle(NavigationViewStyle.Default())
+                    .accentColor(ColorStyle.textPrimary.color)
             }
         }
     }
