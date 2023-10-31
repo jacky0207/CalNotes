@@ -214,24 +214,18 @@ struct NoteDetailSumView: View {
             Spacer()
             sumValue()
         }
-        .padding(.all, Dimen.spacing(.large))
-        .background(ColorStyle.sectionBackground.color)
+        .stackStyle(StackStyle.SectionFooter())
     }
 
     func sumTitle() -> some View {
         Text(String(format: "sum".localized(), sum))
-            .textStyle(TextStyle.SectionTitle   ())
+            .textStyle(TextStyle.SectionFooterTitle())
     }
 
     func sumValue() -> some View {
         HStack(spacing: Dimen.spacing(.xSmall)) {
-            Image("coin")
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(ColorStyle.textSecondary.color)
-                .imageStyle(ImageStyle.Icon())
-            Text(String(format: "%.2f", sum))
-                .textStyle(TextStyle.SectionTitle())
+            Text("dollar_format".localized(with: [sum]))
+                .textStyle(TextStyle.SectionFooterTitle())
         }
     }
 }

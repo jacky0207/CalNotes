@@ -16,6 +16,7 @@ struct NoteListView: View {
     var body: some View {
         BodyView(
             title: "notes",
+            titleDisplayType: .large,
             toolbar: toolbarTrailing,
             content: content
         )
@@ -73,8 +74,10 @@ struct NoteListView: View {
     func cloneButton(_ indexSet: IndexSet) -> some View {
         Button(action: { cloneNote(at: indexSet) }) {
             Image("clone")
+                .resizable()
                 .renderingMode(.template)
                 .foregroundColor(.white)
+                .imageStyle(ImageStyle.Icon())
         }
         .tint(.blue)
     }

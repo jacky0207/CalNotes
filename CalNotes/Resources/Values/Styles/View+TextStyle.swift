@@ -21,68 +21,90 @@ extension Text {
 
 struct TextStyle {
     struct Regular: ViewModifier {
+        var foregroundColor: Color = ColorStyle.textPrimary.color
         var fontSize: FontSize = .normal
 
         func body(content: Content) -> some View {
             content
-                .foregroundColor(ColorStyle.textPrimary.color)
+                .foregroundColor(foregroundColor)
                 .font(FontStyle.regular.notoSansTC(for: fontSize))
         }
     }
 
     struct Medium: ViewModifier {
+        var foregroundColor: Color = ColorStyle.textPrimary.color
         var fontSize: FontSize = .normal
 
         func body(content: Content) -> some View {
             content
-                .foregroundColor(ColorStyle.textPrimary.color)
+                .foregroundColor(foregroundColor)
                 .font(FontStyle.medium.notoSansTC(for: fontSize))
         }
     }
 
     struct Bold: ViewModifier {
+        var foregroundColor: Color = ColorStyle.textPrimary.color
         var fontSize: FontSize = .normal
         
         func body(content: Content) -> some View {
             content
-                .foregroundColor(ColorStyle.textPrimary.color)
+                .foregroundColor(foregroundColor)
                 .font(FontStyle.bold.notoSansTC(for: fontSize))
         }
     }
+}
 
-    struct NoteTitle: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .foregroundColor(ColorStyle.textPrimary.color)
-                .font(FontStyle.bold.notoSansTC(for: .normal))
-        }
-    }
-
-    struct ItemTitle: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .foregroundColor(ColorStyle.textPrimary.color)
-                .font(FontStyle.bold.notoSansTC(for: .normal))
-        }
-    }
-
-    struct SectionTitle: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .foregroundColor(ColorStyle.textSecondary.color)
-                .font(FontStyle.bold.notoSansTC(for: .normal))
-        }
-    }
-
+// MARK: - Form
+extension TextStyle {
     struct FormSectionTitle: ViewModifier {
         func body(content: Content) -> some View {
             content
-                .foregroundColor(ColorStyle.textPrimary.color)
-                .font(FontStyle.bold.notoSansTC(for: .xLarge))
+                .textStyle(TextStyle.Bold(fontSize: .xLarge))
         }
     }
 
     struct FormTitle: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .textStyle(TextStyle.Medium())
+        }
+    }
+
+    struct FormPlaceholder: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .textStyle(TextStyle.Regular(foregroundColor: ColorStyle.hintPrimary.color))
+        }
+    }
+
+    struct FormError: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .textStyle(TextStyle.Regular(foregroundColor: ColorStyle.errorPrimary.color))
+        }
+    }
+}
+
+// MARK: - Section
+extension TextStyle {
+    struct SectionTitle: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .textStyle(TextStyle.Bold(fontSize: .xLarge))
+        }
+    }
+
+    struct SectionFooterTitle: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .textStyle(TextStyle.Bold(foregroundColor: ColorStyle.textSecondary.color, fontSize: .normal))
+        }
+    }
+}
+
+// MARK: - Item
+extension TextStyle {
+    struct ItemTitle: ViewModifier {
         func body(content: Content) -> some View {
             content
                 .foregroundColor(ColorStyle.textPrimary.color)
@@ -90,19 +112,11 @@ struct TextStyle {
         }
     }
 
-    struct FormPlaceholder: ViewModifier {
+    struct ItemText: ViewModifier {
         func body(content: Content) -> some View {
             content
+                .foregroundColor(ColorStyle.textPrimary.color)
                 .font(FontStyle.regular.notoSansTC(for: .normal))
-                .foregroundColor(ColorStyle.hintPrimary.color)
-        }
-    }
-
-    struct FormError: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .font(FontStyle.regular.notoSansTC(for: .normal))
-                .foregroundColor(ColorStyle.errorPrimary.color)
         }
     }
 }

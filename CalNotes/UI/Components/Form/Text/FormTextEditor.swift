@@ -46,11 +46,12 @@ struct FormTextEditor: View {
                 textEditorPlaceholder()
             }
         }
+        .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))
     }
 
     func textEditor() -> some View {
         TextEditor(text: $text)
-            .textEditorStyle(TextEditorStyle.RoundedRect(isError: !errorMessage.isEmpty))
+            .frame(height: Dimen.float(.textEditorHeight))
             .keyboardType(keyboardType)
             .onChange(of: text) { _ in
                 if let maxLength = maxLength, text.count > maxLength {

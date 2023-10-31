@@ -126,6 +126,7 @@
 		F3DF756D2ADB2281001FE8FF /* NoteItemForm+Clone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DF756C2ADB2281001FE8FF /* NoteItemForm+Clone.swift */; };
 		F3E1165E2AE459FC004B6B15 /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E1165D2AE459FC004B6B15 /* ImageUtil.swift */; };
 		F3E116612AE45C84004B6B15 /* FormImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E116602AE45C84004B6B15 /* FormImagePicker.swift */; };
+		F3E343662AF05B2A00CEFEB6 /* CalculatorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E343652AF05B2A00CEFEB6 /* CalculatorValue.swift */; };
 		F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4D2AA48815006880A4 /* CreateNoteForm.swift */; };
 		F3E97E502AA4CFA0006880A4 /* NoteCreateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */; };
 		F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */; };
@@ -282,6 +283,7 @@
 		F3DF756C2ADB2281001FE8FF /* NoteItemForm+Clone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteItemForm+Clone.swift"; sourceTree = "<group>"; };
 		F3E1165D2AE459FC004B6B15 /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		F3E116602AE45C84004B6B15 /* FormImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormImagePicker.swift; sourceTree = "<group>"; };
+		F3E343652AF05B2A00CEFEB6 /* CalculatorValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorValue.swift; sourceTree = "<group>"; };
 		F3E97E4D2AA48815006880A4 /* CreateNoteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteForm.swift; sourceTree = "<group>"; };
 		F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateFormView.swift; sourceTree = "<group>"; };
 		F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				F3F3DC9F2AE73AA7001C1249 /* CalculatorStyle.swift */,
 				F30E09612AE95C040048D776 /* CalcalutorColor.swift */,
 				F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */,
+				F3E343652AF05B2A00CEFEB6 /* CalculatorValue.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -1173,6 +1176,7 @@
 				F3DB44D82A9C16EC0019050B /* DataList.swift in Sources */,
 				F3C0C27E2AA1E52B001844B4 /* CDNote+Note.swift in Sources */,
 				F3B3EE202A9F257E00A1E8A6 /* NoteItemList.swift in Sources */,
+				F3E343662AF05B2A00CEFEB6 /* CalculatorValue.swift in Sources */,
 				F3C492312A9B31C2009A63ED /* ViewStyle+TextField.swift in Sources */,
 				F3C4923F2A9B33C3009A63ED /* NoteItemDetail.swift in Sources */,
 				F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */,
@@ -1391,12 +1395,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1406,6 +1413,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1524,12 +1534,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1539,6 +1552,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1657,12 +1673,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1672,6 +1691,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1790,12 +1812,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1805,6 +1830,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1923,12 +1951,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1938,6 +1969,9 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

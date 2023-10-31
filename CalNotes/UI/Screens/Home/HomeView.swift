@@ -14,13 +14,14 @@ struct HomeView: View {
     var body: some View {
         BodyView(
             title: "home",
+            titleDisplayType: .large,
             content: content
         )
         .onAppear(perform: viewModel.loadData)
     }
 
     func content() -> some View {
-        VStack(spacing: Dimen.spacing(.normal)) {
+        VStack(spacing: Dimen.spacing(.xLarge)) {
             Group {
                 HomeNotesView(
                     note: viewModel.home.note,
@@ -46,9 +47,9 @@ struct HomeNotesView: View {
     var trash: Int
 
     var body: some View {
-        VStack(alignment: .leading, spacing: Dimen.spacing(.normal)) {
+        VStack(alignment: .leading, spacing: Dimen.spacing(.small)) {
             Text("notes")
-                .textStyle(TextStyle.Medium(fontSize: .large))
+                .textStyle(TextStyle.SectionTitle())
             HStack(spacing: Dimen.spacing(.normal)) {
                 noteButton()
                 trashButton()
@@ -85,9 +86,9 @@ struct HomeNotesView: View {
 
 struct HomeSettingsView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: Dimen.spacing(.normal)) {
+        VStack(alignment: .leading, spacing: Dimen.spacing(.small)) {
             Text("settings")
-                .textStyle(TextStyle.Medium(fontSize: .large))
+                .textStyle(TextStyle.SectionTitle())
             HStack(spacing: Dimen.spacing(.normal)) {
                 versionButton()
             }

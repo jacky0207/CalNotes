@@ -25,8 +25,18 @@ struct FormView<Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             FormHeaderView(title: title)
-            content()
+            content().textStyle(TextStyle.Regular())
             FormFooterView(errorMessage: errorMessage)
+        }
+    }
+}
+
+extension FormView {
+    static func styled<Content: View>(_ view: Content) -> some View {
+        if let image = view as? Image {
+            return AnyView(image.resizable().imageStyle(ImageStyle.Icon()))
+        } else {
+            return AnyView(view)
         }
     }
 }

@@ -16,6 +16,7 @@ struct NoteTrashView: View {
     var body: some View {
         BodyView(
             title: "note_trash",
+            titleDisplayType: .large,
             toolbar: toolbar,
             content: content
         )
@@ -66,8 +67,10 @@ struct NoteTrashView: View {
     func recoverButton(at indexSet: IndexSet) -> some View {
         Button(action: { recoverNote(at: indexSet) }) {
             Image("recover")
+                .resizable()
                 .renderingMode(.template)
                 .foregroundColor(.white)
+                .imageStyle(ImageStyle.Icon())
         }
         .tint(.green)
     }
@@ -107,11 +110,13 @@ struct NoteTrashView_Previews: PreviewProvider {
                 NoteTrashView(viewModel: NoteTrashViewModel(preview: true))
                     .environment(\.defaultMinListRowHeight, 0)
             }
+            .navigationViewStyle(StackNavigationViewStyle())  // solve navigation view displayed as drawer in ipad
 
             NavigationView {
                 NoteTrashView(viewModel: NoteTrashViewModel(preview: false))
                     .environment(\.defaultMinListRowHeight, 0)
             }
+            .navigationViewStyle(StackNavigationViewStyle())  // solve navigation view displayed as drawer in ipad
             .previewDisplayName("No Item")
         }
     }

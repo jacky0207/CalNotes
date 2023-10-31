@@ -73,10 +73,9 @@ struct FormTextField<LeftView: View, RightView: View>: View {
                 TextField(placeholder, text: $text)
                     .keyboardType(keyboardType)
             },
-            leftView: leftView,
-            rightView: rightView
+            leftView: { FormView<LeftView>.styled(leftView()) },
+            rightView: { FormView<LeftView>.styled(rightView()) }
         )
-        .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))
         .onChange(of: text) { _ in
             errorMessage = ""

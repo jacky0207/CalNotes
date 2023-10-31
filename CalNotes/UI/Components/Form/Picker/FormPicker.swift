@@ -22,7 +22,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         data: [PickerItem],
         errorMessage: Binding<String> = .constant(""),
         leftView: @escaping () -> LeftView = { EmptyView() },
-        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
+        rightView: @escaping () -> RightView = { Image("arrow_down").resizable().imageStyle(ImageStyle.Icon()) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.title = title
@@ -39,7 +39,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         field: Binding<FormField<Int>>,
         data: [PickerItem],
         leftView: @escaping () -> LeftView = { EmptyView() },
-        rightView: @escaping () -> RightView = { Image("arrow_down").allowsTightening(false) },
+        rightView: @escaping () -> RightView = { Image("arrow_down").resizable().imageStyle(ImageStyle.Icon()) },
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.init(
@@ -71,8 +71,8 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         PickerMenu(
             selectedId: $selectedId,
             data: data,
-            leftView: leftView,
-            rightView: rightView
+            leftView: { FormView<LeftView>.styled(leftView()) },
+            rightView: { FormView<LeftView>.styled(rightView()) }
         )
         .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))
