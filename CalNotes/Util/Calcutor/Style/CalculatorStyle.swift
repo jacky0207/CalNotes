@@ -22,9 +22,10 @@ import SwiftUI
 struct CalculatorText: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, 16)
+            .frame(maxWidth: CalculatorValue.shared.buttonWidth * 3 + CalculatorValue.shared.buttonHorizontalPadding * 5 + CalculatorValue.shared.spanSpacing * 2, alignment: .trailing)
+            .padding(.horizontal, CalculatorValue.shared.buttonHorizontalPadding / 2)
             .foregroundColor(CalculatorColor.white)
-            .font(Font.system(size: 48))
+            .font(Font.system(size: CalculatorValue.shared.textFontSize))
             .lineLimit(1)
             .minimumScaleFactor(0.5)
     }
@@ -34,21 +35,19 @@ struct CalculatorButtonStyle: ButtonStyle {
     var isSelected: Bool = false
 
     var type: CalculatorButtonType
-    var fontSize: CGFloat = 28
-    var width: CGFloat = 40
-    var padding: CGFloat = 20
     var span: Int = 1
     var spanSpacing: CGFloat = 0
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(isSelected ? type.foregroundSelectedColor : type.foregroundColor)
-            .font(Font.system(size: fontSize))
-            .frame(width: width, height: width / 4)
-            .padding(.trailing, (spanSpacing + width + padding * 2) * (CGFloat(span) - 1))
-            .padding(.all, padding)
+            .font(Font.system(size: CalculatorValue.shared.buttonFontSize))
+            .frame(width: CalculatorValue.shared.buttonWidth, height: CalculatorValue.shared.buttonHeight)
+            .padding(.trailing, CalculatorValue.shared.buttonTrailingPadding(for: span))
+            .padding(.horizontal, CalculatorValue.shared.buttonHorizontalPadding)
+            .padding(.vertical, CalculatorValue.shared.buttonVerticalPadding)
             .background(
-                RoundedRectangle(cornerRadius: width/2 + padding)
+                RoundedRectangle(cornerRadius: CalculatorValue.shared.buttonCornerRadius)
                     .fill(configuration.isPressed ? type.highlightColor : (isSelected ? type.selectedColor : type.normalColor) )
             )
     }
