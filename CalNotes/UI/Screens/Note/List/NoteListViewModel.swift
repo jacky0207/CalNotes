@@ -10,7 +10,7 @@ import Combine
 
 class NoteListViewModel: ViewModel, ObservableObject, NoteListProtocol {
     @Published var list: NoteList = .none
-    @Published var selectedNoteId: Int = -1
+    var selectedNoteId: Int = -1
 
     override func loadData() {
         super.loadData()
@@ -47,9 +47,10 @@ class NoteListViewModel: ViewModel, ObservableObject, NoteListProtocol {
                     ))
                 },
                 receiveValue: { note in
-                    self.getAllNotes()  // refresh ui
-                    self.selectedNoteId = note.id
-                    completion(note)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+                        self.selectedNoteId = note.id
+                        completion(note)
+                    }
                 }
             )
             .store(in: &cancellables)
@@ -91,9 +92,10 @@ class NoteListViewModel: ViewModel, ObservableObject, NoteListProtocol {
                     ))
                 },
                 receiveValue: { note in
-                    self.getAllNotes()  // refresh ui
-                    self.selectedNoteId = note.id
-                    completion(note)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+                        self.selectedNoteId = note.id
+                        completion(note)
+                    }
                 }
             )
             .store(in: &cancellables)
