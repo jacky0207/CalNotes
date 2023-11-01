@@ -50,14 +50,13 @@ struct BannerView: UIViewControllerRepresentable {
 
         func bannerViewController(_ bannerViewController: BannerViewController, didUpdate width: CGFloat) {
             // Pass the viewWidth from Coordinator to BannerView.
-            print("\(#function) called")
             parent.viewWidth = width
         }
 
         // MARK: - GADBannerViewDelegate methods
 
         func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-            print("\(#function) called")
+
         }
 
         func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
