@@ -17,6 +17,11 @@ struct NoteItemFormView: View {
             toolbar: toolbar,
             content: content
         )
+        .safeAreaInset(edge: .bottom) {
+            BannerView()
+                .frame(height: 60)
+                .background(ColorStyle.background.color)
+        }
         .onAppear(perform: viewModel.loadData)
         .bottomSheet(
             isPresented: $isShowAmountCalculator,

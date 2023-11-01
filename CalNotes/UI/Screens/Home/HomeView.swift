@@ -18,6 +18,11 @@ struct HomeView: View {
             content: content
         )
         .onAppear(perform: viewModel.loadData)
+        .safeAreaInset(edge: .bottom) {
+            BannerView()
+                .frame(height: 60)
+                .background(ColorStyle.background.color)
+        }
     }
 
     func content() -> some View {
