@@ -9,8 +9,6 @@ import SwiftUI
 
 struct CalculatorView: View {
     @StateObject private var calculator: SumTextCalculator
-    private let spanSpacing: CGFloat = 16.0
-    private let maxLength = 16
 
     init(
         sum: String,
@@ -20,53 +18,52 @@ struct CalculatorView: View {
     }
 
     var body: some View {
-        VStack(spacing: spanSpacing) {
-            HStack(spacing: spanSpacing) {
+        VStack(spacing: CalculatorValue.shared.spanSpacing) {
+            HStack(alignment: .bottom, spacing: CalculatorValue.shared.spanSpacing) {
                 calculationText()
                 functionButton(.delete)
             }
-            HStack(spacing: spanSpacing) {
+            HStack(spacing: CalculatorValue.shared.spanSpacing) {
                 functionButton(calculator.isDigitInputted ? .clear : .allClear)
                 functionButton(.inverseSign)
                 functionButton(.percentage)
                 operatorButton(.divide)
             }
-            HStack(spacing: spanSpacing) {
+            HStack(spacing: CalculatorValue.shared.spanSpacing) {
                 digitButton(.seven)
                 digitButton(.eight)
                 digitButton(.nine)
                 operatorButton(.multiply)
             }
-            HStack(spacing: spanSpacing) {
+            HStack(spacing: CalculatorValue.shared.spanSpacing) {
                 digitButton(.four)
                 digitButton(.five)
                 digitButton(.six)
                 operatorButton(.minus)
             }
-            HStack(spacing: spanSpacing) {
+            HStack(spacing: CalculatorValue.shared.spanSpacing) {
                 digitButton(.one)
                 digitButton(.two)
                 digitButton(.three)
                 operatorButton(.plus)
             }
-            HStack(spacing: spanSpacing) {
+            HStack(spacing: CalculatorValue.shared.spanSpacing) {
                 digitButton(.zero, span: 2)
                 digitButton(.dot)
                 operatorButton(.equal)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.all, 16)
+        .padding(.all, CalculatorValue.shared.padding)
         .background(CalculatorColor.black)
     }
 
     func calculationText() -> some View {
         Text(calculator.text)
-            .frame(maxWidth: 240, alignment: .trailing)
             .textStyle(CalculatorText())
             .onChange(of: calculator.text) { text in
-                if text.count > maxLength {
-                    calculator.text = String(text.prefix(maxLength))
+                if text.count > CalculatorValue.shared.textMaxLength {
+                    calculator.text = String(text.prefix(CalculatorValue.shared.textMaxLength))
                 }
             }
     }
@@ -75,7 +72,7 @@ struct CalculatorView: View {
         CalculatorButton(
             type: .digit(type),
             span: span,
-            spanSpacing: spanSpacing,
+            spanSpacing: CalculatorValue.shared.spanSpacing,
             action: calculator.pressButton
         )
     }
@@ -83,6 +80,8 @@ struct CalculatorView: View {
     func operatorButton(_ type: CalculatorOperator) -> some View {
         CalculatorButton(
             type: .operator(type),
+            span: 1,
+            spanSpacing: CalculatorValue.shared.spanSpacing,
             isSelected: calculator.isOperatorSelected(type),
             action: calculator.pressButton
         )
@@ -91,6 +90,8 @@ struct CalculatorView: View {
     func functionButton(_ type: CalculatorFunction) -> some View {
         CalculatorButton(
             type: .function(type),
+            span: 1,
+            spanSpacing: CalculatorValue.shared.spanSpacing,
             action: calculator.pressButton
         )
     }

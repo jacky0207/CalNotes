@@ -22,6 +22,7 @@ extension Dimen {
 extension Dimen {
     enum Float {
         case shadowAlpha
+        case shadowAlphaLarge
         case shadowOffsetX
         case shadowOffsetY
         case iconSmallWidth
@@ -37,6 +38,8 @@ extension Dimen {
             switch self {
             case .shadowAlpha:
                 return 0.5
+            case .shadowAlphaLarge:
+                return 0.75
             case .shadowOffsetX:
                 return 2
             case .shadowOffsetY:

@@ -50,6 +50,11 @@ struct FormImagePicker: View {
 
     func content() -> some View {
         ImagePicker(image: $image)
+            .frame(maxWidth: .infinity, minHeight: Dimen.float(.imagePickerHeight))
+            .stackStyle(StackStyle.RoundedRect(
+                isError: !errorMessage.isEmpty,
+                paddingInsets: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            ))
             .onChange(of: image) { _ in
                 errorMessage = ""
             }

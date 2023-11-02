@@ -29,7 +29,7 @@ struct NoteTitleView: View {
 
     var body: some View {
         Text(title)
-            .textStyle(TextStyle.NoteTitle())
+            .textStyle(TextStyle.ItemTitle())
     }
 }
 
@@ -41,12 +41,12 @@ struct NoteSumView: View {
     }
 
     var body: some View {
-        HStack(alignment: .center, spacing: Dimen.spacing(.small)) {
+        HStack(alignment: .center, spacing: Dimen.spacing(.xSmall)) {
             Image("coin")
                 .resizable()
-                .imageStyle(ImageStyle.IconSmall())
+                .imageStyle(ImageStyle.Icon())
             Text(String(format: "%.2f", sum))
-                .textStyle(TextStyle.Regular())
+                .textStyle(TextStyle.ItemText())
         }
     }
 }

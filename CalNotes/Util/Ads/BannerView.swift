@@ -28,6 +28,9 @@ struct BannerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         guard viewWidth != .zero else { return }
 
+        bannerView.rootViewController = uiViewController  // fixed refresh ui not received
+        bannerView.removeFromSuperview()
+        uiViewController.view.addSubview(bannerView)  // fixed refresh ui not visible
         // Request a banner ad with the updated viewWidth.
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         // Load with ad unit id
@@ -50,8 +53,8 @@ struct BannerView: UIViewControllerRepresentable {
 
         func bannerViewController(_ bannerViewController: BannerViewController, didUpdate width: CGFloat) {
             // Pass the viewWidth from Coordinator to BannerView.
-            print("\(#function) called")
             parent.viewWidth = width
+            print("\(#function) called")
         }
 
         // MARK: - GADBannerViewDelegate methods

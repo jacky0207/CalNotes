@@ -26,6 +26,10 @@ struct NavigationViewStyle {
                 .font: UIFont(name: FontStyle.NotoSansTC.bold.rawValue, size: FontSize.large.rawValue)!,
                 .foregroundColor: UIColor(ColorStyle.textPrimary.color)
             ]
+            appearance.largeTitleTextAttributes = [
+                .font: UIFont(name: FontStyle.NotoSansTC.bold.rawValue, size: 36)!,
+                .foregroundColor: UIColor(ColorStyle.textPrimary.color)
+            ]
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().compactAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance

@@ -7,23 +7,31 @@
 
 import SwiftUI
 import Firebase
+import FirebaseCore
 import GoogleMobileAds
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        FirebaseConfiguration.shared.setLoggerLevel(.min)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "58b275a6b31f16860f67b79e0ae050fd" ]
+        return true
+    }
+}
 
 @main
 struct CalNotesApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let diContainer = DIContainer()
 
-    init() {
-        FirebaseApp.configure()
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "5015e1e051150192c2f5bda128f1cf0f" ]
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(.light)
-                .environment(\.defaultMinListRowHeight, 0)  // set list row min height to all pages
+                .environment(\.defaultMinListRowHeight, 1)  // set list row min height to all pages, having bug if min height is 0
                 .environment(\.diContainer, diContainer)
         }
     }

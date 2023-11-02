@@ -62,7 +62,7 @@ struct StackStyle {
                 .background(
                     Rectangle()
                         .fill(ColorStyle.itemBackground.color)
-                        .border(Color.black, width: Dimen.border(.normal))
+                        .border(Color.black, width: Dimen.border(.small))
                 )
         }
     }
@@ -70,17 +70,18 @@ struct StackStyle {
     struct RoundedRect: ViewModifier {
         @FocusState var isFocused: Bool
         var isError: Bool = false
+        var paddingInsets: EdgeInsets = EdgeInsets(
+            top: Dimen.spacing(.normal),
+            leading: Dimen.spacing(.large),
+            bottom: Dimen.spacing(.normal),
+            trailing: Dimen.spacing(.large)
+        )
 
         func body(content: Content) -> some View {
             content
                 .focused($isFocused)
                 // padding
-                .padding(EdgeInsets(
-                    top: Dimen.spacing(.small),
-                    leading: Dimen.spacing(.normal),
-                    bottom: Dimen.spacing(.small),
-                    trailing: Dimen.spacing(.normal)
-                ))
+                .padding(paddingInsets)
                 // background
                 .background(
                     RoundedRectangle(cornerRadius: Dimen.corner(.normal))
@@ -90,29 +91,7 @@ struct StackStyle {
                 .overlay(
                     RoundedRectangle(cornerRadius: Dimen.corner(.normal))
                         .strokeBorder(
-                            isError ? ColorStyle.errorPrimary.color : (isFocused ? ColorStyle.primary.color : ColorStyle.textPrimary.color),
-                            style: StrokeStyle(
-                                lineWidth: Dimen.border(.normal)
-                            )
-                        )
-                )
-        }
-    }
-
-    struct ImagePicker: ViewModifier {
-        func body(content: Content) -> some View {
-            content
-                .frame(maxWidth: .infinity, minHeight: Dimen.float(.imagePickerHeight))
-                // background
-                .background(
-                    RoundedRectangle(cornerRadius: Dimen.corner(.normal))
-                        .fill(Color.white)
-                )
-                // border
-                .overlay(
-                    RoundedRectangle(cornerRadius: Dimen.corner(.normal))
-                        .strokeBorder(
-                            ColorStyle.textPrimary.color,
+                            isError ? ColorStyle.errorPrimary.color : (isFocused ? ColorStyle.primary.color : ColorStyle.secondary.color),
                             style: StrokeStyle(
                                 lineWidth: Dimen.border(.normal)
                             )
@@ -124,8 +103,7 @@ struct StackStyle {
     struct SettingsItem: ViewModifier {
         func body(content: Content) -> some View {
             content
-                .padding(.horizontal, Dimen.spacing(.xLarge))
-                .padding(.vertical, Dimen.spacing(.large))
+                .padding(.all, Dimen.spacing(.large))
                 .background(
                     RoundedRectangle(cornerRadius: Dimen.corner(.xxLarge))
                         .fill(ColorStyle.itemBackground.color)
@@ -136,6 +114,20 @@ struct StackStyle {
                             y: Dimen.float(.shadowOffsetY)
                         )
 
+                )
+        }
+    }
+
+    struct SectionFooter: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .padding(.all, Dimen.spacing(.large))
+                .background(ColorStyle.footerBackground.color)
+                .shadow(
+                    color: ColorStyle.shadow.color.opacity(Double(Dimen.float(.shadowAlphaLarge))),
+                    radius: Dimen.corner(.small),
+                    x: Dimen.float(.shadowOffsetX),
+                    y: -Dimen.float(.shadowOffsetY)
                 )
         }
     }

@@ -16,6 +16,8 @@ extension ColorStyle {
             return 0x0D39CF
         case .primaryDisabled:
             return 0xCCCCCC
+        case .secondary:
+            return 0x6A92BB
         case .textPrimary:
             return 0x000000
         case .textSecondary:
@@ -32,7 +34,7 @@ extension ColorStyle {
             return 0xF9F33D
         case .itemBackground:
             return 0xFFEFB5
-        case .sectionBackground:
+        case .footerBackground:
             return 0x6A6552
         case .shadow:
             return 0x8B8B8B

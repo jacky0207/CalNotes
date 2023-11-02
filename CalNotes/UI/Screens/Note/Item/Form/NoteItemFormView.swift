@@ -17,6 +17,11 @@ struct NoteItemFormView: View {
             toolbar: toolbar,
             content: content
         )
+        .safeAreaInset(edge: .bottom) {
+            BannerView()
+                .frame(height: 60)
+                .background(ColorStyle.background.color)
+        }
         .onAppear(perform: viewModel.loadData)
         .bottomSheet(
             isPresented: $isShowAmountCalculator,
@@ -88,7 +93,7 @@ struct NoteItemFormView: View {
 
     func categoryIcon() -> some View {
         if let category = NoteItemCategory(rawValue: viewModel.form.category.value) {
-            return AnyView(category.icon)
+            return AnyView(category.icon.resizable().imageStyle(ImageStyle.Icon()))
         } else {
             return AnyView(EmptyView())
         }
@@ -99,7 +104,7 @@ struct NoteItemFormView: View {
             return AnyView(EmptyView())
         } else {
             return AnyView(Button(action: { viewModel.form.title.value = "" }) {
-                Image("remove")
+                Image("remove").resizable().imageStyle(ImageStyle.Icon())
             })
         }
     }
@@ -107,7 +112,7 @@ struct NoteItemFormView: View {
     func amountCalculatorButton() -> some View {
         Button(
             action: { isShowAmountCalculator.toggle() },
-            label: { Image("calculator") }
+            label: { Image("calculator").resizable().imageStyle(ImageStyle.Icon()) }
         )
     }
 }
@@ -133,6 +138,7 @@ struct NoteItemFormToolbar: View {
 
     func label() -> some View {
         Image("send")
+            .resizable()
             .imageStyle(ImageStyle.Icon())
     }
 }
@@ -143,11 +149,13 @@ struct NoteItemFormView_Previews: PreviewProvider {
             NavigationView {
                 NoteItemFormView(viewModel: NoteItemFormViewModel(diContainer: DIContainer(), noteId: 0, noteItemId: nil))
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .previewDisplayName("Add Form")
             
             NavigationView {
                 NoteItemFormView(viewModel: NoteItemFormViewModel(preview: true))
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .previewDisplayName("Update Form")
         }
     }

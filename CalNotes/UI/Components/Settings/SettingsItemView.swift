@@ -73,7 +73,7 @@ struct SettingsItemTitleView: View {
 
     var body: some View {
         Text(title)
-            .textStyle(TextStyle.Medium())
+            .textStyle(TextStyle.ItemTitle())
     }
 }
 
@@ -86,7 +86,7 @@ struct SettingsItemValueView: View {
 
     var body: some View {
         Text(value)
-            .textStyle(TextStyle.Medium())
+            .textStyle(TextStyle.ItemText())
     }
 }
 struct SettingsItemTrailingView: View {

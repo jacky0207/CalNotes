@@ -75,7 +75,7 @@ struct DataNoItemView: View {
         VStack(spacing: Dimen.spacing(.normal)) {
             Image("item")
                 .resizable()
-                .imageStyle(ImageStyle.IconXLarge())
+                .imageStyle(ImageStyle.IconXXLarge())
             Text("no_item_found")
                 .textStyle(TextStyle.Medium(fontSize: .large))
         }
@@ -111,8 +111,10 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                         if let deleteItem = deleteItem {
                             Button(action: { deleteItem(indexSet) }) {
                                 Image("trash")
+                                    .resizable()
                                     .renderingMode(.template)
                                     .foregroundColor(.white)
+                                    .imageStyle(ImageStyle.Icon())
                             }
                             .tint(.red)
                         }
@@ -128,8 +130,8 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                 .listRowStyle(ListRowStyle.Default())
         }
         .listStyle(ListStyle.Default())
-        .id(UUID())  // disable animation to avoid overlap with observed object change
-        .environment(\.defaultMinListRowHeight, 0)
+//        .id(UUID())  // disable animation to avoid overlap with observed object change
+        .environment(\.defaultMinListRowHeight, 1)
     }
 }
 

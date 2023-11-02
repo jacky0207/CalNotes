@@ -93,7 +93,7 @@ struct ImageNewPicker: View {
                 .resizable()
                 .imageStyle(ImageStyle.IconXLarge())
         }
-        .stackStyle(StackStyle.ImagePicker())
+        .frame(maxWidth: .infinity, minHeight: Dimen.float(.imagePickerHeight))
     }
 }
 
@@ -108,7 +108,6 @@ struct ImageEditPicker: View {
             removeButton()
         }
         .frame(maxWidth: .infinity, maxHeight: Dimen.float(.imagePickerHeight))
-        .stackStyle(StackStyle.ImagePicker())
     }
 
     func preview() -> some View {

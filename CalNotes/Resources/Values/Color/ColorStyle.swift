@@ -11,6 +11,7 @@ enum ColorStyle {
     case primary
     case primaryHighlighted
     case primaryDisabled
+    case secondary
     case textPrimary
     case textSecondary
     case hintPrimary
@@ -19,6 +20,6 @@ enum ColorStyle {
     case alertBackground
     case noteBackground
     case itemBackground
-    case sectionBackground
+    case footerBackground
     case shadow
 }
