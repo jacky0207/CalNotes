@@ -9,19 +9,10 @@ import SwiftUI
 
 enum NoteItemCategory: Int, CaseIterable {
     case dollar
-    // eating
     case food
-    // transport
     case transport
-    // living
     case rent
-    case water
-    case heat
-    case hydro
-    case internet
-    // communication
     case cellPhone
-    // insurance
     case insurance
 }
 
@@ -36,14 +27,6 @@ extension NoteItemCategory {
             return Image("bus")
         case .rent:
             return Image("house")
-        case .water:
-            return Image("water")
-        case .heat:
-            return Image("heat")
-        case .hydro:
-            return Image("hydro")
-        case .internet:
-            return Image("internet")
         case .cellPhone:
             return Image("smartphone")
         case .insurance:
@@ -61,14 +44,6 @@ extension NoteItemCategory {
             return "transport".localized()
         case .rent:
             return "rent".localized()
-        case .water:
-            return "water".localized()
-        case .heat:
-            return "heat".localized()
-        case .hydro:
-            return "hydro".localized()
-        case .internet:
-            return "internet".localized()
         case .cellPhone:
             return "cellPhone".localized()
         case .insurance:
