@@ -11,22 +11,29 @@ struct LeftRightViewHStack<Content: View, LeftView: View, RightView: View>: View
     var content: () -> Content
     var leftView: () -> LeftView
     var rightView: () -> RightView
+    var spacing: CGFloat
 
     init(
         content:  @escaping () -> Content,
         leftView: @escaping () -> LeftView = { EmptyView() },
-        rightView: @escaping () -> RightView = { EmptyView() }
+        rightView: @escaping () -> RightView = { EmptyView() },
+        spacing: CGFloat = 0
     ) {
         self.content = content
         self.leftView = leftView
         self.rightView = rightView
+        self.spacing = spacing
     }
 
     var body: some View {
-        HStack(spacing: Dimen.spacing(.small)) {
-            leftView()
+        HStack(spacing: spacing) {
+            if LeftView.self != EmptyView.self {
+                leftView()
+            }
             content()
-            rightView()
+            if RightView.self != EmptyView.self {
+                rightView()
+            }
         }
     }
 }

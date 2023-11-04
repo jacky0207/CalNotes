@@ -13,6 +13,8 @@ struct NoteItemDetail: RecordItem {
     var title: String
     var category: Int
     var amount: Float
+    var quantity: Float?
+    var quantityUnit: String?
     var image: Data?
     var remarks: String?
 }

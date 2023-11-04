@@ -31,7 +31,9 @@ extension NoteItemDetail {
             noteId: Int(cdNoteItem.noteId),
             title: cdNoteItem.title,
             category: Int(cdNoteItem.category),
-            amount: Float(cdNoteItem.amount),
+            amount: cdNoteItem.amount,
+            quantity: cdNoteItem.quantity,
+            quantityUnit: cdNoteItem.quantityUnit,
             image: cdNoteItem.image,
             remarks: cdNoteItem.remarks
         )
@@ -43,6 +45,14 @@ extension CDNoteItem {
         self.title = form.title
         self.category = Int16(form.category)
         self.amount = form.amount
+        let isQuantityEnabled = NoteItemCategory(rawValue: form.category)?.isQuantityEnabled ?? false
+        if isQuantityEnabled {
+            self.quantity = form.quantity ?? 1
+            self.quantityUnit = form.quantityUnit
+        } else {
+            self.quantity = 1
+            self.quantityUnit = nil
+        }
         self.image = form.image
         self.remarks = form.remarks
     }

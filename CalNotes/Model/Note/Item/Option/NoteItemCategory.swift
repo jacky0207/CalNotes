@@ -52,6 +52,25 @@ extension NoteItemCategory {
     }
 }
 
+extension NoteItemCategory {
+    var isQuantityEnabled: Bool {
+        switch self {
+        case .dollar:
+            return true
+        case .food:
+            return true
+        case .transport:
+            return false
+        case .rent:
+            return false
+        case .cellPhone:
+            return false
+        case .insurance:
+            return false
+        }
+    }
+}
+
 // MARK: - PickerItem
 extension NoteItemCategory {
     static var items: [PickerItem] {

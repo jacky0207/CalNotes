@@ -14,6 +14,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
     @Binding var errorMessage: String
     var leftView: () -> LeftView
     var rightView: () -> RightView
+    var spacing: CGFloat
     var onSelectedChanged: (Int) -> Void
 
     init(
@@ -23,15 +24,17 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         errorMessage: Binding<String> = .constant(""),
         leftView: @escaping () -> LeftView = { EmptyView() },
         rightView: @escaping () -> RightView = { Image("arrow_down").resizable().imageStyle(ImageStyle.Icon()) },
+        spacing: CGFloat = Dimen.spacing(.small),
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.title = title
         self._selectedId = selectedId
         self.data = data
         self._errorMessage = errorMessage
-        self.onSelectedChanged = onSelectedChanged
         self.leftView = leftView
         self.rightView = rightView
+        self.spacing = spacing
+        self.onSelectedChanged = onSelectedChanged
     }
 
     init(
@@ -40,6 +43,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         data: [PickerItem],
         leftView: @escaping () -> LeftView = { EmptyView() },
         rightView: @escaping () -> RightView = { Image("arrow_down").resizable().imageStyle(ImageStyle.Icon()) },
+        spacing: CGFloat = Dimen.spacing(.small),
         onSelectedChanged: @escaping (Int) -> Void = { _ in }
     ) {
         self.init(
@@ -55,6 +59,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
             ),
             leftView: leftView,
             rightView: rightView,
+            spacing: spacing,
             onSelectedChanged: onSelectedChanged
         )
     }
@@ -71,8 +76,10 @@ struct FormPicker<LeftView: View, RightView: View>: View {
         PickerMenu(
             selectedId: $selectedId,
             data: data,
+            maxWidth: .infinity,
             leftView: { FormView<LeftView>.styled(leftView()) },
-            rightView: { FormView<LeftView>.styled(rightView()) }
+            rightView: { FormView<LeftView>.styled(rightView()) },
+            spacing: spacing
         )
         .textStyle(TextStyle.Regular())
         .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))

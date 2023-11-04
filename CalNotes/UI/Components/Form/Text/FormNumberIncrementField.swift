@@ -13,19 +13,22 @@ struct FormNumberIncrementField: View {
     var min: Float?
     var max: Float?
     @Binding var errorMessage: String
+    var spacing: CGFloat
 
     init(
         title: String = "",
         text: Binding<String>,
         min: Float? = nil,
         max: Float? = nil,
-        errorMessage: Binding<String> = .constant("")
+        errorMessage: Binding<String> = .constant(""),
+        spacing: CGFloat = Dimen.spacing(.small)
     ) {
         self.title = title
         self._text = text
         self.min = min
         self.max = max
         self._errorMessage = errorMessage
+        self.spacing = spacing
     }
 
     init(
@@ -33,7 +36,8 @@ struct FormNumberIncrementField: View {
         placeholder: String = "",
         field: Binding<FormField<String>>,
         min: Float? = nil,
-        max: Float? = nil
+        max: Float? = nil,
+        spacing: CGFloat = Dimen.spacing(.small)
     ) {
         self.init(
             title: title,
@@ -46,7 +50,8 @@ struct FormNumberIncrementField: View {
             errorMessage: Binding(
                 get: { field.wrappedValue.errorMessage },
                 set: { field.wrappedValue.errorMessage = $0 }
-            )
+            ),
+            spacing: spacing
         )
     }
 
@@ -63,7 +68,8 @@ struct FormNumberIncrementField: View {
             LeftRightViewHStack(
                 content: textContent,
                 leftView: decrementButton,
-                rightView: incrementButton
+                rightView: incrementButton,
+                spacing: spacing
             )
             .textStyle(TextStyle.Regular())
             .stackStyle(StackStyle.RoundedRect(isError: !errorMessage.isEmpty))

@@ -38,7 +38,6 @@ struct NoteItemFormView: View {
     func toolbar() -> some View {
         NoteItemFormToolbar(
             sendAction: viewModel.noteItemId == nil ? viewModel.addNoteItem : viewModel.updateNoteItem,
-//            sendDisabled: !viewModel.form.isValid()
             sendDisabled: false
         )
     }
@@ -80,6 +79,15 @@ struct NoteItemFormView: View {
                 leftView: { Text("dollar_sign") },
                 rightView: amountCalculatorButton
             )
+            if NoteItemCategory(rawValue: viewModel.form.category.value)?.isQuantityEnabled ?? false {
+                FormTextField(
+                    title: "quantity".localized(),
+                    field: $viewModel.form.quantity,
+                    keyboardType: .decimalPad,
+                    min: 0,
+                    rightView: quantityUnitPicker
+                )
+            }
             FormImagePicker(
                 title: "image".localized(),
                 field: $viewModel.form.image
@@ -114,6 +122,15 @@ struct NoteItemFormView: View {
             action: { isShowAmountCalculator.toggle() },
             label: { Image("calculator").resizable().imageStyle(ImageStyle.Icon()) }
         )
+    }
+
+    func quantityUnitPicker() -> some View {
+        PickerMenu(
+            selectedId: $viewModel.form.quantityUnit.value,
+            data: NoteItemQuantityUnit.items,
+            leftView: { Image("arrow_down").resizable().imageStyle(ImageStyle.IconSmall()) }
+        )
+        .textStyle(TextStyle.Regular())
     }
 }
 
