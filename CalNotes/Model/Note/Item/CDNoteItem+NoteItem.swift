@@ -16,7 +16,10 @@ extension NoteItem {
             noteId: Int(cdNoteItem.noteId),
             title: cdNoteItem.title,
             category: Int(cdNoteItem.category),
-            amount: Float(cdNoteItem.amount),
+            amount: cdNoteItem.amount,
+            quantity: cdNoteItem.quantity,
+            quantityUnit: cdNoteItem.quantityUnit,
+            sum: cdNoteItem.amount * cdNoteItem.quantity,
             image: cdNoteItem.image,
             remarks: cdNoteItem.remarks
         )

@@ -10,6 +10,7 @@
 "sum" = "Sum";
 "amount" = "Amount";
 "quantity" = "Quantity";
+"quantity_unit_format" = "x%@ %@";
 "image" = "Image";
 "remarks" = "Remarks";
 // Image

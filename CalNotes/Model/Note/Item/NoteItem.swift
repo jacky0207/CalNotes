@@ -13,6 +13,9 @@ struct NoteItem: RecordItem {
     var title: String
     var category: Int
     var amount: Float
+    var quantity: Float
+    var quantityUnit: String?
+    var sum: Float
     var image: Data?
     var remarks: String?
 }
@@ -24,7 +27,9 @@ extension NoteItem {
             noteId: 0,
             title: "",
             category: 0,
-            amount: 0.0
+            amount: 0.0,
+            quantity: 1,
+            sum: 0.0
         )
     }
 }
