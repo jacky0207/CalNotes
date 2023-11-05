@@ -144,6 +144,7 @@
 		F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */; };
 		F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */; };
 		F3F82DD92AF6290D00459A14 /* NoteItemQuantityUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */; };
+		F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +308,7 @@
 		F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorOperator+Calculation.swift"; sourceTree = "<group>"; };
 		F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCalculatorTests.swift; sourceTree = "<group>"; };
 		F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemQuantityUnit.swift; sourceTree = "<group>"; };
+		F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +715,7 @@
 		F3C0C28C2AA267DA001844B4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				F3F82DDD2AF6C7F200459A14 /* Logger */,
 				F382B4542AAE7AB100275BAE /* Ads */,
 				F341B5A32ADFCC8800847BD6 /* Date */,
 				F3E1165C2AE459EC004B6B15 /* Image */,
@@ -1021,6 +1024,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3F82DDD2AF6C7F200459A14 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1240,6 +1251,7 @@
 				F3DB44B32A9B56DC0019050B /* FormTitle.swift in Sources */,
 				F3DB44AB2A9B3A300019050B /* RecordItem.swift in Sources */,
 				F399F9FF2A9A80DC006710DF /* NoteListProtocol.swift in Sources */,
+				F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */,
 				F3DB44C12A9BB4AE0019050B /* NoteView.swift in Sources */,
 				F399FA082A9A824A006710DF /* String+Localizable.swift in Sources */,
 				F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */,

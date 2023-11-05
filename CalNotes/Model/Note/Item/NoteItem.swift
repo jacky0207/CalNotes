@@ -17,16 +17,6 @@ struct NoteItem: RecordItem {
     var remarks: String?
 }
 
-extension NoteItem: Encodable & CustomStringConvertible {
-    var description: String {
-        var object = self
-        object.image = object.image == nil ? nil : Data()
-        let jsonData = try! JSONEncoder().encode(object)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
-    }
-}
-
 extension NoteItem {
     static var none: NoteItem {
         return NoteItem(

@@ -18,16 +18,6 @@ struct NoteItemForm: Encodable {
     var remarks: String?
 }
 
-extension NoteItemForm: CustomStringConvertible {
-    var description: String {
-        var object = self
-        object.image = object.image == nil ? nil : Data()
-        let jsonData = try! JSONEncoder().encode(object)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
-    }
-}
-
 extension NoteItemForm {
     struct LocalForm {
         var category: FormField<Int>
@@ -53,14 +43,6 @@ extension NoteItemForm {
             image: localForm.image.value?.jpegData(compressionQuality: 1),
             remarks: localForm.remarks.value.isEmpty ? nil : localForm.remarks.value
         )
-    }
-}
-
-extension NoteItemForm.LocalForm: Encodable & CustomStringConvertible {
-    var description: String {
-        let jsonData = try! JSONEncoder().encode(self)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
     }
 }
 

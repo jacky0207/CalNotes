@@ -64,14 +64,6 @@ extension UIImage: Encodable {
     }
 }
 
-extension FormField: Encodable & CustomStringConvertible {
-    var description: String {
-        let jsonData = try! JSONEncoder().encode(self)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
-    }
-}
-
 fileprivate struct FormHeaderView: View {
     var title: String
 

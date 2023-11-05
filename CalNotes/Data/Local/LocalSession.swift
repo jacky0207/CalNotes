@@ -29,7 +29,7 @@ struct LocalSession: LocalService {
             let note = try coreDataHelper.noteCount()
             let trash = try coreDataHelper.disabledNoteCount()
             let home = Home(note: note, trash: trash)
-            print("Response=\(home)")
+            LoggerUtil.shared.debug("Response", home)
             return Just(home)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -44,7 +44,7 @@ struct LocalSession: LocalService {
             let cdNotes = try coreDataHelper.notes()
             let cdNoteItems = try coreDataHelper.noteItems()
             let noteList = NoteList(cdNotes: cdNotes, cdNoteItems: cdNoteItems)
-            print("Response=\(noteList)")
+            LoggerUtil.shared.debug("Response", noteList)
             return Just(noteList)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -59,7 +59,7 @@ struct LocalSession: LocalService {
             let cdNotes = try coreDataHelper.disabledNotes()
             let cdNoteItems = try coreDataHelper.noteItems()
             let noteList = NoteList(cdNotes: cdNotes, cdNoteItems: cdNoteItems)
-            print("Response=\(noteList)")
+            LoggerUtil.shared.debug("Response", noteList)
             return Just(noteList)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -71,10 +71,10 @@ struct LocalSession: LocalService {
 
     func createNote(form: CreateNoteForm) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={form:\(form)}")
+            LoggerUtil.shared.debug("Request={form:\(form)}")
             let cdNote = try coreDataHelper.createNote(form: form)
             let noteDetail = NoteDetail(cdNote: cdNote, cdNoteItems: [])
-            print("Response=\(noteDetail)")
+            LoggerUtil.shared.debug("Response", noteDetail)
             return Just(noteDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -86,11 +86,11 @@ struct LocalSession: LocalService {
 
     func cloneNote(noteId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId)}")
             let cdNote = try coreDataHelper.cloneNote(noteId: noteId)
             let cdNoteItems = try coreDataHelper.noteItems(noteId: Int(cdNote.id))
             let noteDetail = NoteDetail(cdNote: cdNote, cdNoteItems: cdNoteItems)
-            print("Response=\(noteDetail)")
+            LoggerUtil.shared.debug("Response", noteDetail)
             return Just(noteDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -102,7 +102,7 @@ struct LocalSession: LocalService {
 
     func editNoteTitle(noteId: Int, form: CreateNoteForm) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={form:\(form)}")
+            LoggerUtil.shared.debug("Request={form:\(form)}")
             try coreDataHelper.editNoteTitle(noteId: noteId, form: form)
             return getNoteDetail(noteId: noteId)
         } catch {
@@ -113,7 +113,7 @@ struct LocalSession: LocalService {
 
     func deleteNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId)}")
             let disabled = try coreDataHelper.note(noteId: noteId).disabled
             try coreDataHelper.deleteNote(noteId: noteId)
             if disabled {
@@ -139,7 +139,7 @@ struct LocalSession: LocalService {
 
     func recoverNote(noteId: Int) -> AnyPublisher<NoteList, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId)}")
             try coreDataHelper.recoverNote(noteId: noteId)
             return getAllDisabledNotes()
         } catch {
@@ -150,11 +150,11 @@ struct LocalSession: LocalService {
 
     func getNoteDetail(noteId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId)}")
             let cdNote = try coreDataHelper.note(noteId: noteId)
             let cdNoteItems = try coreDataHelper.noteItems(noteId: noteId)
             let noteDetail = NoteDetail(cdNote: cdNote, cdNoteItems: cdNoteItems)
-            print("Response=\(noteDetail)")
+            LoggerUtil.shared.debug("Response", noteDetail)
             return Just(noteDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -166,10 +166,10 @@ struct LocalSession: LocalService {
 
     func addNoteItem(noteId: Int, form: NoteItemForm) -> AnyPublisher<NoteItemDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),form:\(form)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),form:\(form)}")
             let cdNoteItem = try coreDataHelper.createNoteItem(noteId: noteId, form: form)
             let noteItemDetail = NoteItemDetail(cdNoteItem: cdNoteItem)
-            print("Response=\(noteItemDetail)")
+            LoggerUtil.shared.debug("Response", noteItemDetail)
             return Just(noteItemDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -181,7 +181,7 @@ struct LocalSession: LocalService {
 
     func cloneNoteItem(noteId: Int, noteItemId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
             _ = try coreDataHelper.cloneNoteItem(noteId: noteId, noteItemId: noteItemId)
             return getNoteDetail(noteId: noteId)
         } catch {
@@ -192,10 +192,10 @@ struct LocalSession: LocalService {
 
     func updateNoteItem(noteId: Int, noteItemId: Int, form: NoteItemForm) -> AnyPublisher<NoteItemDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),noteItemId:\(noteItemId),form:\(form)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),noteItemId:\(noteItemId),form:\(form)}")
             let cdNoteItem = try coreDataHelper.updateNoteItem(noteId: noteId, noteItemId: noteItemId, form: form)
             let noteItemDetail = NoteItemDetail(cdNoteItem: cdNoteItem)
-            print("Response=\(noteItemDetail)")
+            LoggerUtil.shared.debug("Response", noteItemDetail)
             return Just(noteItemDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
@@ -207,7 +207,7 @@ struct LocalSession: LocalService {
 
     func deleteNoteItem(noteId: Int, noteItemId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
             try coreDataHelper.deleteNoteItem(noteId: noteId, noteItemId: noteItemId)
             return getNoteDetail(noteId: noteId)
         } catch {
@@ -218,7 +218,7 @@ struct LocalSession: LocalService {
 
     func moveNoteItem(noteId: Int, noteItemId: Int, newNoteItemId: Int) -> AnyPublisher<NoteDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),noteItemId:\(noteItemId),newNoteItemId:\(newNoteItemId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),noteItemId:\(noteItemId),newNoteItemId:\(newNoteItemId)}")
             try coreDataHelper.moveNoteItem(noteId: noteId, noteItemId: noteItemId, newNoteItemId: newNoteItemId)
             return getNoteDetail(noteId: noteId)
         } catch {
@@ -229,10 +229,10 @@ struct LocalSession: LocalService {
 
     func getNoteItemDetail(noteId: Int, noteItemId: Int) -> AnyPublisher<NoteItemDetail, DataError<APIError>> {
         do {
-            print("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
+            LoggerUtil.shared.debug("Request={noteId:\(noteId),noteItemId:\(noteItemId)}")
             let cdNoteItem = try coreDataHelper.noteItem(noteId: noteId, noteItemId: noteItemId)
             let noteItemDetail = NoteItemDetail(cdNoteItem: cdNoteItem)
-            print("Response=\(noteItemDetail)")
+            LoggerUtil.shared.debug("Response", noteItemDetail)
             return Just(noteItemDetail)
                 .setFailureType(to: DataError<APIError>.self)
                 .eraseToAnyPublisher()
