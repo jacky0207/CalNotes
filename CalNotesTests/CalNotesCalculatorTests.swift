@@ -181,6 +181,8 @@ final class CalNotesCalculatorTests: XCTestCase {
         calculator.appendDigit(.one)
         calculator.deleteBackward()
         XCTAssertEqual(calculator.text, "0")
+        calculator.deleteBackward()
+        XCTAssertEqual(calculator.text, "0")
         calculator.appendDigit(.two)
         calculator.appendDigit(.three)
         calculator.appendDigit(.four)
@@ -189,7 +191,9 @@ final class CalNotesCalculatorTests: XCTestCase {
         XCTAssertEqual(calculator.text, "234")
     }
 
-    func testCalcuator_percentaged() throws {
+    func testCalcuator_Percentaged() throws {
+        calculator.percentaged()
+        XCTAssertEqual(calculator.text, "0")
         calculator.appendDigit(.one)
         calculator.appendDigit(.two)
         calculator.appendDigit(.three)
@@ -197,5 +201,47 @@ final class CalNotesCalculatorTests: XCTestCase {
         calculator.appendDigit(.five)
         calculator.percentaged()
         XCTAssertEqual(calculator.text, "123.45")
+    }
+
+    func testCalculator_PressButton_Operation() throws {
+        calculator.pressButton(.digit(.one))
+        XCTAssertTrue(calculator.isDigitInputted)
+        calculator.pressButton(.operator(.plus))
+        XCTAssertEqual(calculator.state, .progress)
+        XCTAssertFalse(calculator.isCurrDigitInputted)
+        calculator.pressButton(.digit(.two))
+        XCTAssertTrue(calculator.isCurrDigitInputted)
+        calculator.pressButton(.operator(.equal))
+        XCTAssertEqual(calculator.text, "3")
+        calculator.pressButton(.operator(.equal))
+        XCTAssertEqual(calculator.text, "5")
+        calculator.pressButton(.operator(.divide))
+        calculator.pressButton(.operator(.multiply))
+        calculator.pressButton(.digit(.three))
+        calculator.pressButton(.operator(.minus))
+        XCTAssertEqual(calculator.text, "15")
+        calculator.pressButton(.digit(.four))
+        calculator.pressButton(.operator(.equal))
+        XCTAssertEqual(calculator.text, "11")
+    }
+
+    func testCalculator_PressButton_Function() throws {
+        calculator.appendDigit(.one)
+        calculator.appendDigit(.two)
+        calculator.appendDigit(.three)
+        calculator.appendDigit(.four)
+        calculator.appendDigit(.five)
+        calculator.pressButton(.function(.percentage))
+        XCTAssertEqual(calculator.text, "123.45")
+        calculator.pressButton(.function(.delete))
+        XCTAssertEqual(calculator.text, "123.4")
+        calculator.pressButton(.function(.inverseSign))
+        XCTAssertEqual(calculator.text, "-123.4")
+        calculator.pressButton(.function(.clear))
+        calculator.pressButton(.function(.delete))
+        XCTAssertEqual(calculator.text, "0")
+        calculator.appendDigit(.one)
+        calculator.pressButton(.function(.allClear))
+        XCTAssertEqual(calculator.text, "0")
     }
 }
