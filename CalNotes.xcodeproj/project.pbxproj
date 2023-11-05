@@ -21,6 +21,7 @@
 		F32FA0AD2AEF578700E09B93 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */; };
 		F32FA0B02AEF57E100E09B93 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA0AF2AEF57E100E09B93 /* Home.swift */; };
 		F32FA0B22AEF58F300E09B93 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = F32FA0B12AEF58F300E09B93 /* home.json */; };
+		F332321A2AF81EF9002AE20C /* CalNotesCreateNoteFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33232192AF81EF9002AE20C /* CalNotesCreateNoteFormTests.swift */; };
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
@@ -142,6 +143,8 @@
 		F3F3DCA62AE8F85E001C1249 /* CalculatorButtonType+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */; };
 		F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */; };
 		F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */; };
+		F3F51D122AF82FC500B72B8D /* CalNotesNoteItemFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F51D112AF82FC500B72B8D /* CalNotesNoteItemFormTests.swift */; };
+		F3F51D142AF8312800B72B8D /* NoteItemFormTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F51D132AF8312800B72B8D /* NoteItemFormTester.swift */; };
 		F3F82DD92AF6290D00459A14 /* NoteItemQuantityUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */; };
 		F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */; };
 /* End PBXBuildFile section */
@@ -177,6 +180,7 @@
 		F32FA0AC2AEF578700E09B93 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		F32FA0AF2AEF57E100E09B93 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		F32FA0B12AEF58F300E09B93 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		F33232192AF81EF9002AE20C /* CalNotesCreateNoteFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCreateNoteFormTests.swift; sourceTree = "<group>"; };
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 		F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+View.swift"; sourceTree = "<group>"; };
 		F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorOperator+Calculation.swift"; sourceTree = "<group>"; };
 		F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCalculatorTests.swift; sourceTree = "<group>"; };
+		F3F51D112AF82FC500B72B8D /* CalNotesNoteItemFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteItemFormTests.swift; sourceTree = "<group>"; };
+		F3F51D132AF8312800B72B8D /* NoteItemFormTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormTester.swift; sourceTree = "<group>"; };
 		F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemQuantityUnit.swift; sourceTree = "<group>"; };
 		F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,7 +483,8 @@
 		F399F9B72A9A73D7006710DF /* CalNotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */,
+				F3F51D102AF82F9900B72B8D /* Note */,
+				F3F51D0F2AF82F8C00B72B8D /* Calculator */,
 			);
 			path = CalNotesTests;
 			sourceTree = "<group>";
@@ -1021,6 +1028,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3F51D0F2AF82F8C00B72B8D /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		F3F51D102AF82F9900B72B8D /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				F33232192AF81EF9002AE20C /* CalNotesCreateNoteFormTests.swift */,
+				F3F51D132AF8312800B72B8D /* NoteItemFormTester.swift */,
+				F3F51D112AF82FC500B72B8D /* CalNotesNoteItemFormTests.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		F3F82DDD2AF6C7F200459A14 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -1308,7 +1333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F332321A2AF81EF9002AE20C /* CalNotesCreateNoteFormTests.swift in Sources */,
 				F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */,
+				F3F51D122AF82FC500B72B8D /* CalNotesNoteItemFormTests.swift in Sources */,
+				F3F51D142AF8312800B72B8D /* NoteItemFormTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
