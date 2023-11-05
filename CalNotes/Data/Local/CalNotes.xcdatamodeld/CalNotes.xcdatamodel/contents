@@ -12,7 +12,7 @@
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="noteId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="quantity" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantity" attributeType="Float" defaultValueString="1" usesScalarValueType="YES"/>
         <attribute name="quantityUnit" optional="YES" attributeType="String"/>
         <attribute name="remarks" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
