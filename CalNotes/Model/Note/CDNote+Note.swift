@@ -7,12 +7,18 @@
 
 import CoreData
 
+extension CDNoteItem {
+    var sum: Float {
+        return amount * quantity
+    }
+}
+
 extension Note {
     init(cdNote: CDNote, cdNoteItems: [CDNoteItem]) {
         self.init(
             id: Int(cdNote.id),
             title: cdNote.title,
-            sum: cdNoteItems.reduce(0, { $0 + $1.amount }),
+            sum: cdNoteItems.reduce(0, { $0 + $1.sum }),
             lastUpdate: cdNote.lastUpdate
         )
     }
@@ -37,7 +43,7 @@ extension NoteDetail {
             id: Int(cdNote.id),
             title: cdNote.title,
             items: cdNoteItems.map { NoteItem(cdNoteItem: $0) },
-            sum: cdNoteItems.reduce(0, { $0 + $1.amount }),
+            sum: cdNoteItems.reduce(0, { $0 + $1.sum }),
             lastUpdate: cdNote.lastUpdate,
             disabled: cdNote.disabled
         )

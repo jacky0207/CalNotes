@@ -14,14 +14,6 @@ struct Note: Record & Hashable {
     var lastUpdate: String
 }
 
-extension Note: Encodable & CustomStringConvertible {
-    var description: String {
-        let jsonData = try! JSONEncoder().encode(self)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
-    }
-}
-
 extension Note {
     static var none: Note {
         return Note(

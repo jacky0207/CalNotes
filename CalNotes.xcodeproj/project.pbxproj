@@ -12,6 +12,7 @@
 		F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */; };
 		F30E09622AE95C040048D776 /* CalcalutorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09612AE95C040048D776 /* CalcalutorColor.swift */; };
 		F30E09642AE990980048D776 /* CalculatorDigit+Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */; };
+		F32FA0902AED041F00E09B93 /* FormNumberIncrementField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */; };
 		F32FA09C2AED998400E09B93 /* NoteTrashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */; };
 		F32FA09E2AED999C00E09B93 /* NoteTrashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */; };
 		F32FA0A02AED99A700E09B93 /* NoteTrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */; };
@@ -53,6 +54,7 @@
 		F399FA152A9A826C006710DF /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399FA0F2A9A826C006710DF /* BuildConfig.swift */; };
 		F399FA162A9A826C006710DF /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F399FA102A9A826C006710DF /* Development.xcconfig */; };
 		F399FA172A9A826C006710DF /* Configuration+Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399FA112A9A826C006710DF /* Configuration+Plist.swift */; };
+		F3AA205A2AF794D80018AD44 /* note_item.json in Resources */ = {isa = PBXBuildFile; fileRef = F3AA20592AF794D80018AD44 /* note_item.json */; };
 		F3B3EE0B2A9D9AF600A1E8A6 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3EE0A2A9D9AF600A1E8A6 /* NoteDetailView.swift */; };
 		F3B3EE0E2A9D9BA200A1E8A6 /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3EE0D2A9D9BA200A1E8A6 /* FormValidation.swift */; };
 		F3B3EE102A9DA5D600A1E8A6 /* View+ImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3EE0F2A9DA5D600A1E8A6 /* View+ImageStyle.swift */; };
@@ -64,7 +66,6 @@
 		F3B3EE222A9F25BA00A1E8A6 /* NoteItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B3EE212A9F25BA00A1E8A6 /* NoteItemForm.swift */; };
 		F3B3EE242A9F33E500A1E8A6 /* note_item_form.json in Resources */ = {isa = PBXBuildFile; fileRef = F3B3EE232A9F33E500A1E8A6 /* note_item_form.json */; };
 		F3B451842AF0ABDB00D7FB06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3B451832AF0ABDB00D7FB06 /* GoogleService-Info.plist */; };
-		F3BAA32D2A9C7AD700586A58 /* note_item.json in Resources */ = {isa = PBXBuildFile; fileRef = F3BAA32C2A9C7AD700586A58 /* note_item.json */; };
 		F3BAA32F2A9D63E100586A58 /* Dimen+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BAA32E2A9D63E100586A58 /* Dimen+Border.swift */; };
 		F3BAA3332A9D90F900586A58 /* FormTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BAA3322A9D90F900586A58 /* FormTextEditor.swift */; };
 		F3BAA3352A9D920A00586A58 /* View+TextEditorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BAA3342A9D920A00586A58 /* View+TextEditorStyle.swift */; };
@@ -142,6 +143,8 @@
 		F3F3DCA62AE8F85E001C1249 /* CalculatorButtonType+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */; };
 		F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */; };
 		F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */; };
+		F3F82DD92AF6290D00459A14 /* NoteItemQuantityUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */; };
+		F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +169,7 @@
 		F30E095F2AE95BBA0048D776 /* CalculatorButtonType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+Color.swift"; sourceTree = "<group>"; };
 		F30E09612AE95C040048D776 /* CalcalutorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcalutorColor.swift; sourceTree = "<group>"; };
 		F30E09632AE990980048D776 /* CalculatorDigit+Concat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorDigit+Concat.swift"; sourceTree = "<group>"; };
+		F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNumberIncrementField.swift; sourceTree = "<group>"; };
 		F32FA09B2AED998400E09B93 /* NoteTrashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashViewModel.swift; sourceTree = "<group>"; };
 		F32FA09D2AED999C00E09B93 /* NoteTrashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashProtocol.swift; sourceTree = "<group>"; };
 		F32FA09F2AED99A700E09B93 /* NoteTrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		F399FA102A9A826C006710DF /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		F399FA112A9A826C006710DF /* Configuration+Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Configuration+Plist.swift"; sourceTree = "<group>"; };
 		F399FA122A9A826C006710DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3AA20592AF794D80018AD44 /* note_item.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = note_item.json; sourceTree = "<group>"; };
 		F3B3EE0A2A9D9AF600A1E8A6 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
 		F3B3EE0D2A9D9BA200A1E8A6 /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		F3B3EE0F2A9DA5D600A1E8A6 /* View+ImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ImageStyle.swift"; sourceTree = "<group>"; };
@@ -221,7 +226,6 @@
 		F3B3EE212A9F25BA00A1E8A6 /* NoteItemForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemForm.swift; sourceTree = "<group>"; };
 		F3B3EE232A9F33E500A1E8A6 /* note_item_form.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = note_item_form.json; sourceTree = "<group>"; };
 		F3B451832AF0ABDB00D7FB06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F3BAA32C2A9C7AD700586A58 /* note_item.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = note_item.json; sourceTree = "<group>"; };
 		F3BAA32E2A9D63E100586A58 /* Dimen+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dimen+Border.swift"; sourceTree = "<group>"; };
 		F3BAA3322A9D90F900586A58 /* FormTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextEditor.swift; sourceTree = "<group>"; };
 		F3BAA3342A9D920A00586A58 /* View+TextEditorStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextEditorStyle.swift"; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 		F3F3DCA52AE8F85E001C1249 /* CalculatorButtonType+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorButtonType+View.swift"; sourceTree = "<group>"; };
 		F3F3DCAB2AE90193001C1249 /* CalculatorOperator+Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalculatorOperator+Calculation.swift"; sourceTree = "<group>"; };
 		F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCalculatorTests.swift; sourceTree = "<group>"; };
+		F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemQuantityUnit.swift; sourceTree = "<group>"; };
+		F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -709,6 +715,7 @@
 		F3C0C28C2AA267DA001844B4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				F3F82DDD2AF6C7F200459A14 /* Logger */,
 				F382B4542AAE7AB100275BAE /* Ads */,
 				F341B5A32ADFCC8800847BD6 /* Date */,
 				F3E1165C2AE459EC004B6B15 /* Image */,
@@ -860,7 +867,7 @@
 				F3C0C2882AA1F953001844B4 /* CDNoteItem+CoreDataClass.swift */,
 				F3C25B1D2AAEE985005BC7C4 /* CDNoteItem+CoreDataProperties.swift */,
 				F3C0C2942AA26D4B001844B4 /* CDNoteItem+NoteItem.swift */,
-				F3BAA32C2A9C7AD700586A58 /* note_item.json */,
+				F3AA20592AF794D80018AD44 /* note_item.json */,
 				F3C4923E2A9B33C3009A63ED /* note_item_list.json */,
 				F3C4923C2A9B33C3009A63ED /* note_item_detail.json */,
 			);
@@ -871,6 +878,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C4923A2A9B33C3009A63ED /* NoteItemCategory.swift */,
+				F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */,
 			);
 			path = Option;
 			sourceTree = "<group>";
@@ -881,6 +889,7 @@
 				F3DB44B22A9B56DC0019050B /* FormTitle.swift */,
 				F3C492102A9B3124009A63ED /* FormTextField.swift */,
 				F3C4920F2A9B3124009A63ED /* FormPasswordField.swift */,
+				F32FA08F2AED041F00E09B93 /* FormNumberIncrementField.swift */,
 				F3BAA3322A9D90F900586A58 /* FormTextEditor.swift */,
 			);
 			path = Text;
@@ -1015,6 +1024,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3F82DDD2AF6C7F200459A14 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1137,11 +1154,11 @@
 				F3DB44C32A9BB5540019050B /* note.json in Resources */,
 				F3C4922D2A9B31C2009A63ED /* NotoSansTC-Medium.otf in Resources */,
 				F3C492422A9B33C3009A63ED /* note_item_detail.json in Resources */,
-				F3BAA32D2A9C7AD700586A58 /* note_item.json in Resources */,
 				F3C4922C2A9B31C2009A63ED /* NotoSansTC-Bold.otf in Resources */,
 				F3DB44BA2A9BB1370019050B /* note_list.json in Resources */,
 				F3B451842AF0ABDB00D7FB06 /* GoogleService-Info.plist in Resources */,
 				F32FA0B22AEF58F300E09B93 /* home.json in Resources */,
+				F3AA205A2AF794D80018AD44 /* note_item.json in Resources */,
 				F399FA092A9A824A006710DF /* Localizable.strings in Resources */,
 				F3DB44BC2A9BB1420019050B /* note_detail.json in Resources */,
 				F399FA162A9A826C006710DF /* Development.xcconfig in Resources */,
@@ -1183,6 +1200,7 @@
 				F3F3DC9B2AE72D86001C1249 /* CalculatorView.swift in Sources */,
 				F3C4920B2A9B304A009A63ED /* NoteItemFormProtocol.swift in Sources */,
 				F3C492092A9B3042009A63ED /* NoteItemFormViewModel.swift in Sources */,
+				F32FA0902AED041F00E09B93 /* FormNumberIncrementField.swift in Sources */,
 				F399F9DD2A9A782B006710DF /* AppState.swift in Sources */,
 				F3F3DCAC2AE90193001C1249 /* CalculatorOperator+Calculation.swift in Sources */,
 				F3C4922A2A9B31C2009A63ED /* ColorStyle.swift in Sources */,
@@ -1233,6 +1251,7 @@
 				F3DB44B32A9B56DC0019050B /* FormTitle.swift in Sources */,
 				F3DB44AB2A9B3A300019050B /* RecordItem.swift in Sources */,
 				F399F9FF2A9A80DC006710DF /* NoteListProtocol.swift in Sources */,
+				F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */,
 				F3DB44C12A9BB4AE0019050B /* NoteView.swift in Sources */,
 				F399FA082A9A824A006710DF /* String+Localizable.swift in Sources */,
 				F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */,
@@ -1243,6 +1262,7 @@
 				F30E09602AE95BBA0048D776 /* CalculatorButtonType+Color.swift in Sources */,
 				F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */,
 				F399F9E12A9A7865006710DF /* DataSession.swift in Sources */,
+				F3F82DD92AF6290D00459A14 /* NoteItemQuantityUnit.swift in Sources */,
 				F3C492162A9B3124009A63ED /* PickerMenu.swift in Sources */,
 				F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */,
 				F3C0C2772AA1E078001844B4 /* CDNote+CoreDataClass.swift in Sources */,

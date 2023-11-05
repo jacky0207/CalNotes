@@ -13,18 +13,10 @@ struct NoteItemDetail: RecordItem {
     var title: String
     var category: Int
     var amount: Float
+    var quantity: Float?
+    var quantityUnit: String?
     var image: Data?
     var remarks: String?
-}
-
-extension NoteItemDetail: Encodable & CustomStringConvertible {
-    var description: String {
-        var object = self
-        object.image = object.image == nil ? nil : Data()
-        let jsonData = try! JSONEncoder().encode(object)
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        return jsonString
-    }
 }
 
 extension NoteItemDetail {

@@ -9,6 +9,8 @@
 "category" = "Category";
 "sum" = "Sum";
 "amount" = "Amount";
+"quantity" = "Quantity";
+"quantity_unit_format" = "x%@ %@";
 "image" = "Image";
 "remarks" = "Remarks";
 // Image
@@ -39,10 +41,6 @@
 "food" = "Food";
 "transport" = "Transport";
 "rent" = "Rent";
-"water" = "Water";
-"heat" = "Heat";
-"hydro" = "Hydro";
-"internet" = "Internet";
 "cellPhone" = "CellPhone";
 "insurance" = "Insurance";
 // Settings

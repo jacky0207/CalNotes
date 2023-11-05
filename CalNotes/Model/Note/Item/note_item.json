@@ -1,8 +1,10 @@
 {
     "id": 1,
     "noteId": 1,
-    "title": "Public Mobile Plan",
-    "category": 8,
-    "amount": 44.0,
-    "remarks": "44GB with 4G speed"
+    "title": "Vegetable",
+    "category": 1,
+    "amount": 0.78,
+    "quantity": 1.361,
+    "quantityUnit": "kg",
+    "sum": 1.0608
 }

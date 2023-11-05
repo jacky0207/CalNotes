@@ -15,19 +15,25 @@ struct PickerItem: Decodable {
 struct PickerMenu<LeftView: View, RightView: View>: View {
     @Binding var selectedId: Int
     var data: [PickerItem]
+    var maxWidth: CGFloat?
     var leftView: () -> LeftView
     var rightView: () -> RightView
+    var spacing: CGFloat
 
     init(
         selectedId: Binding<Int>,
         data: [PickerItem],
+        maxWidth: CGFloat? = nil,
         leftView: @escaping () -> LeftView = { EmptyView() },
-        rightView: @escaping () -> RightView = { EmptyView() }
+        rightView: @escaping () -> RightView = { EmptyView() },
+        spacing: CGFloat = 0
     ) {
         self._selectedId = selectedId
         self.data = data
+        self.maxWidth = maxWidth
         self.leftView = leftView
         self.rightView = rightView
+        self.spacing = spacing
     }
 
     var body: some View {
@@ -57,13 +63,12 @@ struct PickerMenu<LeftView: View, RightView: View>: View {
     func label() -> some View {
         LeftRightViewHStack(
             content: {
-                HStack(spacing: 0) {
-                    Text(data.first(where: { $0.id == selectedId })?.value ?? " ")
-                    Spacer()
-                }
+                Text(data.first(where: { $0.id == selectedId })?.value ?? "")
+                    .frame(maxWidth: maxWidth, alignment: .leading)
             },
             leftView: leftView,
-            rightView: rightView
+            rightView: rightView,
+            spacing: spacing
         )
     }
 }

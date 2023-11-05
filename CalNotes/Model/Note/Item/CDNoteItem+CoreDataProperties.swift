@@ -2,7 +2,7 @@
 //  CDNoteItem+CoreDataProperties.swift
 //  CalNotes
 //
-//  Created by Jacky Lam on 2023-10-23.
+//  Created by Jacky Lam on 2023-11-04.
 //
 //
 
@@ -23,6 +23,8 @@ extension CDNoteItem {
     @NSManaged public var noteId: Int16
     @NSManaged public var remarks: String?
     @NSManaged public var title: String
+    @NSManaged public var quantity: Float
+    @NSManaged public var quantityUnit: String?
 
 }
 

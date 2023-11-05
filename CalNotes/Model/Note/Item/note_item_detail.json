@@ -4,5 +4,6 @@
     "title": "Public Mobile Plan",
     "category": 8,
     "amount": 44.0,
+    "quantity": 1,
     "remarks": "30 GB of data, 4G Speed"
 }

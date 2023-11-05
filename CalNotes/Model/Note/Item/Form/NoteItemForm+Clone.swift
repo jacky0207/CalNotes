@@ -11,6 +11,7 @@ extension NoteItemForm {
             category: Int(cdNoteItem.category),
             title: cdNoteItem.title,
             amount: cdNoteItem.amount,
+            quantity: cdNoteItem.quantity,
             image: cdNoteItem.image,
             remarks: cdNoteItem.remarks
         )
