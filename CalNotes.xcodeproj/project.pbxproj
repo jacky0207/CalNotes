@@ -31,7 +31,6 @@
 		F399F9A52A9A73D5006710DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9A42A9A73D5006710DF /* ContentView.swift */; };
 		F399F9A72A9A73D7006710DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F399F9A62A9A73D7006710DF /* Assets.xcassets */; };
 		F399F9AA2A9A73D7006710DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F399F9A92A9A73D7006710DF /* Preview Assets.xcassets */; };
-		F399F9B92A9A73D7006710DF /* CalNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9B82A9A73D7006710DF /* CalNotesTests.swift */; };
 		F399F9C32A9A73D7006710DF /* CalNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9C22A9A73D7006710DF /* CalNotesUITests.swift */; };
 		F399F9C52A9A73D7006710DF /* CalNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9C42A9A73D7006710DF /* CalNotesUITestsLaunchTests.swift */; };
 		F399F9DD2A9A782B006710DF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9DB2A9A782B006710DF /* AppState.swift */; };
@@ -189,7 +188,6 @@
 		F399F9A62A9A73D7006710DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F399F9A92A9A73D7006710DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F399F9B42A9A73D7006710DF /* CalNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F399F9B82A9A73D7006710DF /* CalNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesTests.swift; sourceTree = "<group>"; };
 		F399F9BE2A9A73D7006710DF /* CalNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F399F9C22A9A73D7006710DF /* CalNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesUITests.swift; sourceTree = "<group>"; };
 		F399F9C42A9A73D7006710DF /* CalNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -479,7 +477,6 @@
 		F399F9B72A9A73D7006710DF /* CalNotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F399F9B82A9A73D7006710DF /* CalNotesTests.swift */,
 				F3F3DCAF2AE909A1001C1249 /* CalNotesCalculatorTests.swift */,
 			);
 			path = CalNotesTests;
@@ -1312,7 +1309,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F3DCB02AE909A1001C1249 /* CalNotesCalculatorTests.swift in Sources */,
-				F399F9B92A9A73D7006710DF /* CalNotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
