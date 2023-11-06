@@ -19,6 +19,7 @@ struct NoteDetailView: View {
             toolbar: toolbar,
             content: content
         )
+        .accessibilityIdentifier("noteDetail")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: editNoteTitleContent)
     }

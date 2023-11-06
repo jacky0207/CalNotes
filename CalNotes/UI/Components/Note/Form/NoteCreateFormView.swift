@@ -30,6 +30,7 @@ struct NoteCreateFormView: View {
             actionDisabled: !form.isValid(),
             content: alertContent
         )
+        .accessibilityIdentifier("createNoteForm")
     }
 
     func alertAction() {
@@ -41,6 +42,7 @@ struct NoteCreateFormView: View {
             title: "",
             text: $form.title
         )
+        .accessibilityIdentifier("titleField")
     }
 }
 

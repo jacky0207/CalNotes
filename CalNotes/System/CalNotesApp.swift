@@ -12,8 +12,11 @@ import GoogleMobileAds
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        if CommandLine.arguments.contains("testing") {
+            UIView.setAnimationsEnabled(false)
+            try! CoreDataHelper.shared.deleteAll()
+        }
         FirebaseApp.configure()
         FirebaseConfiguration.shared.setLoggerLevel(.min)
         GADMobileAds.sharedInstance().start(completionHandler: nil)

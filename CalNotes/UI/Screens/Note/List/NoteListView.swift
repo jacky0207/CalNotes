@@ -53,6 +53,7 @@ struct NoteListView: View {
                 viewModel.deleteNote(at: $0.first!)
             }
         )
+        .accessibilityIdentifier("noteList")
     }
 
     func createFormContent() -> some View {
@@ -80,6 +81,7 @@ struct NoteListView: View {
                 .imageStyle(ImageStyle.Icon())
         }
         .tint(.blue)
+        .accessibilityIdentifier("listRowCloneButton")
     }
 
     func cloneNote(at indexSet: IndexSet) {
@@ -100,6 +102,7 @@ struct NoteListTrailingToolbar: View {
             action: { isShowCreateForm.toggle() },
             label: label
         )
+        .accessibilityIdentifier("createNoteButton")
         .navigationLinkBackground(
             destination: destination,
             isActive: $isNoteSelected

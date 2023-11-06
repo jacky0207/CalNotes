@@ -28,6 +28,7 @@ struct FormView<Content: View>: View {
             content().textStyle(TextStyle.Regular())
             FormFooterView(errorMessage: errorMessage)
         }
+        .accessibilityElement()
     }
 }
 
