@@ -25,6 +25,7 @@ struct NoteListView: View {
                 .frame(height: 60)
                 .background(ColorStyle.background.color)
         }
+        .accessibilityIdentifier("noteList")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: createFormContent)
     }

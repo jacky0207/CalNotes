@@ -20,6 +20,7 @@ struct NoteTrashView: View {
             toolbar: toolbar,
             content: content
         )
+        .accessibilityIdentifier("noteTrash")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: confirmDeleteAllNotesContent)
     }
