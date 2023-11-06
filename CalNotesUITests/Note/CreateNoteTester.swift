@@ -32,6 +32,14 @@ class CreateNoteTester {
         XCTAssertFalse(root.waitForExistence(timeout: 0.5))
     }
 
+    func updateNote() {
+        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
+        titleField.tap()
+        titleField.typeText(" (2)")
+        submitButton.tap()
+        XCTAssertFalse(root.waitForExistence(timeout: 0.5))
+    }
+
     func showError() {
         noteListTester.enterCreateNoteForm()
         XCTAssertTrue(root.waitForExistence(timeout: 0.5))

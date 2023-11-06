@@ -50,53 +50,54 @@ struct NoteItemFormView: View {
                 bottom: Dimen.spacing(.bottomMargin),
                 trailing: Dimen.spacing(.horizontalMargin)
             ),
-            content: formContent
-        )
-    }
-
-    func formContent() -> some View {
-        Group {
-            FormPicker(
-                title: "category".localized(),
-                field: $viewModel.form.category,
-                data: NoteItemCategory.items,
-                leftView: categoryIcon,
-                onSelectedChanged: { id in
-                    if viewModel.form.title.value.isEmpty {
-                        viewModel.form.title.value = NoteItemCategory(rawValue: id)?.name ?? ""
+            content: {
+                FormPicker(
+                    title: "category".localized(),
+                    field: $viewModel.form.category,
+                    data: NoteItemCategory.items,
+                    leftView: categoryIcon,
+                    onSelectedChanged: { id in
+                        if viewModel.form.title.value.isEmpty {
+                            viewModel.form.title.value = NoteItemCategory(rawValue: id)?.name ?? ""
+                        }
                     }
-                }
-            )
-            FormTextField(
-                title: "title".localized(),
-                field: $viewModel.form.title,
-                rightView: removeTitleButton
-            )
-            FormTextField(
-                title: "amount".localized(),
-                field: $viewModel.form.amount,
-                keyboardType: .decimalPad,
-                leftView: { Text("dollar_sign") },
-                rightView: amountCalculatorButton
-            )
-            if NoteItemCategory(rawValue: viewModel.form.category.value)?.isQuantityEnabled ?? false {
+                )
+                .accessibilityIdentifier("categoryField")
                 FormTextField(
-                    title: "quantity".localized(),
-                    field: $viewModel.form.quantity,
+                    title: "title".localized(),
+                    field: $viewModel.form.title,
+                    rightView: removeTitleButton
+                )
+                .accessibilityIdentifier("titleField")
+                FormTextField(
+                    title: "amount".localized(),
+                    field: $viewModel.form.amount,
                     keyboardType: .decimalPad,
-                    min: 0,
-                    rightView: quantityUnitPicker
+                    leftView: { Text("dollar_sign") },
+                    rightView: amountCalculatorButton
+                )
+                .accessibilityIdentifier("amountField")
+                if NoteItemCategory(rawValue: viewModel.form.category.value)?.isQuantityEnabled ?? false {
+                    FormTextField(
+                        title: "quantity".localized(),
+                        field: $viewModel.form.quantity,
+                        keyboardType: .decimalPad,
+                        min: 0,
+                        rightView: quantityUnitPicker
+                    )
+                    .accessibilityIdentifier("quantityField")
+                }
+                FormImagePicker(
+                    title: "image".localized(),
+                    field: $viewModel.form.image
+                )
+                FormTextEditor(
+                    title: "remarks".localized(),
+                    text: $viewModel.form.remarks.value
                 )
             }
-            FormImagePicker(
-                title: "image".localized(),
-                field: $viewModel.form.image
-            )
-            FormTextEditor(
-                title: "remarks".localized(),
-                text: $viewModel.form.remarks.value
-            )
-        }
+        )
+        .accessibilityIdentifier("noteItemForm")
     }
 
     func categoryIcon() -> some View {
@@ -131,6 +132,7 @@ struct NoteItemFormView: View {
             leftView: { Image("arrow_down").resizable().imageStyle(ImageStyle.IconSmall()) }
         )
         .textStyle(TextStyle.Regular())
+        .accessibilityIdentifier("quantityUnitField")
     }
 }
 
@@ -144,6 +146,7 @@ struct NoteItemFormToolbar: View {
             action: action,
             label: label
         )
+        .accessibilityIdentifier("submitNoteItemFormButton")
         .disabled(sendDisabled)
     }
 

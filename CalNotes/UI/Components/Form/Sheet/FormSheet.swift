@@ -45,8 +45,10 @@ struct FormSheet<Content: View>: View {
     }
 
     var body: some View {
-        ScrollView {
+        List {
             Spacer().frame(height: padding.top)
+                .listRowStyle(ListRowStyle.Default())
+
             HStack {
                 Spacer().frame(width: padding.leading)
                 VStack(alignment: .leading, spacing: Dimen.spacing(.small)) {
@@ -58,8 +60,14 @@ struct FormSheet<Content: View>: View {
                 .frame(maxWidth: .infinity)
                 Spacer().frame(width: padding.trailing)
             }
+            .listRowStyle(ListRowStyle.Default())
+
             Spacer().frame(height: Dimen.spacing(.bottomMargin))
+                .listRowStyle(ListRowStyle.Default())
         }
+        .listStyle(ListStyle.Default())
+        .environment(\.defaultMinListRowHeight, 1)
+        .accessibilityElement()
     }
 
     func submitButton() -> some View {

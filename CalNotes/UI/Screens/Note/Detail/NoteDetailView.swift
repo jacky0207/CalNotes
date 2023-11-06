@@ -19,7 +19,6 @@ struct NoteDetailView: View {
             toolbar: toolbar,
             content: content
         )
-        .accessibilityIdentifier("noteDetail")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: editNoteTitleContent)
     }
@@ -49,8 +48,12 @@ struct NoteDetailView: View {
                 }
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .accessibilityElement()
+            .accessibilityIdentifier("noteItemList")
             NoteDetailSumView(sum: viewModel.note.sum)
         }
+        .accessibilityElement()
+        .accessibilityIdentifier("noteDetail")
     }
 
     func listContent(item: NoteItem) -> some View {
@@ -86,6 +89,7 @@ struct NoteDetailView: View {
                 .foregroundColor(.white)
         }
         .tint(.blue)
+        .accessibilityIdentifier("listRowCloneButton")
     }
 
     func cloneNoteItem(at indexSet: IndexSet) {
@@ -104,6 +108,7 @@ struct NoteDetailToolbar: View {
             addButton()
             menu()
         }
+        .accessibilityElement()
     }
 
     func addButton() -> some View {
@@ -111,6 +116,8 @@ struct NoteDetailToolbar: View {
             destination: addDestination,
             label: addLabel
         )
+        .accessibilityAddTraits(.isButton)
+        .accessibilityIdentifier("createNoteItemButton")
     }
 
     func addDestination() -> some View {
@@ -135,6 +142,8 @@ struct NoteDetailToolbar: View {
             },
             label: menuLabel
         )
+        .accessibilityAddTraits(.isButton)
+        .accessibilityIdentifier("noteDetailMenu")
     }
 
     func menuLabel() -> some View {
@@ -148,6 +157,7 @@ struct NoteDetailToolbar: View {
             action: { isShowEditNoteTitle = true },
             label: editNoteTitleLabel
         )
+        .accessibilityIdentifier("editNoteTitleButton")
     }
 
     func editNoteTitleLabel() -> some View {
@@ -165,6 +175,7 @@ struct NoteDetailToolbar: View {
             action: deleteNoteAction,
             label: deleteNoteLabel
         )
+        .accessibilityIdentifier("deleteNoteButton")
     }
 
     func deleteNoteLabel() -> some View {

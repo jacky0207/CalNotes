@@ -28,6 +28,10 @@
 		F34A81ED2AF871F900FE4C6D /* CalNotesNoteListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */; };
 		F34A81EF2AF8727000FE4C6D /* CreateNoteTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */; };
 		F34A81F12AF8757D00FE4C6D /* NoteListTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */; };
+		F34A81F42AF8B70400FE4C6D /* NoteDetailTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */; };
+		F34A81F62AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */; };
+		F34A81F82AF8B82100FE4C6D /* NoteItemFormTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */; };
+		F34A81FA2AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */; };
 		F382B4532AAE784800275BAE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F382B4522AAE784700275BAE /* GoogleMobileAds */; };
 		F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F382B4552AAE7AC700275BAE /* BannerViewController.swift */; };
 		F382B4582AAE7AEF00275BAE /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F382B4572AAE7AEF00275BAE /* BannerView.swift */; };
@@ -189,6 +193,10 @@
 		F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteListUITests.swift; sourceTree = "<group>"; };
 		F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteTester.swift; sourceTree = "<group>"; };
 		F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTester.swift; sourceTree = "<group>"; };
+		F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailTester.swift; sourceTree = "<group>"; };
+		F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteDetailUITests.swift; sourceTree = "<group>"; };
+		F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormTester.swift; sourceTree = "<group>"; };
+		F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteItemFormUITests.swift; sourceTree = "<group>"; };
 		F382B4552AAE7AC700275BAE /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		F382B4572AAE7AEF00275BAE /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		F399F99F2A9A73D5006710DF /* CalNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1056,6 +1064,10 @@
 				F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */,
 				F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */,
 				F399F9C22A9A73D7006710DF /* CalNotesCreateNoteUITests.swift */,
+				F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */,
+				F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */,
+				F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */,
+				F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -1359,9 +1371,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F34A81F12AF8757D00FE4C6D /* NoteListTester.swift in Sources */,
+				F34A81F62AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift in Sources */,
 				F34A81ED2AF871F900FE4C6D /* CalNotesNoteListUITests.swift in Sources */,
+				F34A81F82AF8B82100FE4C6D /* NoteItemFormTester.swift in Sources */,
 				F34A81EF2AF8727000FE4C6D /* CreateNoteTester.swift in Sources */,
+				F34A81FA2AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift in Sources */,
 				F399F9C32A9A73D7006710DF /* CalNotesCreateNoteUITests.swift in Sources */,
+				F34A81F42AF8B70400FE4C6D /* NoteDetailTester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
