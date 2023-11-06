@@ -23,11 +23,11 @@ final class CalNotesNoteItemFormUITests: XCTestCase {
         tester.createFoodNoteItem()
     }
 
-    func testNoteItemForm_CreateFoodItem_Fail() throws {
-        tester.showFoodNoteItemQuantityError()
-    }
-
     func testNoteItemForm_CreateTransportationItem_Success() throws {
         tester.createTransportationNoteItem()
+    }
+
+    func testNoteItemForm_Fail() throws {
+        tester.showError()
     }
 }
