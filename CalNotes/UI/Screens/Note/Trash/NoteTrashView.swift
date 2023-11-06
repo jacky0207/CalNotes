@@ -20,6 +20,7 @@ struct NoteTrashView: View {
             toolbar: toolbar,
             content: content
         )
+        .accessibilityIdentifier("noteTrash")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: confirmDeleteAllNotesContent)
     }
@@ -46,6 +47,7 @@ struct NoteTrashView: View {
                 viewModel.deleteNote(at: $0.first!)
             }
         )
+        .accessibilityIdentifier("noteTrashList")
     }
 
     func confirmDeleteAllNotesContent() -> some View {
@@ -61,7 +63,7 @@ struct NoteTrashView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             }
-        ))
+        ).accessibilityIdentifier("deleteAllNoteForm"))
     }
 
     func recoverButton(at indexSet: IndexSet) -> some View {
@@ -73,6 +75,7 @@ struct NoteTrashView: View {
                 .imageStyle(ImageStyle.Icon())
         }
         .tint(.green)
+        .accessibilityIdentifier("listRowRecoverButton")
     }
 
     func recoverNote(at indexSet: IndexSet) {
@@ -85,10 +88,6 @@ struct NoteTrashToolbar: View {
     @Binding var isShowDeleteAllNotes: Bool
 
     var body: some View {
-        deleteButton()
-    }
-
-    func deleteButton() -> some View {
         Button(
             action: {
                 isShowDeleteAllNotes.toggle()
@@ -99,6 +98,7 @@ struct NoteTrashToolbar: View {
                     .imageStyle(ImageStyle.Icon())
             }
         )
+        .accessibilityIdentifier("deleteAllNoteButton")
     }
 }
 

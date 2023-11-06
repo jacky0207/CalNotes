@@ -73,6 +73,8 @@ struct HomeNotesView: View {
                 )
             }
         )
+        .accessibilityAddTraits(.isButton)
+        .accessibilityIdentifier("noteListButton")
     }
 
     func trashButton() -> some View {
@@ -86,6 +88,8 @@ struct HomeNotesView: View {
                 )
             }
         )
+        .accessibilityAddTraits(.isButton)
+        .accessibilityIdentifier("noteTrashButton")
     }
 }
 

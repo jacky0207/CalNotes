@@ -117,11 +117,14 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                                     .imageStyle(ImageStyle.Icon())
                             }
                             .tint(.red)
+                            .accessibilityIdentifier("listRowDeleteButton")
                         }
                         if let swipeContent = swipeContent {
                             swipeContent(indexSet)
                         }
                     }
+                    .accessibilityElement()
+                    .accessibilityIdentifier("listRow")
             }.onMove { from, to in
                 moveItem?(from, to)
             }
@@ -132,6 +135,7 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
         .listStyle(ListStyle.Default())
 //        .id(UUID())  // disable animation to avoid overlap with observed object change
         .environment(\.defaultMinListRowHeight, 1)
+        .accessibilityElement()
     }
 }
 

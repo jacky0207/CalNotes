@@ -57,6 +57,7 @@ struct BodyView<Content: View, ToolbarLeading: View, ToolbarTrailing: View>: Vie
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(ColorStyle.background.color)
+            .accessibilityElement()
     }
 }
 

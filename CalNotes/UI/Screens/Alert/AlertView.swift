@@ -89,6 +89,7 @@ struct AlertView<Content: View>: View {
             .stackStyle(StackStyle.Alert())
             .padding(.horizontal, Dimen.spacing(.horizontalMargin))
         }
+        .accessibilityElement()
     }
 }
 
@@ -111,10 +112,12 @@ struct AlertFooterView: View {
             if action == nil {
                 Button("ok", action: positiveAction)
                     .buttonStyle(RoundedRectButtonStyle(maxWidth: .infinity))
+                    .accessibilityIdentifier("submitButton")
             } else {
                 Button("ok", action: positiveAction)
                     .buttonStyle(RoundedRectButtonStyle())
                     .disabled(actionDisabled)
+                    .accessibilityIdentifier("submitButton")
 
                 Spacer()
 

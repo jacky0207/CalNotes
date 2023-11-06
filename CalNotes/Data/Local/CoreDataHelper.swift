@@ -39,7 +39,7 @@ protocol CoreDataHelperProtocol {
     func moveNoteItem(noteId: Int, noteItemId: Int, newNoteItemId: Int) throws
 }
 
-struct CoreDataHelper: CoreDataHelperProtocol {
+class CoreDataHelper: CoreDataHelperProtocol {
     static let containerName = "CalNotes"
     static let shared = CoreDataHelper()
     var container: NSPersistentContainer = NSPersistentContainer(name: containerName)
@@ -52,7 +52,7 @@ struct CoreDataHelper: CoreDataHelperProtocol {
         }
     }
 
-    mutating func deleteAll() throws {
+    func deleteAll() throws {
         // Get a reference to a NSPersistentStoreCoordinator
         let storeContainer = container.persistentStoreCoordinator
 
@@ -66,7 +66,7 @@ struct CoreDataHelper: CoreDataHelperProtocol {
         }
 
         // Re-create the persistent container
-        container = NSPersistentContainer(name: "CalNotes")
+        container = NSPersistentContainer(name: CoreDataHelper.containerName)
 
         // Calling loadPersistentStores will re-create the persistent stores
         container.loadPersistentStores { description, error in

@@ -13,6 +13,11 @@
       "targets" : [
         {
           "containerPath" : "container:CalNotes.xcodeproj",
+          "identifier" : "F399F99E2A9A73D5006710DF",
+          "name" : "CalNotes"
+        },
+        {
+          "containerPath" : "container:CalNotes.xcodeproj",
           "identifier" : "F399F9B32A9A73D7006710DF",
           "name" : "CalNotesTests"
         }
