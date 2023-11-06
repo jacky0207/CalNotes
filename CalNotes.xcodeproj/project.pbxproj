@@ -141,7 +141,6 @@
 		F3E97E4E2AA48815006880A4 /* CreateNoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4D2AA48815006880A4 /* CreateNoteForm.swift */; };
 		F3E97E502AA4CFA0006880A4 /* NoteCreateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */; };
 		F3E97E5B2AA58DFC006880A4 /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */; };
-		F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6A2AA59D34006880A4 /* QA.xcconfig */; };
 		F3E97E6E2AA633AC006880A4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */; };
 		F3F3DC8A2AE53E96001C1249 /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC892AE53E96001C1249 /* ImagePreviewView.swift */; };
 		F3F3DC972AE7154D001C1249 /* LeftRightViewHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3DC962AE7154D001C1249 /* LeftRightViewHStack.swift */; };
@@ -314,8 +313,6 @@
 		F3E97E4F2AA4CFA0006880A4 /* NoteCreateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCreateFormView.swift; sourceTree = "<group>"; };
 		F3E97E5A2AA58DFC006880A4 /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
 		F3E97E5C2AA59C0F006880A4 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
-		F3E97E692AA59D2A006880A4 /* UAT.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = UAT.xcconfig; sourceTree = "<group>"; };
-		F3E97E6A2AA59D34006880A4 /* QA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = QA.xcconfig; sourceTree = "<group>"; };
 		F3E97E6C2AA59D3F006880A4 /* Beta.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Beta.xcconfig; sourceTree = "<group>"; };
 		F3E97E6D2AA633AC006880A4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		F3E97E6F2AA6447D006880A4 /* CalNotes.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CalNotes.xctestplan; sourceTree = "<group>"; };
@@ -698,8 +695,6 @@
 			isa = PBXGroup;
 			children = (
 				F399FA102A9A826C006710DF /* Development.xcconfig */,
-				F3E97E692AA59D2A006880A4 /* UAT.xcconfig */,
-				F3E97E6A2AA59D34006880A4 /* QA.xcconfig */,
 				F3E97E6C2AA59D3F006880A4 /* Beta.xcconfig */,
 				F3E97E5C2AA59C0F006880A4 /* Production.xcconfig */,
 				F399FA122A9A826C006710DF /* Info.plist */,
@@ -1311,7 +1306,6 @@
 				F3E97E502AA4CFA0006880A4 /* NoteCreateFormView.swift in Sources */,
 				F3C4922F2A9B31C2009A63ED /* FontStyle.swift in Sources */,
 				F3C0C2852AA1EDF6001844B4 /* CalNotes.xcdatamodeld in Sources */,
-				F3E97E6B2AA59D34006880A4 /* QA.xcconfig in Sources */,
 				F3F3DCA22AE84651001C1249 /* Calculator.swift in Sources */,
 				F3DB44D62A9C0E0A0019050B /* View+ListStyle.swift in Sources */,
 				F3DB44DB2A9C1A9B0019050B /* BodyView.swift in Sources */,
@@ -1699,284 +1693,6 @@
 			};
 			name = Production;
 		};
-		F3E97E5D2AA59CBD006880A4 /* UAT */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3E97E692AA59D2A006880A4 /* UAT.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = UAT;
-		};
-		F3E97E5E2AA59CBD006880A4 /* UAT */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CalNotes/Resources\"";
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = UAT;
-		};
-		F3E97E5F2AA59CBD006880A4 /* UAT */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
-			};
-			name = UAT;
-		};
-		F3E97E602AA59CBD006880A4 /* UAT */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CalNotes;
-			};
-			name = UAT;
-		};
-		F3E97E612AA59CD9006880A4 /* QA */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3E97E6A2AA59D34006880A4 /* QA.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = QA;
-		};
-		F3E97E622AA59CD9006880A4 /* QA */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CalNotes/Resources\"";
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CalNotes/Resources/Configs/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to camera";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires acess to photo library";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 0.1;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = QA;
-		};
-		F3E97E632AA59CD9006880A4 /* QA */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalNotes.app/CalNotes";
-			};
-			name = QA;
-		};
-		F3E97E642AA59CD9006880A4 /* QA */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6HCGREW92J;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CalNotes;
-			};
-			name = QA;
-		};
 		F3E97E652AA59CDD006880A4 /* Beta */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3E97E6C2AA59D3F006880A4 /* Beta.xcconfig */;
@@ -2125,8 +1841,6 @@
 				F399F9C62A9A73D7006710DF /* Development */,
 				F39DF1B12AAE93E00071ABD1 /* Production */,
 				F3E97E652AA59CDD006880A4 /* Beta */,
-				F3E97E612AA59CD9006880A4 /* QA */,
-				F3E97E5D2AA59CBD006880A4 /* UAT */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;
@@ -2137,8 +1851,6 @@
 				F399F9C92A9A73D7006710DF /* Development */,
 				F39DF1B22AAE93E00071ABD1 /* Production */,
 				F3E97E662AA59CDD006880A4 /* Beta */,
-				F3E97E622AA59CD9006880A4 /* QA */,
-				F3E97E5E2AA59CBD006880A4 /* UAT */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;
@@ -2149,8 +1861,6 @@
 				F399F9CC2A9A73D7006710DF /* Development */,
 				F39DF1B32AAE93E00071ABD1 /* Production */,
 				F3E97E672AA59CDD006880A4 /* Beta */,
-				F3E97E632AA59CD9006880A4 /* QA */,
-				F3E97E5F2AA59CBD006880A4 /* UAT */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;
@@ -2161,8 +1871,6 @@
 				F399F9CF2A9A73D7006710DF /* Development */,
 				F39DF1B42AAE93E00071ABD1 /* Production */,
 				F3E97E682AA59CDD006880A4 /* Beta */,
-				F3E97E642AA59CD9006880A4 /* QA */,
-				F3E97E602AA59CBD006880A4 /* UAT */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Production;
