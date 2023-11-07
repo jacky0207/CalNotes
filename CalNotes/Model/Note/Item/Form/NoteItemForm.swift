@@ -58,6 +58,18 @@ extension NoteItemForm.LocalForm {
             remarks: .init("")
         )
     }
+
+    static func image(_ image: UIImage?) -> NoteItemForm.LocalForm {
+        return NoteItemForm.LocalForm(
+            category: .init(NoteItemCategory.dollar.rawValue),
+            title: .init(""),
+            amount: .init(""),
+            quantity: .init("1"),
+            quantityUnit: .init(-1),
+            image: .init(image),
+            remarks: .init("")
+        )
+    }
 }
 
 // MARK: - FormValidation

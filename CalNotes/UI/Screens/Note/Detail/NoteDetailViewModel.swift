@@ -5,7 +5,7 @@
 //  Created by Jacky Lam on 2023-08-28.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class NoteDetailViewModel: ViewModel, ObservableObject, NoteDetailProtocol {

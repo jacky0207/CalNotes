@@ -12,6 +12,9 @@ struct NoteDetailView: View {
     @Environment(\.diContainer) var diContainer
     @ObservedObject var viewModel: NoteDetailViewModel
     @State private var isShowEditNoteTitle = false
+    @State private var isShowNoteItemCamera = false
+    @State private var selectedImage: UIImage?
+    @State private var isNoteItemPhotoTook = false
 
     var body: some View {
         BodyView(
@@ -21,6 +24,15 @@ struct NoteDetailView: View {
         )
         .onAppear(perform: viewModel.loadData)
         .overlay(content: editNoteTitleContent)
+        .sheet(isPresented: $isShowNoteItemCamera) {
+            ImagePickerView(
+                sourceType: .camera,
+                selectedImage: $selectedImage,
+                onSelectedChange: { _ in
+                    isNoteItemPhotoTook.toggle()
+                }
+            )
+        }
     }
 
     func toolbar() -> some View {
@@ -30,6 +42,9 @@ struct NoteDetailView: View {
         return AnyView(NoteDetailToolbar(
             note: viewModel.note,
             isShowEditNoteTitle: $isShowEditNoteTitle,
+            isShowNoteItemCamera: $isShowNoteItemCamera,
+            isNoteItemPhotoTook: $isNoteItemPhotoTook,
+            image: selectedImage,
             deleteNoteAction: deleteNote
         ))
     }
@@ -101,6 +116,9 @@ struct NoteDetailToolbar: View {
     @Environment(\.diContainer) var diContainer
     var note: NoteDetail
     @Binding var isShowEditNoteTitle: Bool
+    @Binding var isShowNoteItemCamera: Bool
+    @Binding var isNoteItemPhotoTook: Bool
+    var image: UIImage?
     var deleteNoteAction: () -> Void
 
     var body: some View {
@@ -124,7 +142,8 @@ struct NoteDetailToolbar: View {
         NoteItemFormView(viewModel: NoteItemFormViewModel(
             diContainer: diContainer,
             noteId: note.id,
-            noteItemId: nil
+            noteItemId: nil,
+            image: nil
         ))
     }
 
@@ -138,12 +157,17 @@ struct NoteDetailToolbar: View {
         Menu(
             content: {
                 editNoteTitleButton()
+                addNoteItemCameraButton()
                 deleteNoteButton()
             },
             label: menuLabel
         )
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("noteDetailMenu")
+        .navigationLinkBackground(
+            destination: addPhotoDestination,
+            isActive: $isNoteItemPhotoTook
+        )
     }
 
     func menuLabel() -> some View {
@@ -160,11 +184,37 @@ struct NoteDetailToolbar: View {
         .accessibilityIdentifier("editNoteTitleButton")
     }
 
+    func addPhotoDestination() -> some View {
+        NoteItemFormView(viewModel: NoteItemFormViewModel(
+            diContainer: diContainer,
+            noteId: note.id,
+            noteItemId: nil,
+            image: image
+        ))
+    }
+
     func editNoteTitleLabel() -> some View {
         HStack {
             Text("edit_note_name")
                 .textStyle(TextStyle.Regular())
             Image("edit")
+                .imageStyle(ImageStyle.Icon())
+        }
+    }
+
+    func addNoteItemCameraButton() -> some View {
+        Button(
+            action: { isShowNoteItemCamera = true },
+            label: addNoteItemCameraLabel
+        )
+        .accessibilityIdentifier("addNoteItemCameraButton")
+    }
+
+    func addNoteItemCameraLabel() -> some View {
+        HStack {
+            Text("add_note_item_camera")
+                .textStyle(TextStyle.Regular())
+            Image("camera")
                 .imageStyle(ImageStyle.Icon())
         }
     }
@@ -208,7 +258,8 @@ struct NoteDetailItemView: View {
         NoteItemFormView(viewModel: NoteItemFormViewModel(
             diContainer: diContainer,
             noteId: item.noteId,
-            noteItemId: item.id
+            noteItemId: item.id,
+            image: nil
         ))
     }
 
