@@ -1503,7 +1503,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = "1.0-dev";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1642,7 +1642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1781,7 +1781,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = "1.0-beta";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wannabee.CalNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
