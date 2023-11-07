@@ -11,13 +11,16 @@ struct ImagePickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) private var presentationMode
     var sourceType: UIImagePickerController.SourceType
     @Binding var selectedImage: Optional<UIImage>
+    var onSelectedChange: (UIImage) -> Void
 
     init(
         sourceType: UIImagePickerController.SourceType,
-        selectedImage: Binding<Optional<UIImage>>
+        selectedImage: Binding<Optional<UIImage>>,
+        onSelectedChange: @escaping (UIImage) -> Void = { _ in }
     ) {
         self.sourceType = sourceType
         self._selectedImage = selectedImage
+        self.onSelectedChange = onSelectedChange
     }
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePickerView>) -> UIImagePickerController {
@@ -44,8 +47,12 @@ struct ImagePickerView: UIViewControllerRepresentable {
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            if let image = image {
                 parent.selectedImage = image
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {  // trigger after selectedImage updated
+                    self.parent.onSelectedChange(image)
+                }
             }
             parent.presentationMode.wrappedValue.dismiss()
         }

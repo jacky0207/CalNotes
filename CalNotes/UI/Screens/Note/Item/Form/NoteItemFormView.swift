@@ -167,7 +167,7 @@ struct NoteItemFormView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                NoteItemFormView(viewModel: NoteItemFormViewModel(diContainer: DIContainer(), noteId: 0, noteItemId: nil))
+                NoteItemFormView(viewModel: NoteItemFormViewModel(diContainer: DIContainer(), noteId: 0, noteItemId: nil, image: nil))
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .previewDisplayName("Add Form")

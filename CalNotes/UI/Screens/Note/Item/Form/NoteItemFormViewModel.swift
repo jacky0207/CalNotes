@@ -6,15 +6,17 @@
 //
 
 import Combine
+import SwiftUI
 
 class NoteItemFormViewModel: ViewModel, ObservableObject, NoteItemFormProtocol {
     var noteId: Int
     var noteItemId: Int?
     @Published var form: NoteItemForm.LocalForm = .none
 
-    required init(diContainer: DIContainer, noteId: Int, noteItemId: Int?) {
+    required init(diContainer: DIContainer, noteId: Int, noteItemId: Int?, image: UIImage?) {
         self.noteId = noteId
         self.noteItemId = noteItemId
+        self.form = .image(image)
         super.init(diContainer: diContainer)
     }
 
@@ -95,7 +97,7 @@ class NoteItemFormViewModel: ViewModel, ObservableObject, NoteItemFormProtocol {
 #if DEBUG
 extension NoteItemFormViewModel {
     convenience init(preview: Bool) {
-        self.init(diContainer: DIContainer(), noteId: 0, noteItemId: 0)
+        self.init(diContainer: DIContainer(), noteId: 0, noteItemId: 0, image: nil)
         if preview {
             form = NoteItemForm.LocalForm(noteItemDetail: ModelData().noteItemDetail)
         }

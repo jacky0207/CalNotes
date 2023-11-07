@@ -36,6 +36,7 @@
 "delete_note_confirm_message" = "These notes will be deleted. This action cannot be undone";
 // Note Item
 "add_note_item" = "Add Note Item";
+"add_note_item_camera" = "Take Note Item Photo";
 "update_note_item" = "Update Note Item";
 // Note Item Category
 "food" = "Food";
