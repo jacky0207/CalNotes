@@ -41,7 +41,7 @@ struct PickerMenu<LeftView: View, RightView: View>: View {
             content: content,
             label: label
         )
-        .accessibilityElement()
+        .accessibilityElement(children: .contain)
     }
 
     func content() -> some View {

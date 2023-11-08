@@ -87,6 +87,7 @@ struct FormTextField<LeftView: View, RightView: View>: View {
             content: {
                 TextField(placeholder, text: $text)
                     .keyboardType(keyboardType)
+                    .accessibilityIdentifier("content")
             },
             leftView: { FormView<LeftView>.styled(leftView()) },
             rightView: { FormView<LeftView>.styled(rightView()) },

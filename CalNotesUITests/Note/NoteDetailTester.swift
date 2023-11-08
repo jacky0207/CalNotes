@@ -18,9 +18,9 @@ class NoteDetailTester {
     lazy var deleteNoteButton = app.buttons["deleteNoteButton"]
     lazy var editNoteTitleForm = app.otherElements["createNoteForm"]
     lazy var noteItemList = root.otherElements["noteItemList"]
-    lazy var noteItemListRow = root.otherElements["listRow"].firstMatch
-    lazy var noteItemListRowDeleteButton = noteItemList.buttons["listRowDeleteButton"]
-    lazy var noteItemListRowCloneButton = noteItemList.buttons["listRowCloneButton"]
+    lazy var noteItemListRow = app.otherElements["listRow"].firstMatch
+    lazy var noteItemListRowDeleteButton = noteItemList.buttons["listRowDeleteButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+    lazy var noteItemListRowCloneButton = noteItemList.buttons["listRowCloneButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteItemForm = app.otherElements["noteItemForm"]
 
     init(app: XCUIApplication) {
@@ -62,6 +62,7 @@ class NoteDetailTester {
         let tester = NoteItemFormTester(app: app)
         tester.createFoodNoteItem()
         XCTAssertTrue(root.waitForExistence(timeout: 0.5))
+        XCTAssertTrue(noteItemList.waitForExistence(timeout: 0.5))
         noteItemListRow.tap()
         XCTAssertTrue(noteItemForm.waitForExistence(timeout: 0.5))
     }

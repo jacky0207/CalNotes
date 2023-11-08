@@ -11,8 +11,8 @@ class CreateNoteTester {
     let app: XCUIApplication
     lazy var noteListTester = NoteListTester(app: app)
     lazy var root = noteListTester.createNoteForm
-    lazy var titleField = root.otherElements["titleField"].textFields.firstMatch
-    lazy var submitButton = root.buttons["submitButton"]
+    lazy var titleField = root.otherElements["titleField"].textFields["content"]
+    lazy var submitButton = root.buttons["submitButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
 
     init(app: XCUIApplication) {
         self.app = app

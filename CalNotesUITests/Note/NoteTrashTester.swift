@@ -14,11 +14,11 @@ class NoteTrashTester {
     lazy var root = homeTester.noteTrash
     lazy var deleteAllNoteButton = app.buttons["deleteAllNoteButton"]
     lazy var deleteAllNoteForm = app.otherElements["deleteAllNoteForm"]
-    lazy var deleteAllNoteSubmitButton = deleteAllNoteForm.buttons["submitButton"]
+    lazy var deleteAllNoteSubmitButton = deleteAllNoteForm.buttons["submitButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteTrashList = root.otherElements["noteTrashList"]
-    lazy var noteTrashListRow = root.otherElements["listRow"].firstMatch
-    lazy var noteTrashListRowDeleteButton = noteTrashList.buttons["listRowDeleteButton"]
-    lazy var noteTrashListRowRecoverButton = noteTrashList.buttons["listRowRecoverButton"]
+    lazy var noteTrashListRow = app.otherElements["listRow"].firstMatch
+    lazy var noteTrashListRowDeleteButton = noteTrashList.buttons["listRowDeleteButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+    lazy var noteTrashListRowRecoverButton = noteTrashList.buttons["listRowRecoverButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteDetail = app.otherElements["noteDetail"]
 
     init(app: XCUIApplication) {

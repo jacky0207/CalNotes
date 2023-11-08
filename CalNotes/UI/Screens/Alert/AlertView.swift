@@ -85,11 +85,12 @@ struct AlertView<Content: View>: View {
                 content()
                 AlertFooterView(isPresented: isPresented, action: action, actionDisabled: actionDisabled)
             }
+            .accessibilityElement(children: .contain)
             .frame(maxWidth: .infinity, alignment: .leading)
             .stackStyle(StackStyle.Alert())
             .padding(.horizontal, Dimen.spacing(.horizontalMargin))
         }
-        .accessibilityElement()
+        .accessibilityElement(children: .contain)
     }
 }
 

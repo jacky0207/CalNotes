@@ -41,7 +41,6 @@ struct NavigationViewLink<Content: View, Label: View>: View {
             destination: destination,
             isActive: $isActive
         )
-        .accessibilityElement()
     }
 }
 

@@ -14,9 +14,9 @@ class NoteListTester {
     lazy var createNoteButton = root.buttons["createNoteButton"]
     lazy var createNoteForm = root.otherElements["createNoteForm"]
     lazy var noteList = root.otherElements["noteList"]
-    lazy var noteListRow = root.otherElements["listRow"].firstMatch
-    lazy var noteListRowDeleteButton = noteList.buttons["listRowDeleteButton"]
-    lazy var noteListRowCloneButton = noteList.buttons["listRowCloneButton"]
+    lazy var noteListRow = app.otherElements["listRow"].firstMatch
+    lazy var noteListRowDeleteButton = noteList.buttons["listRowDeleteButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+    lazy var noteListRowCloneButton = noteList.buttons["listRowCloneButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteDetail = root.otherElements["noteDetail"]
 
     init(app: XCUIApplication) {
