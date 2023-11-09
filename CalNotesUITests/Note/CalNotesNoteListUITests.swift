@@ -20,18 +20,40 @@ final class CalNotesNoteListUITests: XCTestCase {
     }
 
     func testNoteList_EnterCreateNote() throws {
-        tester.enterCreateNoteForm()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.tapCreateNote()
+        XCTAssertTrue(tester.isEnteredCreateNoteForm())
     }
 
     func testNoteList_EnterNoteDetail() throws {
-        tester.enterNoteDetail()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.tapCreateNote()
+        tester.completeCreateNote()
+        XCTAssertTrue(tester.isEnteredNoteDetail())
     }
 
     func testNoteList_DeleteNote() throws {
-        tester.deleteNote()
+        XCTAssertFalse(tester.isNoteListRowExist())
+        tester.tapCreateNote()
+        tester.completeCreateNote()
+        tester.tapBack()
+        XCTAssertTrue(tester.isNoteListRowExist())
+        tester.tapRowDelete()
+        XCTAssertFalse(tester.isNoteListRowExist())
     }
 
     func testNoteList_CloneNote() throws {
-        tester.cloneNote()
+        XCTAssertFalse(tester.isNoteListRowExist())
+        tester.tapCreateNote()
+        tester.completeCreateNote()
+        tester.tapBack()
+        XCTAssertTrue(tester.isNoteListRowExist())
+        tester.tapRowClone()
+        tester.tapBack()
+        XCTAssertTrue(tester.isNoteListRowExist())
+        tester.tapRowDelete()
+        XCTAssertTrue(tester.isNoteListRowExist())
+        tester.tapRowDelete()
+        XCTAssertFalse(tester.isNoteListRowExist())
     }
 }

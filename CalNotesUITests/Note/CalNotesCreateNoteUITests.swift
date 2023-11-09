@@ -13,6 +13,7 @@ final class CalNotesCreateNoteUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         tester.reset()
+        tester.enterPage()
     }
 
     override func tearDownWithError() throws {
@@ -20,10 +21,14 @@ final class CalNotesCreateNoteUITests: XCTestCase {
     }
 
     func testCreateNote_Success() throws {
-        tester.createNote()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.completeForm()
+        XCTAssertFalse(tester.isEnteredPage())
     }
 
     func testCreateNote_Fail() throws {
-        tester.showError()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.tapSubmit()
+        XCTAssertTrue(tester.isEnteredPage())
     }
 }

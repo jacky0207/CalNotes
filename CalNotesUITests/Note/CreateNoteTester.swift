@@ -7,14 +7,14 @@
 
 import XCTest
 
-class CreateNoteTester {
+class CreateNoteTester: UITester {
     let app: XCUIApplication
     lazy var noteListTester = NoteListTester(app: app)
     lazy var root = noteListTester.createNoteForm
-    lazy var titleField = root.otherElements["titleField"].textFields["content"]
-    lazy var submitButton = root.buttons["submitButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+    lazy var titleField = app.otherElements["titleField"].textFields["content"]
+    lazy var submitButton = app.buttons["submitButton"]
 
-    init(app: XCUIApplication) {
+    required init(app: XCUIApplication) {
         self.app = app
         self.app.launchArguments = ["testing"]
     }
@@ -23,28 +23,31 @@ class CreateNoteTester {
         app.launch()
     }
 
-    func createNote() {
-        noteListTester.enterCreateNoteForm()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
+    func enterPage() {
+        noteListTester.tapCreateNote()
+    }
+
+    func isEnteredPage() -> Bool {
+        return root.waitForExistence(timeout: 0.5)
+    }
+
+    func typeTitle() {
         titleField.tap()
         titleField.typeText("Weekly Spend")
-        submitButton.tap()
-        XCTAssertFalse(root.waitForExistence(timeout: 0.5))
     }
 
-    func updateNote() {
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
-        titleField.tap()
-        titleField.typeText(" (2)")
+    func tapSubmit() {
+        if app.keys.element(boundBy: 0).exists {
+            app.typeText("\n")
+        }
         submitButton.tap()
-        XCTAssertFalse(root.waitForExistence(timeout: 0.5))
     }
+}
 
-    func showError() {
-        noteListTester.enterCreateNoteForm()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
-        titleField.tap()
-        submitButton.tap()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
+// MARK: - Form
+extension CreateNoteTester {
+    func completeForm() {
+        typeTitle()
+        tapSubmit()
     }
 }

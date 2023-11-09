@@ -13,6 +13,7 @@ final class CalNotesNoteTrashUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         tester.reset()
+        tester.enterPage()
     }
 
     override func tearDownWithError() throws {
@@ -20,18 +21,30 @@ final class CalNotesNoteTrashUITests: XCTestCase {
     }
 
     func testNoteTrash_EnterNoteDetail() throws {
-        tester.enterNoteDetail()
+        XCTAssertTrue(tester.isEnteredPage())
+        XCTAssertTrue(tester.isNoteTrashRowExist())
+        tester.tapTrashRow()
+        XCTAssertTrue(tester.isNoteDetailExist())
     }
 
     func testNoteTrash_DeleteAllNotes() throws {
-        tester.deleteAllNotes()
+        XCTAssertTrue(tester.isEnteredPage())
+        XCTAssertTrue(tester.isNoteTrashRowExist())
+        tester.tapDeleteAllNotes()
+        XCTAssertFalse(tester.isNoteTrashRowExist())
     }
 
     func testNoteTrash_DeleteNote() throws {
-        tester.deleteNote()
+        XCTAssertTrue(tester.isEnteredPage())
+        XCTAssertTrue(tester.isNoteTrashRowExist())
+        tester.tapDeleteRow()
+        XCTAssertFalse(tester.isNoteTrashRowExist())
     }
 
     func testNoteTrash_RecoverNote() throws {
-        tester.recoverNote()
+        XCTAssertTrue(tester.isEnteredPage())
+        XCTAssertTrue(tester.isNoteTrashRowExist())
+        tester.tapRecoverRow()
+        XCTAssertFalse(tester.isNoteTrashRowExist())
     }
 }

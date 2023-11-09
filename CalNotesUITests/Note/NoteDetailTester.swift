@@ -7,23 +7,22 @@
 
 import XCTest
 
-class NoteDetailTester {
+class NoteDetailTester: UITester {
     let app: XCUIApplication
     lazy var navigationBarBackButton = app.navigationBars.buttons.element(boundBy: 0)
-    lazy var noteListTester = NoteListTester(app: app)
-    lazy var root = noteListTester.noteDetail
+    lazy var root = app.otherElements["noteDetail"]
     lazy var createNoteItemButton = app.buttons["createNoteItemButton"]
     lazy var navigationBarMenu = app.navigationBars.buttons["noteDetailMenu"]
     lazy var editNoteTitleButton = app.buttons["editNoteTitleButton"]
     lazy var deleteNoteButton = app.buttons["deleteNoteButton"]
     lazy var editNoteTitleForm = app.otherElements["createNoteForm"]
-    lazy var noteItemList = root.otherElements["noteItemList"]
+    lazy var noteItemList = app.otherElements["noteItemList"]
     lazy var noteItemListRow = app.otherElements["listRow"].firstMatch
     lazy var noteItemListRowDeleteButton = noteItemList.buttons["listRowDeleteButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteItemListRowCloneButton = noteItemList.buttons["listRowCloneButton"].coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
     lazy var noteItemForm = app.otherElements["noteItemForm"]
 
-    init(app: XCUIApplication) {
+    required init(app: XCUIApplication) {
         self.app = app
         self.app.launchArguments = ["testing"]
     }
@@ -32,64 +31,65 @@ class NoteDetailTester {
         app.launch()
     }
 
-    func editNoteTitle() {
-        noteListTester.enterNoteDetail()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
-        navigationBarMenu.tap()
-        editNoteTitleButton.tap()
-        XCTAssertTrue(editNoteTitleForm.waitForExistence(timeout: 0.5))
-        let tester = CreateNoteTester(app: app)
-        tester.updateNote()
-        XCTAssertFalse(editNoteTitleForm.waitForExistence(timeout: 0.5))
+    func enterPage() {
+        let tester = NoteListTester(app: app)
+        tester.tapCreateNote()
+        tester.completeCreateNote()
     }
 
-    func deleteNote() {
-        noteListTester.enterNoteDetail()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
-        navigationBarMenu.tap()
-        deleteNoteButton.tap()
-        XCTAssertFalse(root.waitForExistence(timeout: 0.5))
+    func isEnteredPage() -> Bool {
+        return root.waitForExistence(timeout: 0.5)
+    }
+
+    func tapBack() {
+        navigationBarBackButton.tap()
+    }
+
+    func isNoteItemExist() -> Bool {
+        return noteItemListRow.waitForExistence(timeout: 0.5)
     }
 
     func enterCreateNoteItemForm() {
-        noteListTester.enterNoteDetail()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
         createNoteItemButton.tap()
-        XCTAssertTrue(noteItemForm.waitForExistence(timeout: 0.5))
+    }
+
+    func completeFoodForm() {
+        NoteItemFormTester(app: app).completeFoodForm()
     }
 
     func enterUpdateNoteItemForm() {
-        let tester = NoteItemFormTester(app: app)
-        tester.createFoodNoteItem()
-        XCTAssertTrue(root.waitForExistence(timeout: 0.5))
-        XCTAssertTrue(noteItemList.waitForExistence(timeout: 0.5))
         noteItemListRow.tap()
-        XCTAssertTrue(noteItemForm.waitForExistence(timeout: 0.5))
     }
 
-    func deleteNoteItem() {
-        XCTAssertFalse(noteItemListRow.waitForExistence(timeout: 0.5))
-        let tester = NoteItemFormTester(app: app)
-        tester.createFoodNoteItem()
-        XCTAssertTrue(noteItemListRow.waitForExistence(timeout: 0.5))
+    func isEnteredNoteItemForm() -> Bool {
+        return noteItemForm.waitForExistence(timeout: 0.5)
+    }
+
+    func isEnteredEditNoteTitle() -> Bool {
+        return editNoteTitleForm.waitForExistence(timeout: 0.5)
+    }
+
+    func tapEditNoteTitle() {
+        navigationBarMenu.tap()
+        editNoteTitleButton.tap()
+    }
+
+    func completeEditNoteTitle() {
+        CreateNoteTester(app: app).completeForm()
+    }
+
+    func tapDeleteNote() {
+        navigationBarMenu.tap()
+        deleteNoteButton.tap()
+    }
+
+    func tapDeleteNoteItem() {
         noteItemListRow.swipeLeft()
         noteItemListRowDeleteButton.tap()
-        XCTAssertFalse(noteItemListRow.waitForExistence(timeout: 0.5))
     }
 
-    func cloneNoteItem() {
-        XCTAssertFalse(noteItemListRow.waitForExistence(timeout: 0.5))
-        let tester = NoteItemFormTester(app: app)
-        tester.createFoodNoteItem()
-        XCTAssertTrue(noteItemListRow.waitForExistence(timeout: 0.5))
+    func tapCloneNoteItem() {
         noteItemListRow.swipeLeft()
         noteItemListRowCloneButton.tap()
-        XCTAssertTrue(noteItemListRow.waitForExistence(timeout: 0.5))
-        noteItemListRow.swipeLeft()
-        noteItemListRowDeleteButton.tap()
-        XCTAssertTrue(noteItemListRow.waitForExistence(timeout: 0.5))
-        noteItemListRow.swipeLeft()
-        noteItemListRowDeleteButton.tap()
-        XCTAssertFalse(noteItemListRow.waitForExistence(timeout: 0.5))
     }
 }

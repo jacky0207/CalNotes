@@ -17,6 +17,7 @@ struct HomeView: View {
             titleDisplayType: .large,
             content: content
         )
+        .accessibilityIdentifier("home")
         .onAppear(perform: viewModel.loadData)
         .safeAreaInset(edge: .bottom) {
             BannerView()
