@@ -1,5 +1,5 @@
 //
-//  CalNotesNoteTrashUITests.swift
+//  NoteTrashUITests.swift
 //  CalNotesUITests
 //
 //  Created by Jacky Lam on 2023-11-06.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class CalNotesNoteTrashUITests: XCTestCase {
+final class NoteTrashUITests: XCTestCase {
     var tester = NoteTrashTester(app: XCUIApplication())
 
     override func setUpWithError() throws {

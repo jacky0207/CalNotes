@@ -25,17 +25,17 @@
 		F3328EE22AE5045E004951F6 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE12AE5045E004951F6 /* ImagePickerView.swift */; };
 		F3328EE42AE50877004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3328EE32AE50877004951F6 /* ImagePicker.swift */; };
 		F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F341B5A42ADFCC9700847BD6 /* DateUtil.swift */; };
-		F34A81ED2AF871F900FE4C6D /* CalNotesNoteListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */; };
+		F34A81ED2AF871F900FE4C6D /* NoteListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81EC2AF871F900FE4C6D /* NoteListUITests.swift */; };
 		F34A81EF2AF8727000FE4C6D /* CreateNoteTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */; };
 		F34A81F12AF8757D00FE4C6D /* NoteListTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */; };
 		F34A81F42AF8B70400FE4C6D /* NoteDetailTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */; };
-		F34A81F62AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */; };
+		F34A81F62AF8B71500FE4C6D /* NoteDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F52AF8B71500FE4C6D /* NoteDetailUITests.swift */; };
 		F34A81F82AF8B82100FE4C6D /* NoteItemFormTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */; };
-		F34A81FA2AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */; };
+		F34A81FA2AF8B83200FE4C6D /* NoteItemFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81F92AF8B83200FE4C6D /* NoteItemFormUITests.swift */; };
 		F34A81FC2AF9927700FE4C6D /* HomeTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81FB2AF9927700FE4C6D /* HomeTester.swift */; };
 		F34A81FF2AF9929700FE4C6D /* CalNotesHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A81FE2AF9929700FE4C6D /* CalNotesHomeUITests.swift */; };
 		F34A82022AF995D200FE4C6D /* NoteTrashTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A82012AF995D200FE4C6D /* NoteTrashTester.swift */; };
-		F34A82042AF995E000FE4C6D /* CalNotesNoteTrashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A82032AF995E000FE4C6D /* CalNotesNoteTrashUITests.swift */; };
+		F34A82042AF995E000FE4C6D /* NoteTrashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34A82032AF995E000FE4C6D /* NoteTrashUITests.swift */; };
 		F34C9B052AFC1B5700C5A6FD /* UITester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34C9B042AFC1B5700C5A6FD /* UITester.swift */; };
 		F382B4532AAE784800275BAE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F382B4522AAE784700275BAE /* GoogleMobileAds */; };
 		F382B4562AAE7AC700275BAE /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F382B4552AAE7AC700275BAE /* BannerViewController.swift */; };
@@ -44,7 +44,7 @@
 		F399F9A52A9A73D5006710DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9A42A9A73D5006710DF /* ContentView.swift */; };
 		F399F9A72A9A73D7006710DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F399F9A62A9A73D7006710DF /* Assets.xcassets */; };
 		F399F9AA2A9A73D7006710DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F399F9A92A9A73D7006710DF /* Preview Assets.xcassets */; };
-		F399F9C32A9A73D7006710DF /* CalNotesCreateNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9C22A9A73D7006710DF /* CalNotesCreateNoteUITests.swift */; };
+		F399F9C32A9A73D7006710DF /* CreateNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9C22A9A73D7006710DF /* CreateNoteUITests.swift */; };
 		F399F9DD2A9A782B006710DF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9DB2A9A782B006710DF /* AppState.swift */; };
 		F399F9DE2A9A782B006710DF /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9DC2A9A782B006710DF /* DIContainer.swift */; };
 		F399F9E12A9A7865006710DF /* DataSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F399F9DF2A9A7865006710DF /* DataSession.swift */; };
@@ -194,17 +194,17 @@
 		F3328EE12AE5045E004951F6 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		F3328EE32AE50877004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F341B5A42ADFCC9700847BD6 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
-		F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteListUITests.swift; sourceTree = "<group>"; };
+		F34A81EC2AF871F900FE4C6D /* NoteListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListUITests.swift; sourceTree = "<group>"; };
 		F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteTester.swift; sourceTree = "<group>"; };
 		F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTester.swift; sourceTree = "<group>"; };
 		F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailTester.swift; sourceTree = "<group>"; };
-		F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteDetailUITests.swift; sourceTree = "<group>"; };
+		F34A81F52AF8B71500FE4C6D /* NoteDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailUITests.swift; sourceTree = "<group>"; };
 		F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormTester.swift; sourceTree = "<group>"; };
-		F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteItemFormUITests.swift; sourceTree = "<group>"; };
+		F34A81F92AF8B83200FE4C6D /* NoteItemFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormUITests.swift; sourceTree = "<group>"; };
 		F34A81FB2AF9927700FE4C6D /* HomeTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTester.swift; sourceTree = "<group>"; };
 		F34A81FE2AF9929700FE4C6D /* CalNotesHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesHomeUITests.swift; sourceTree = "<group>"; };
 		F34A82012AF995D200FE4C6D /* NoteTrashTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashTester.swift; sourceTree = "<group>"; };
-		F34A82032AF995E000FE4C6D /* CalNotesNoteTrashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesNoteTrashUITests.swift; sourceTree = "<group>"; };
+		F34A82032AF995E000FE4C6D /* NoteTrashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTrashUITests.swift; sourceTree = "<group>"; };
 		F34C9B042AFC1B5700C5A6FD /* UITester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITester.swift; sourceTree = "<group>"; };
 		F382B4552AAE7AC700275BAE /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		F382B4572AAE7AEF00275BAE /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		F399F9A92A9A73D7006710DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F399F9B42A9A73D7006710DF /* CalNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F399F9BE2A9A73D7006710DF /* CalNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F399F9C22A9A73D7006710DF /* CalNotesCreateNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalNotesCreateNoteUITests.swift; sourceTree = "<group>"; };
+		F399F9C22A9A73D7006710DF /* CreateNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUITests.swift; sourceTree = "<group>"; };
 		F399F9DB2A9A782B006710DF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F399F9DC2A9A782B006710DF /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		F399F9DF2A9A7865006710DF /* DataSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSession.swift; sourceTree = "<group>"; };
@@ -459,6 +459,51 @@
 				F34C9B042AFC1B5700C5A6FD /* UITester.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F34C9B062AFD05B000C5A6FD /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */,
+				F34A81EC2AF871F900FE4C6D /* NoteListUITests.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F34C9B072AFD05B800C5A6FD /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */,
+				F399F9C22A9A73D7006710DF /* CreateNoteUITests.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		F34C9B082AFD05CF00C5A6FD /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */,
+				F34A81F52AF8B71500FE4C6D /* NoteDetailUITests.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F34C9B092AFD05E000C5A6FD /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				F34A82012AF995D200FE4C6D /* NoteTrashTester.swift */,
+				F34A82032AF995E000FE4C6D /* NoteTrashUITests.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
+		F34C9B0A2AFD05EB00C5A6FD /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */,
+				F34A81F92AF8B83200FE4C6D /* NoteItemFormUITests.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 		F382B4542AAE7AB100275BAE /* Ads */ = {
@@ -1084,16 +1129,11 @@
 		F3F51D152AF837C500B72B8D /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				F34A81F02AF8757D00FE4C6D /* NoteListTester.swift */,
-				F34A81EC2AF871F900FE4C6D /* CalNotesNoteListUITests.swift */,
-				F34A81EE2AF8727000FE4C6D /* CreateNoteTester.swift */,
-				F399F9C22A9A73D7006710DF /* CalNotesCreateNoteUITests.swift */,
-				F34A81F32AF8B70400FE4C6D /* NoteDetailTester.swift */,
-				F34A81F52AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift */,
-				F34A81F72AF8B82100FE4C6D /* NoteItemFormTester.swift */,
-				F34A81F92AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift */,
-				F34A82012AF995D200FE4C6D /* NoteTrashTester.swift */,
-				F34A82032AF995E000FE4C6D /* CalNotesNoteTrashUITests.swift */,
+				F34C9B0A2AFD05EB00C5A6FD /* Item */,
+				F34C9B072AFD05B800C5A6FD /* Form */,
+				F34C9B062AFD05B000C5A6FD /* List */,
+				F34C9B092AFD05E000C5A6FD /* Trash */,
+				F34C9B082AFD05CF00C5A6FD /* Detail */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -1397,15 +1437,15 @@
 			files = (
 				F34A81F12AF8757D00FE4C6D /* NoteListTester.swift in Sources */,
 				F34A81FF2AF9929700FE4C6D /* CalNotesHomeUITests.swift in Sources */,
-				F34A81F62AF8B71500FE4C6D /* CalNotesNoteDetailUITests.swift in Sources */,
-				F34A82042AF995E000FE4C6D /* CalNotesNoteTrashUITests.swift in Sources */,
-				F34A81ED2AF871F900FE4C6D /* CalNotesNoteListUITests.swift in Sources */,
+				F34A81F62AF8B71500FE4C6D /* NoteDetailUITests.swift in Sources */,
+				F34A82042AF995E000FE4C6D /* NoteTrashUITests.swift in Sources */,
+				F34A81ED2AF871F900FE4C6D /* NoteListUITests.swift in Sources */,
 				F34A81FC2AF9927700FE4C6D /* HomeTester.swift in Sources */,
 				F34A82022AF995D200FE4C6D /* NoteTrashTester.swift in Sources */,
 				F34A81F82AF8B82100FE4C6D /* NoteItemFormTester.swift in Sources */,
 				F34A81EF2AF8727000FE4C6D /* CreateNoteTester.swift in Sources */,
-				F34A81FA2AF8B83200FE4C6D /* CalNotesNoteItemFormUITests.swift in Sources */,
-				F399F9C32A9A73D7006710DF /* CalNotesCreateNoteUITests.swift in Sources */,
+				F34A81FA2AF8B83200FE4C6D /* NoteItemFormUITests.swift in Sources */,
+				F399F9C32A9A73D7006710DF /* CreateNoteUITests.swift in Sources */,
 				F34C9B052AFC1B5700C5A6FD /* UITester.swift in Sources */,
 				F34A81F42AF8B70400FE4C6D /* NoteDetailTester.swift in Sources */,
 			);

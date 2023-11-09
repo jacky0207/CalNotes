@@ -1,5 +1,5 @@
 //
-//  CalNotesNoteItemFormUITests.swift
+//  NoteItemFormUITests.swift
 //  CalNotesUITests
 //
 //  Created by Jacky Lam on 2023-11-06.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class CalNotesNoteItemFormUITests: XCTestCase {
+final class NoteItemFormUITests: XCTestCase {
     var tester = NoteItemFormTester(app: XCUIApplication())
 
     override func setUpWithError() throws {

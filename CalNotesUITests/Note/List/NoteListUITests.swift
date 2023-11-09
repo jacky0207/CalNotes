@@ -1,5 +1,5 @@
 //
-//  CalNotesNoteListUITests.swift
+//  NoteListUITests.swift
 //  CalNotesUITests
 //
 //  Created by Jacky Lam on 2023-11-05.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class CalNotesNoteListUITests: XCTestCase {
+final class NoteListUITests: XCTestCase {
     var tester = NoteListTester(app: XCUIApplication())
 
     override func setUpWithError() throws {
