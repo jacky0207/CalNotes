@@ -1,5 +1,5 @@
 //
-//  CalNotesNoteItemFormUITests.swift
+//  NoteItemFormUITests.swift
 //  CalNotesUITests
 //
 //  Created by Jacky Lam on 2023-11-06.
@@ -7,12 +7,13 @@
 
 import XCTest
 
-final class CalNotesNoteItemFormUITests: XCTestCase {
+final class NoteItemFormUITests: XCTestCase {
     var tester = NoteItemFormTester(app: XCUIApplication())
 
     override func setUpWithError() throws {
         continueAfterFailure = false
         tester.reset()
+        tester.enterPage()
     }
 
     override func tearDownWithError() throws {
@@ -20,14 +21,20 @@ final class CalNotesNoteItemFormUITests: XCTestCase {
     }
 
     func testNoteItemForm_CreateFoodItem_Success() throws {
-        tester.createFoodNoteItem()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.completeFoodForm()
+        XCTAssertFalse(tester.isEnteredPage())
     }
 
     func testNoteItemForm_CreateTransportationItem_Success() throws {
-        tester.createTransportationNoteItem()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.completeTransportationForm()
+        XCTAssertFalse(tester.isEnteredPage())
     }
 
     func testNoteItemForm_Fail() throws {
-        tester.showError()
+        XCTAssertTrue(tester.isEnteredPage())
+        tester.tapSubmit()
+        XCTAssertTrue(tester.isEnteredPage())
     }
 }

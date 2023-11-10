@@ -17,6 +17,7 @@ struct HomeView: View {
             titleDisplayType: .large,
             content: content
         )
+        .accessibilityIdentifier("home")
         .onAppear(perform: viewModel.loadData)
         .safeAreaInset(edge: .bottom) {
             BannerView()
@@ -35,6 +36,7 @@ struct HomeView: View {
                 HomeSettingsView()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .contain)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .padding(EdgeInsets(
@@ -43,6 +45,7 @@ struct HomeView: View {
             bottom: Dimen.spacing(.bottomMargin),
             trailing: Dimen.spacing(.horizontalMargin)
         ))
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -59,7 +62,9 @@ struct HomeNotesView: View {
                 noteButton()
                 trashButton()
             }
+            .accessibilityElement(children: .contain)
         }
+        .accessibilityElement(children: .contain)
     }
 
     func noteButton() -> some View {
@@ -71,10 +76,10 @@ struct HomeNotesView: View {
                     value: "\(note)",
                     leadingIcon: Image("note")
                 )
+                .accessibilityAddTraits(.isButton)
+                .accessibilityIdentifier("noteListButton")
             }
         )
-        .accessibilityAddTraits(.isButton)
-        .accessibilityIdentifier("noteListButton")
     }
 
     func trashButton() -> some View {
@@ -86,10 +91,10 @@ struct HomeNotesView: View {
                     value: "\(trash)",
                     leadingIcon: Image("trash")
                 )
+                .accessibilityAddTraits(.isButton)
+                .accessibilityIdentifier("noteTrashButton")
             }
         )
-        .accessibilityAddTraits(.isButton)
-        .accessibilityIdentifier("noteTrashButton")
     }
 }
 

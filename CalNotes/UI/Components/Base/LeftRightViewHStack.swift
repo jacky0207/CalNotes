@@ -35,7 +35,7 @@ struct LeftRightViewHStack<Content: View, LeftView: View, RightView: View>: View
                 rightView()
             }
         }
-        .accessibilityElement()
+        .accessibilityElement(children: .contain)
     }
 }
 

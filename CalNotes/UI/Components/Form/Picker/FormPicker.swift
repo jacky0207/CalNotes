@@ -87,7 +87,7 @@ struct FormPicker<LeftView: View, RightView: View>: View {
             errorMessage = ""
             onSelectedChanged(selectedId)
         }
-        .accessibilityIdentifier("pickerMenu")
+        .accessibilityIdentifier("content")
     }
 }
 

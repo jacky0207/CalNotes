@@ -123,7 +123,7 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                             swipeContent(indexSet)
                         }
                     }
-                    .accessibilityElement()
+                    .accessibilityElement(children: .contain)
                     .accessibilityIdentifier("listRow")
             }.onMove { from, to in
                 moveItem?(from, to)
@@ -135,7 +135,7 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
         .listStyle(ListStyle.Default())
 //        .id(UUID())  // disable animation to avoid overlap with observed object change
         .environment(\.defaultMinListRowHeight, 1)
-        .accessibilityElement()
+        .accessibilityElement(children: .combine)
     }
 }
 

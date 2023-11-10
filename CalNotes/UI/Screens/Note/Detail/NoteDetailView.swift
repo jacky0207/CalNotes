@@ -22,6 +22,7 @@ struct NoteDetailView: View {
             toolbar: toolbar,
             content: content
         )
+        .accessibilityIdentifier("noteDetail")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: editNoteTitleContent)
         .sheet(isPresented: $isShowNoteItemCamera) {
@@ -36,17 +37,14 @@ struct NoteDetailView: View {
     }
 
     func toolbar() -> some View {
-        if viewModel.note.disabled {
-            return AnyView(EmptyView())
-        }
-        return AnyView(NoteDetailToolbar(
+        NoteDetailToolbar(
             note: viewModel.note,
             isShowEditNoteTitle: $isShowEditNoteTitle,
             isShowNoteItemCamera: $isShowNoteItemCamera,
             isNoteItemPhotoTook: $isNoteItemPhotoTook,
             image: selectedImage,
             deleteNoteAction: deleteNote
-        ))
+        )
     }
 
     func content() -> some View {
@@ -63,12 +61,10 @@ struct NoteDetailView: View {
                 }
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .accessibilityElement()
             .accessibilityIdentifier("noteItemList")
             NoteDetailSumView(sum: viewModel.note.sum)
         }
-        .accessibilityElement()
-        .accessibilityIdentifier("noteDetail")
+        .accessibilityElement(children: .contain)
     }
 
     func listContent(item: NoteItem) -> some View {
@@ -126,7 +122,7 @@ struct NoteDetailToolbar: View {
             addButton()
             menu()
         }
-        .accessibilityElement()
+        .accessibilityElement(children: .contain)
     }
 
     func addButton() -> some View {
@@ -134,8 +130,6 @@ struct NoteDetailToolbar: View {
             destination: addDestination,
             label: addLabel
         )
-        .accessibilityAddTraits(.isButton)
-        .accessibilityIdentifier("createNoteItemButton")
     }
 
     func addDestination() -> some View {
@@ -151,6 +145,9 @@ struct NoteDetailToolbar: View {
         Image("plus")
             .resizable()
             .imageStyle(ImageStyle.Icon())
+            .accessibilityRemoveTraits(.isImage)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityIdentifier("createNoteItemButton")
     }
 
     func menu() -> some View {
@@ -162,6 +159,7 @@ struct NoteDetailToolbar: View {
             },
             label: menuLabel
         )
+        .accessibilityElement(children: .contain)
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("noteDetailMenu")
         .navigationLinkBackground(
@@ -245,13 +243,10 @@ struct NoteDetailItemView: View {
     var disabled: Bool
 
     var body: some View {
-        if disabled {
-            return AnyView(label())
-        }
-        return AnyView(NavigationViewLink(
+        NavigationViewLink(
             destination: destination,
             label: label
-        ))
+        )
     }
 
     func destination() -> some View {

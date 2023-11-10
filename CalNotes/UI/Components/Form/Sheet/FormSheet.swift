@@ -58,16 +58,18 @@ struct FormSheet<Content: View>: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
+                .accessibilityElement(children: .contain)
                 Spacer().frame(width: padding.trailing)
             }
             .listRowStyle(ListRowStyle.Default())
+            .accessibilityElement(children: .contain)
 
             Spacer().frame(height: Dimen.spacing(.bottomMargin))
                 .listRowStyle(ListRowStyle.Default())
         }
         .listStyle(ListStyle.Default())
         .environment(\.defaultMinListRowHeight, 1)
-        .accessibilityElement()
+        .accessibilityElement(children: .combine)
     }
 
     func submitButton() -> some View {

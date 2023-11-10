@@ -54,7 +54,6 @@ struct NoteListView: View {
                 viewModel.deleteNote(at: $0.first!)
             }
         )
-        .accessibilityIdentifier("noteList")
     }
 
     func createFormContent() -> some View {

@@ -7,16 +7,16 @@
 
 import XCTest
 
-class HomeTester {
+class HomeTester: UITester {
     let app: XCUIApplication
     lazy var navigationBarBackButton = app.navigationBars.buttons.element(boundBy: 0)
-    lazy var root = app
-    lazy var noteListButton = root.buttons["noteListButton"]
-    lazy var noteList = root.otherElements["noteList"]
-    lazy var noteTrashButton = root.buttons["noteTrashButton"]
-    lazy var noteTrash = root.otherElements["noteTrash"]
+    lazy var root = app.otherElements["home"]
+    lazy var noteListButton = app.buttons["noteListButton"]
+    lazy var noteList = app.otherElements["noteList"]
+    lazy var noteTrashButton = app.buttons["noteTrashButton"]
+    lazy var noteTrash = app.otherElements["noteTrash"]
 
-    init(app: XCUIApplication) {
+    required init(app: XCUIApplication) {
         self.app = app
         self.app.launchArguments = ["testing"]
     }
@@ -25,17 +25,27 @@ class HomeTester {
         app.launch()
     }
 
-    func enterNoteList() {
+    func enterPage() {
         navigationBarBackButton.tap()
-        XCTAssertFalse(noteList.waitForExistence(timeout: 0.5))
-        noteListButton.tap()
-        XCTAssertTrue(noteList.waitForExistence(timeout: 0.5))
     }
 
-    func enterNoteTrash() {
-        navigationBarBackButton.tap()
-        XCTAssertFalse(noteTrash.waitForExistence(timeout: 0.5))
+    func isEnteredPage() -> Bool {
+        return root.waitForExistence(timeout: 0.5)
+    }
+
+    func isEnteredNoteList() -> Bool {
+        return noteList.waitForExistence(timeout: 0.5)
+    }
+
+    func tapNoteList() {
+        noteListButton.tap()
+    }
+
+    func isEnteredNoteTrash() -> Bool {
+        return noteTrash.waitForExistence(timeout: 0.5)
+    }
+
+    func tapNoteTrash() {
         noteTrashButton.tap()
-        XCTAssertTrue(noteTrash.waitForExistence(timeout: 0.5))
     }
 }
