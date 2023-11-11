@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteItem: RecordItem {
+struct NoteItem: RecordItem & Hashable {
     var id: Int
     var noteId: Int
     var title: String

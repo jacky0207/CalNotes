@@ -31,6 +31,7 @@ struct ImagePicker: View {
                 ImageNewPicker()
             }
         }
+        .buttonStyle(PlainButtonStyle())
         .confirmationDialog("", isPresented: $isShowSourceTypeSelections, titleVisibility: .hidden) {
             Button("camera", role: nil, action: cameraAction)
             Button("photo_library", role: nil, action: photoLibraryAction)
