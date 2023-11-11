@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DataList<Data: RandomAccessCollection, Content: View, SwipeContent: View>: View {
+struct DataList<Data: RandomAccessCollection & Hashable, Content: View, SwipeContent: View>: View {
     var data: Data
     var spacing: CGFloat
     var padding: EdgeInsets
@@ -82,7 +82,7 @@ struct DataNoItemView: View {
     }
 }
 
-struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: View>: View {
+struct DataItemList<Data: RandomAccessCollection & Hashable, Content: View, SwipeContent: View>: View {
     var data: Data
     var spacing: CGFloat
     var padding: EdgeInsets
@@ -106,6 +106,9 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                     ))
                     .listRowStyle(ListRowStyle.Default())
                     .moveDisabled(moveItem == nil)
+                    .onDrag { // mean drag a row container
+                        return NSItemProvider()
+                    }
                     .swipeActions(allowsFullSwipe: deleteItem != nil) {
                         let indexSet = Foundation.IndexSet(arrayLiteral: index)
                         if let deleteItem = deleteItem {
@@ -133,7 +136,8 @@ struct DataItemList<Data: RandomAccessCollection, Content: View, SwipeContent: V
                 .listRowStyle(ListRowStyle.Default())
         }
         .listStyle(ListStyle.Default())
-//        .id(UUID())  // disable animation to avoid overlap with observed object change
+        .id(data)  // disable animation to avoid overlap with observed object change
+        .environment(\.editMode, .constant(.inactive))
         .environment(\.defaultMinListRowHeight, 1)
         .accessibilityElement(children: .combine)
     }
