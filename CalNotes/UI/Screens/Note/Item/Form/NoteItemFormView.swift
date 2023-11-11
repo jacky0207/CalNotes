@@ -114,7 +114,7 @@ struct NoteItemFormView: View {
         } else {
             return AnyView(Button(action: { viewModel.form.title.value = "" }) {
                 Image("remove").resizable().imageStyle(ImageStyle.Icon())
-            })
+            }.buttonStyle(PlainButtonStyle()))
         }
     }
 
@@ -122,7 +122,7 @@ struct NoteItemFormView: View {
         Button(
             action: { isShowAmountCalculator.toggle() },
             label: { Image("calculator").resizable().imageStyle(ImageStyle.Icon()) }
-        )
+        ).buttonStyle(PlainButtonStyle())
     }
 
     func quantityUnitPicker() -> some View {
