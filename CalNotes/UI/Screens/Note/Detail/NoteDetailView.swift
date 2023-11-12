@@ -39,6 +39,7 @@ struct NoteDetailView: View {
     func toolbar() -> some View {
         NoteDetailToolbar(
             note: viewModel.note,
+            disabled: viewModel.note.disabled,
             isShowEditNoteTitle: $isShowEditNoteTitle,
             isShowNoteItemCamera: $isShowNoteItemCamera,
             isNoteItemPhotoTook: $isNoteItemPhotoTook,
@@ -111,6 +112,7 @@ struct NoteDetailView: View {
 struct NoteDetailToolbar: View {
     @Environment(\.diContainer) var diContainer
     var note: NoteDetail
+    var disabled: Bool
     @Binding var isShowEditNoteTitle: Bool
     @Binding var isShowNoteItemCamera: Bool
     @Binding var isNoteItemPhotoTook: Bool
@@ -118,11 +120,15 @@ struct NoteDetailToolbar: View {
     var deleteNoteAction: () -> Void
 
     var body: some View {
-        HStack(spacing: Dimen.spacing(.normal)) {
-            addButton()
-            menu()
+        if disabled {
+            EmptyView()
+        } else {
+            HStack(spacing: Dimen.spacing(.normal)) {
+                addButton()
+                menu()
+            }
+            .accessibilityElement(children: .contain)
         }
-        .accessibilityElement(children: .contain)
     }
 
     func addButton() -> some View {
@@ -243,10 +249,14 @@ struct NoteDetailItemView: View {
     var disabled: Bool
 
     var body: some View {
-        NavigationViewLink(
-            destination: destination,
-            label: label
-        )
+        if disabled {
+            label()
+        } else {
+            NavigationViewLink(
+                destination: destination,
+                label: label
+            )
+        }
     }
 
     func destination() -> some View {
