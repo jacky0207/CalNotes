@@ -33,6 +33,7 @@ struct NoteItemFormView: View {
                 }
             }
         )
+        .analyticsScreen(self)
     }
 
     func toolbar() -> some View {

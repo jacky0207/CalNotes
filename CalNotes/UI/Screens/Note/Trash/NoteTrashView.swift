@@ -23,6 +23,7 @@ struct NoteTrashView: View {
         .accessibilityIdentifier("noteTrash")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: confirmDeleteAllNotesContent)
+        .analyticsScreen(self)
     }
 
     func toolbar() -> some View {

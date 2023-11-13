@@ -157,6 +157,8 @@
 		F3F51D142AF8312800B72B8D /* NoteItemFormTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F51D132AF8312800B72B8D /* NoteItemFormTester.swift */; };
 		F3F82DD92AF6290D00459A14 /* NoteItemQuantityUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */; };
 		F3F82DDF2AF6C80000459A14 /* LoggerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */; };
+		F3F920C02B01E186004301CA /* View+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F920BF2B01E186004301CA /* View+Analytics.swift */; };
+		F3F920C22B01EC39004301CA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3F920C12B01EC39004301CA /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,6 +334,7 @@
 		F3F51D132AF8312800B72B8D /* NoteItemFormTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemFormTester.swift; sourceTree = "<group>"; };
 		F3F82DD82AF6290D00459A14 /* NoteItemQuantityUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItemQuantityUnit.swift; sourceTree = "<group>"; };
 		F3F82DDE2AF6C7FF00459A14 /* LoggerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerUtil.swift; sourceTree = "<group>"; };
+		F3F920BF2B01E186004301CA /* View+Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Analytics.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F920C22B01EC39004301CA /* FirebaseCrashlytics in Frameworks */,
 				F30E095C2AE9111B0048D776 /* FirebaseAnalytics in Frameworks */,
 				F382B4532AAE784800275BAE /* GoogleMobileAds in Frameworks */,
 			);
@@ -511,6 +515,7 @@
 			children = (
 				F382B4552AAE7AC700275BAE /* BannerViewController.swift */,
 				F382B4572AAE7AEF00275BAE /* BannerView.swift */,
+				F3F920BF2B01E186004301CA /* View+Analytics.swift */,
 			);
 			path = Ads;
 			sourceTree = "<group>";
@@ -1156,6 +1161,7 @@
 				F399F99B2A9A73D5006710DF /* Sources */,
 				F399F99C2A9A73D5006710DF /* Frameworks */,
 				F399F99D2A9A73D5006710DF /* Resources */,
+				F3F920BE2B01DD62004301CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1165,6 +1171,7 @@
 			packageProductDependencies = (
 				F382B4522AAE784700275BAE /* GoogleMobileAds */,
 				F30E095B2AE9111B0048D776 /* FirebaseAnalytics */,
+				F3F920C12B01EC39004301CA /* FirebaseCrashlytics */,
 			);
 			productName = CalNotes;
 			productReference = F399F99F2A9A73D5006710DF /* CalNotes.app */;
@@ -1297,6 +1304,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F3F920BE2B01DD62004301CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"$(SRCROOT)/${BUILT_PRODUCTS_DIR}/${INFOPLISH_PATH}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F399F99B2A9A73D5006710DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1383,6 +1412,7 @@
 				F3C491E82A9A8441009A63ED /* UIScreen+ScreenSize.swift in Sources */,
 				F341B5A52ADFCC9700847BD6 /* DateUtil.swift in Sources */,
 				F399F9FD2A9A80B9006710DF /* NoteListViewModel.swift in Sources */,
+				F3F920C02B01E186004301CA /* View+Analytics.swift in Sources */,
 				F3DB44EB2A9C77CC0019050B /* NoteItemView.swift in Sources */,
 				F399F9E72A9A79B3006710DF /* LocalSession.swift in Sources */,
 				F3DB44CF2A9BC1D10019050B /* FontStyle+NotoSansTC.swift in Sources */,
@@ -1535,6 +1565,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CalNotes/Resources\"";
 				DEVELOPMENT_TEAM = 6HCGREW92J;
 				ENABLE_PREVIEWS = YES;
@@ -1675,6 +1706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CalNotes/Resources\"";
 				DEVELOPMENT_TEAM = 6HCGREW92J;
 				ENABLE_PREVIEWS = YES;
@@ -1815,6 +1847,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"CalNotes/Resources\"";
 				DEVELOPMENT_TEAM = 6HCGREW92J;
 				ENABLE_PREVIEWS = YES;
@@ -1961,6 +1994,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F382B4512AAE784700275BAE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		F3F920C12B01EC39004301CA /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F30E095A2AE9111B0048D776 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 

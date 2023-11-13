@@ -34,6 +34,7 @@ struct NoteDetailView: View {
                 }
             )
         }
+        .analyticsScreen(self)
     }
 
     func toolbar() -> some View {

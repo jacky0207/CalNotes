@@ -24,6 +24,7 @@ struct HomeView: View {
                 .frame(height: 60)
                 .background(ColorStyle.background.color)
         }
+        .analyticsScreen(self)
     }
 
     func content() -> some View {
