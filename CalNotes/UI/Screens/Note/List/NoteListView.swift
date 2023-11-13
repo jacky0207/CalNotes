@@ -28,6 +28,7 @@ struct NoteListView: View {
         .accessibilityIdentifier("noteList")
         .onAppear(perform: viewModel.loadData)
         .overlay(content: createFormContent)
+        .analyticsScreen(self)
     }
 
     func toolbarTrailing() -> some View {
